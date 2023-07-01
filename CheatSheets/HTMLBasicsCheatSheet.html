@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Basics Cheat Sheet</title>
+</head>
+<body>
+
+<h1>HTML Cheat Sheet</h1>
+<h2>Basic structure of an HTML Page</h2>
+<p>
+<mark>&lt;!DOCTYPE html&gt;</mark><br />
+<mark>&lt;html lang="en"&gt;</mark><br />
+<mark>&lt;head&gt;</mark><br />
+&nbsp; &nbsp;<mark>&lt;meta charset="UTF-8"&gt;</mark><br />
+&nbsp; &nbsp;<mark>&lt;title&gt;</mark>HTML Basics Cheat Sheet<mark>&lt;/title&gt;</mark><br />
+<mark>&lt;/head&gt;</mark><br />
+<mark>&lt;body&gt;</mark><br />
+&nbsp; &nbsp;<mark>&lt;p&gt;</mark>Hello World!<mark>&lt;p&gt;</mark><br />
+<mark>&lt;/body&gt;</mark><br />
+<mark>&lt;/html&gt;</mark><br />
+    The html represents the whole document, the head section is information about the document
+    and the body is the contents of the document. Space and line returns are ignored, with one space
+    between words. Comments are also ignored and are designated by using <mark>&lt;!-- comment here --&gt;</mark>
+    where you want the comment to be.
+</p>
+
+
+<h2>Tags</h2>
+<p>HTML is made up of tags which can be thought of as commands inside <mark>&lt; &gt;</mark> symbols
+    with the end of the tag being designated with another copy of that tag but starting with a /.
+    Some tags don't have text in them, so don't need a closing tag.
+    Such tags optionally will end with a / before the &gt; such as <mark>&lt;br /&gt;</mark>.
+    These can be nested so tags can be inside other tags. An example would be </p>
+<p>
+    <mark>&lt;p&gt;</mark>This is an example of a paragraph. <mark>&lt;b&gt;</mark>It can have bold, <mark>&lt;i&gt;</mark>bold and italic,
+    <mark>&lt;u&gt;</mark>bold and italic that is underlined<mark>&lt;/u&gt;</mark><mark>&lt;/i&gt;</mark><mark>&lt;/b&gt;</mark> text.
+    We can have <mark>&lt;i&gt;</mark>Italic<mark>&lt;/i&gt;</mark> and <mark>&lt;u&gt;</mark>underlined<mark>&lt;/u&gt;</mark> by themselves. We can also <mark>&lt;mark&gt;</mark>mark text<mark>&lt;/mark&gt;</mark> and
+    can show <mark>&lt;del&gt;</mark>deleted text<mark>&lt;/del&gt;</mark>.
+    <mark>&lt;sub&gt;</mark><sub>Subscripts</sub><mark>&lt;/sub&gt;</mark> and <mark>&lt;sup&gt;</mark><sup>superscripts</sup><mark>&lt;/sup&gt;</mark> can also be used.<mark>&lt;/p&gt;</mark><br />
+    This would result in:
+</p>
+<p>This is an example of a paragraph. <b>It can have bold, <i>bold and italic,
+    <u>bold and italic that is underlined</u></i></b> text.
+We can have <i>Italic</i> and <u>underlined</u> by themselves. We can also <mark>mark text</mark> and
+can show <del>deleted text</del>.</p>
+<p>Tags can have additional commands inside of them. These are known as attributes.
+The most important tag when we get to JavaScript is the id attribute which gives a tag a unique identifier.
+Tags are separated by spaces. An example of such a tag would be for displaying images.
+<mark>&lt;img src="CSS3_and_HTML5_logos_and_wordmarks.svg" width="300" height="250" id="logo" /&gt;</mark> which is an image
+provided by daPhyre, CC BY 3.0. The img tag displays the image located at the src attribute
+    (more on specifying file locations later) with a specified width and height and an id so we can manipulate
+the image with JavaScript, a topic we will be covering in the future.</p>
+<img src="CSS3_and_HTML5_logos_and_wordmarks.svg" width="400" height="250" id="logo" alt="css logo"/>
+
+<h2>Special Symbols</h2>
+<p>Astute readers will notice that the <mark>&lt; and &gt;</mark> symbols are part of tags, so how do we get them in a document?
+the &amp; is used to insert symbols by using the HTML symbol name or by using #unicode with unicode being the unicode value.
+The table below shows a sample of some of these symbols.</p>
+<table border="1">
+<tr><th>Symbol</th><th>HTML</th><th>Unicode</th><th>Description</th></tr>
+<tr><td>&lt;</td><td>&amp;lt;</td><td>60</td><td>Less than</td></tr>
+<tr><td>&gt;</td><td>&amp;gt;</td><td>62</td><td>Greater than</td></tr>
+<tr><td>&amp;</td><td>&amp;amp;</td><td>38</td><td>Ampersand</td></tr>
+    <tr><td>&copy;</td><td>&amp;copy;</td><td>169</td><td>Copyright</td></tr>
+    <tr><td>&reg;</td><td>&amp;reg;</td><td>174</td><td>Registered Trademark</td></tr>
+    <tr><td>&trade;</td><td>&amp;trade;</td><td>8482</td><td>Trademark</td></tr>
+    <tr><td>&ne;</td><td>&amp;ne;</td><td>8800</td><td>Not equals</td></tr>
+    <tr><td>&infin;</td><td>&amp;infin;</td><td>8734</td><td>infinity</td></tr>
+</table>
+
+
+<h2>Headers</h2>
+<p> To organize your documents, you can have headers.
+    Headers are assigned numbers from h1 for the most important header to h6 for the lowest level.
+    The look of the headers can be controlled through CSS which we will cover later</p>
+<h1><mark>&lt;h1&gt;</mark>Heading level 1 (highest)<mark>&lt;/h1&gt;</mark></h1>
+<h2><mark>&lt;h2&gt;</mark>Heading level 2<mark>&lt;/h2&gt;</mark></h2>
+<h3><mark>&lt;h3&gt;</mark>Heading level 3<mark>&lt;/h3&gt;</mark></h3>
+<h4><mark>&lt;h4&gt;</mark>Heading level 4<mark>&lt;/h4&gt;</mark></h4>
+<h5><mark>&lt;h5&gt;</mark>Heading level 5<mark>&lt;/h5&gt;</mark></h5>
+<h6><mark>&lt;h6&gt;</mark>Heading level 6<mark>&lt;/h6&gt;</mark></h6>
+
+
+<h2>Links</h2>
+<p>When Sir Tim Berners-Lee was creating the world-wide web, the idea was based around the concept of hyperlinks.
+    The idea here is that you have links that lead to other parts of the document, other pages on the site, or even other sites.
+    This is done through the URL (Uniform Resource Locator) which looks like http://www.spelchan.com/articles/cheatsheets/html.html .
+    The “http://”  specifies the protocol that is being used. The “www.spelchan.com” is the site you wish to go to,
+    and “articles/cheatsheets/html.html” is the directory on the site where the page is (with “html.html” being the file you want to load).
+    Relative links are just the path relative to the page you are on. For example, if I was at the URL above, then to have a link to the css.html page,
+    I could use “css.html” for the path. To go back a directory, we use two dots.</p>
+<p>To add a link, we use the <mark>&lt;a&gt;</mark> tag, which stands for anchor.
+    The tag uses a href attribute to indicate where to link to and optionally a target attribute which defaults
+    to "_self" which replaces the current page with the new page. Setting the target to "_blank" will open the link
+    in a new window or tab. For example, if we wanted a link to 2600Dragons.com to open in a new page, we would use
+    <mark>&lt;a href="http://2600Dragons.com" target="_blank"&gt;</mark>2600 Dragons<mark>&lt;/a&gt;</mark>.
+</p>
+
+<h2>Lists</h2>
+<p>There are two main types of lists.
+    Ordered Lists number items and Unordered Lists just use bullet points.
+    This is a composite tag, meaning that you have tags within the tags to clarify things.
+    In the case of our lists, this consists of the type of list and the items in the list.
+    To indicate an ordered list, we use <mark>&lt;ol&gt;</mark> and for unordered lists we use <mark>&lt;ul&gt;</mark>.
+    Each item in the list, and this is the same for both types of lists, is denoted with a <mark>&lt;li&gt;</mark> tag.
+</p>
+<p> Unordered list example:<br/>
+    <mark>&lt;ul&gt;</mark></p>
+    <ul>
+    <li><mark>&lt;li&gt;</mark>First<mark>&lt;/li&gt;</mark></li>
+    <li><mark>&lt;li&gt;</mark>Second<mark>&lt;/li&gt;</mark></li>
+    <li><mark>&lt;li&gt;</mark>Third<mark>&lt;/li&gt;</mark></li>
+    </ul><mark>&lt;/ul&gt;</mark>
+
+<p> Ordered list example:<br/>
+    <mark>&lt;ol&gt;</mark></p>
+    <ol>
+    <li><mark>&lt;li&gt;</mark>First<mark>&lt;/li&gt;</mark></li>
+    <li><mark>&lt;li&gt;</mark>Second<mark>&lt;/li&gt;</mark></li>
+    <li><mark>&lt;li&gt;</mark>Third<mark>&lt;/li&gt;</mark></li>
+</ol><mark>&lt;/ol&gt;</mark>
+
+<p> Lists can be nested with either type of list being an item of another list.
+    Nested list example:<br/>
+    <mark>&lt;ol&gt;</mark></p>
+    <ol>
+    <li><mark>&lt;li&gt;</mark>First
+        <mark>&lt;ul&gt;</mark><ul>
+            <li><mark>&lt;li&gt;</mark>Nested First<mark>&lt;/li&gt;</mark></li>
+            <li><mark>&lt;li&gt;</mark>Nested Second
+                <mark>&lt;ol&gt;</mark><ol>
+                <li><mark>&lt;li&gt;</mark>Double Nested First<mark>&lt;/li&gt;</mark></li>
+                <li><mark>&lt;li&gt;</mark>Double Nested Second<mark>&lt;/li&gt;</mark></li>
+                <li><mark>&lt;li&gt;</mark>Double Nested Third<mark>&lt;/li&gt;</mark></li>
+            </ol><mark>&lt;/ol&gt;</mark>
+                <mark>&lt;/li&gt;</mark></li>
+
+            <li><mark>&lt;li&gt;</mark>Nested Third<mark>&lt;/li&gt;</mark></li>
+        </ul><mark>&lt;/ul&gt;</mark>
+        <mark>&lt;/li&gt;</mark></li>
+    <li><mark>&lt;li&gt;</mark>Second<mark>&lt;/li&gt;</mark></li>
+    <li><mark>&lt;li&gt;</mark>Third<mark>&lt;/li&gt;</mark></li>
+</ol><mark>&lt;/ol&gt;</mark>
+
+<h2>Tables</h2>
+<p>
+Tables, like lists, are composite tags with additional tags inside the table tag to set things up.
+We start with the <mark>&lt;table&gt;</mark> tag.
+Unfortunately, borders are depreciated, but we will use them for now until we cover CSS.
+    If we want a caption for the table we use the <mark>&lt;caption&gt;</mark> tag
+    with the caption between the open and closing tags.
+    A table is made up of rows and columns. We build the table row by row using <mark>&lt;tr&gt;</mark> tags.
+    Between the opening and closing of the tr tag, we can have two different types of cells.
+    <mark>&lt;th&gt;</mark> tags indicate a header cell, while
+    <mark>&lt;td&gt;</mark> indicates a normal data cell.
+    Cells can span multiple rows and/or columns using the <b>colspan</b> and <b>rowspan</b> attributes.
+    Here is a sample table combining these:
+</p>
+<p>
+<mark>&lt;table <del>border="1"</del>&gt;</mark></p>
+<table border="1">
+    <caption><mark>&lt;caption&gt;</mark>Sample Table<mark>&lt;/caption&gt;</mark></caption>
+    <tr><th><mark>&lt;tr&gt;</mark><mark>&lt;th&gt;</mark>Column 1<mark>&lt;/th&gt;</mark></th>
+    <th><mark>&lt;th&gt;</mark>Column 2<mark>&lt;/th&gt;</mark></th>
+    <th><mark>&lt;th&gt;</mark>Column 3<mark>&lt;/th&gt;</mark><mark>&lt;/tr&gt;</mark></th>
+    </tr>
+    <tr>
+        <td><mark>&lt;tr&gt;</mark><mark>&lt;td&gt;</mark>R1C1<mark>&lt;/td&gt;</mark></td>
+        <td><mark>&lt;td&gt;</mark>R1C2<mark>&lt;/td&gt;</mark></td>
+        <td><mark>&lt;td&gt;</mark>R1C3<mark>&lt;/td&gt;</mark><mark>&lt;/tr&gt;</mark></td>
+    </tr>
+    <tr>
+      <td colspan="2" rowspan="2">
+          <mark>&lt;tr&gt;</mark><mark>&lt;td colspan="2" rowspan="2"&gt;</mark>
+          Multi-row/col data<mark>&lt;/td&gt;</mark></td>
+    <td><mark>&lt;td&gt;</mark>R2C3<mark>&lt;/td&gt;</mark><mark>&lt;/tr&gt;</mark></td>
+    </tr>
+
+    <tr>
+        <td><mark>&lt;td&gt;</mark>R3C3<mark>&lt;/td&gt;</mark><mark>&lt;/tr&gt;</mark></td>
+    </tr>
+
+    <tr>
+        <td><mark>&lt;tr&gt;</mark><mark>&lt;td&gt;</mark>R4C1<mark>&lt;/td&gt;</mark></td>
+        <td><mark>&lt;td&gt;</mark>R4C2<mark>&lt;/td&gt;</mark></td>
+        <td rowspan="2"><mark>&lt;td rowspan="2"&gt;</mark>Multi-row data</td>
+    </tr>
+    <tr>
+        <td colspan="2"><mark>&lt;tr</mark><mark>&lt;td colspan="2"&gt;</mark>Multi-column<mark>&lt;/td&gt;</mark></td>
+    </tr>
+</table>
+
+
+</body>
+</html>
