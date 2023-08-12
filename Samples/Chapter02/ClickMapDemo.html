@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Demo click map</h1>
+<p>The following image has clickable areas mapped into it.</p>
+<img src="clickmapDemo.png" width="750" height="250" usemap="#demoMap" alt="demo click map" />
+<map name="demoMap">
+    <area shape="poly" coords="162,16, 260,190, 60,190" alt="polygon" href="#poly" />
+    <area shape="circle" coords="384,103,84" alt="circle" href="#circle" />
+    <area shape="rect" coords="532,15,717,192" alt="rectangle" href="#rectangle" />
+</map>
+<p>The code for this image and it's map is:<br/>
+    &lt;img src="clickmapDemo.png" width="750" height="250" usemap="#demoMap" alt="demo click map" /&gt;<br/>
+    &lt;map name="demoMap"&gt;<br/>
+&nbsp; &nbsp; &lt;area shape="poly" coords="162,16, 260,190, 60,190" alt="polygon" href="#poly" /&gt;<br/>
+    &nbsp; &nbsp; &lt;area shape="circle" coords="384,103,84" alt="circle" href="#circle" /&gt;<br/>
+    &nbsp; &nbsp; &lt;area shape="rect" coords="532,15,717,192" alt="rectangle" href="#rectangle" /&gt;<br/>
+    &lt;/map&gt;
+</p>
+<p>
+    The map tag specifies the name of the map and within it’s content is a series of area tags. Each area tag describes the shape of a clickable area. There are four possible tags: default  selects the whole image, poly describes a polygon, circle describes a circle and rect describes a rectangle. As each of these have their own way of describing the shape. Click on a shape in the image above to see its explanation.
+</p>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h2 id="poly">Polygon</h2>
+<p>
+    &nbsp; &nbsp; &lt;area shape="poly" coords="162,16, 260,190, 60,190" alt="polygon" href="#poly" /&gt;<br/>
+    Polygons are simply a series of points. Each pair of points is connected by a line to form a shape. The coordinates are specified using an x,y format where the x coordinate is the distance in pixels from the left edge of the image and the y coordinate is the distance in pixels from the top edge of the image. You can specify the points in either clockwise or counter-clockwise order but should try to stay consistent. If the final point specified is not the starting point, then the browser will automatically add that point so it is common not to see the final point specified as it is always the same as the starting point. While you do not need to have spaces between the points, it makes reading the map much easier.
+</p>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h2 id="circle">Circle</h2>
+<p>
+    &nbsp; &nbsp; &lt;area shape="circle" coords="384,103,84" alt="circle" href="#circle" /&gt;<br/>
+    The circle shape is more traditional. You specify the center point of the circle as the coordinates, then have a third number which represents the radius of the circle. The x,y coordinates are expressed as distance from the left and top just like the polygon
+</p>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h2 id="rectangle">Rectangle</h2>
+&nbsp; &nbsp; &lt;area shape="rect" coords="532,15,717,192" alt="rectangle" href="#rectangle" /&gt;<br/>
+Rectangles use “rect” for the shape name, which is a common abbreviation in computer graphics. Again, x,y coordinates are relative to the top-left which math people tend to find annoying but makes perfect sense once you get use to the coordinate system. This time you need to specify the x,y coordinate of the top-left corner of the rectangle followed by the x,y coordinate of the bottom-right corner.
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>
