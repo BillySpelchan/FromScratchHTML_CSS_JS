@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Demo</title>
+</head>
+<body>
+<h1>Lists</h1>
+<h2>Ordered Lists</h2>
+<h3>Basic ordered list</h3>
+<p>Uses the &lt;ol&gt; tag.
+  Each item is automatically numbered, with items added using &lt;li&gt; tags</p>
+<ol>
+  <li>first entry</li>
+  <li>second entry</li>
+  <li>third entry</li>
+  <li>fourth entry</li>
+</ol>
+<h3>Nested ordered list</h3>
+Nesting ordered lists is possible, but without css, the numbering scheme is up to the browser.
+<ol>
+  <li>first entry</li>
+  <li>second entry
+    <ol>
+      <li>first sub-entry</li>
+      <li>second sub-entry</li>
+    </ol>
+  </li>
+  <li>third entry
+    <ol>
+      <li>first sub-entry
+        <ol>
+          <li>first sub-sub-entry</li>
+          <li>second sub-sub-entry</li>
+        </ol>      </li>
+      <li>second sub-entry</li>
+      <li>third sub-entry</li>
+    </ol>
+  </li>
+  </li>
+  <li>fourth entry</li>
+</ol>
+
+<h2>Unordered Lists</h2>
+<h3>Basic unordered list</h3>
+<p>Uses the &lt;ul&gt; tag.
+  Each item is a bullet point, with items added using &lt;li&gt; tags</p>
+<ul>
+  <li>first entry</li>
+  <li>second entry</li>
+  <li>third entry</li>
+  <li>fourth entry</li>
+</ul>
+<h3>Nested ordered list</h3>
+Nesting unordered lists is possible, but without css, the bullet scheme is up to the browser.
+<ul>
+  <li>first entry</li>
+  <li>second entry
+    <ul>
+      <li>first sub-entry</li>
+      <li>second sub-entry</li>
+    </ul>
+  </li>
+  <li>third entry
+    <ul>
+      <li>first sub-entry
+        <ul>
+          <li>first sub-sub-entry</li>
+          <li>second sub-sub-entry</li>
+        </ul>      </li>
+      <li>second sub-entry</li>
+      <li>third sub-entry</li>
+    </ul>
+  </li>
+  </li>
+  <li>fourth entry</li>
+</ul>
+
+<h2>Mixed</h2>
+<p>When creating nested lists, can intermix &lt;ol&gt; and &lt;ul&gt; at will.</p>
+
+<ol>
+  <li>first entry</li>
+  <li>second entry
+    <ul>
+      <li>first sub-entry</li>
+      <li>second sub-entry
+      <ol>
+        <li>first sub-sub-entry</li>
+        <li>second sub-sub-entry</li>
+      </ol>
+      </li>
+      <li>third sub-entry
+      <ul>
+        <li>first sub-sub-entry</li>
+        <li>second sub-sub-entry</li>
+      </ul>
+      </li>
+    </ul>
+  </li>
+  <li>third entry
+    <ol>
+      <li>first sub-entry
+        <ul>
+          <li>first sub-sub-entry</li>
+          <li>second sub-sub-entry</li>
+        </ul>      </li>
+      <li>second sub-entry
+      <ol>
+      <li>first sub-sub-entry</li>
+      <li>second sub-sub-entry</li>
+      </ol>
+  </li>
+      <li>third sub-entry</li>
+    </ol>
+  </li>
+  </li>
+  <li>fourth entry</li>
+</ol>
+
+<h2>Definitions</h2>
+<p> Related to lists, this is a list of definitions.
+Start the list with the &lt;dl<&gt; tag, then for each definition,
+use a pair of tags, &lt;dt<&gt; for tag (word to define) and &lt;dd<&gt; for the definition. </p>
+<dl>
+  <dt>word to define</dt>
+  <dd>definition of word</dd>
+
+  <dt>second word to define</dt>
+  <dd>definition of second word</dd>
+
+  <dt>third word to define</dt>
+  <dd>definition of third word</dd>
+</dl>
+</body>
+</html>
