@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Demo</title>
+
+  <!-- "Magic CSS code" here to simulate border="1" attribute -->
+  <style>
+    table, td, th {
+      border: 1px solid;
+    }
+  </style>
+</head>
+<body>
+<h1>HTML tables</h1>
+<h2>Basic table</h2>
+<p>Your basic table uses the &lt;table&gt; tag to indicate there is a table.
+Rows of table created using &lt;tr&gt; tags which then contain
+  &lt;th&gt; for table heading cells (such as along side/top) or &lt;td&gt; for regular table cells</p>
+
+<table>
+  <caption>Additive color table</caption>
+  <tr>
+    <td></td>
+    <th>red</th>
+    <th>green</th>
+    <th>blue</th>
+  </tr>
+  <tr>
+    <th>red</th>
+    <td>red</td>
+    <td>yellow</td>
+    <td>purple</td>
+  </tr>
+  <tr>
+    <th>green</th>
+    <td>yellow</td>
+    <td>green</td>
+    <td>cyan</td>
+  </tr>
+  <tr>
+    <th>blue</th>
+    <td >purple</td>
+    <td>cyan</td>
+    <td>blue</td>
+  </tr>
+</table>
+
+<p> Cells can be anything, so you can even have images as part of the cells.
+Here is the tileset used for Mr. Holeman, a Java applet that I am planning on porting to JavaScript as part of my game engine book.</p>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Editor tile</th>
+    <th>Game tile</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td><img src="holemanTiles/00_Empty.png" alt="empty tile"/></td>
+    <td><img src="holemanTiles/00_Empty.png" alt="empty tile"/></td>
+    <td>Empty tiles that player/slimes can move through</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td><img src="holemanTiles/01_FakeFloor.png" alt="fake floor tile"/></td>
+    <td><img src="holemanTiles/05_Floor.png" alt="floor tile"/></td>
+    <td>Empty tiles that looks like floor so player falls through</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td><img src="holemanTiles/02_FakeGrass.png" alt="fake grass tile"/></td>
+    <td><img src="holemanTiles/06_Grass.png" alt="grass tile"/></td>
+    <td>Empty tiles that looks like grass but player falls through</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td><img src="holemanTiles/03_FakeSteel.png" alt="fake steel tile"/></td>
+    <td><img src="holemanTiles/07_Steel.png" alt="steel tile"/></td>
+    <td>Empty tiles that looks like steel but player falls through</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td><img src="holemanTiles/04_HoleWhenUsed.png" alt="hole tile"/></td>
+    <td><img src="holemanTiles/04_HoleWhenUsed.png" alt="hole tile"/></td>
+    <td>Portable hole when deployed over solid tile</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td><img src="holemanTiles/05_Floor.png" alt="floor tile"/></td>
+    <td><img src="holemanTiles/05_Floor.png" alt="floor tile"/></td>
+    <td>Floor player can walk on</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td><img src="holemanTiles/06_Grass.png" alt="grass tile"/></td>
+    <td><img src="holemanTiles/06_Grass.png" alt="grass tile"/></td>
+    <td>Grass player can walk on</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td><img src="holemanTiles/07_Steel.png" alt="steel tile"/></td>
+    <td><img src="holemanTiles/07_Steel.png" alt="steel tile"/></td>
+    <td>Steel can be walked on but portable holes don't work on it</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td><img src="holemanTiles/08_Ladder.png" alt="ladder tile"/></td>
+    <td><img src="holemanTiles/08_Ladder.png" alt="ladder tile"/></td>
+    <td>Ladders allow for climbing</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td><img src="holemanTiles/09_Rope.png" alt="rope tile"/></td>
+    <td><img src="holemanTiles/09_Rope.png" alt="rope tile"/></td>
+    <td>Ropes allow for slow climbing</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td><img src="holemanTiles/10_Chain.png" alt="chain tile"/></td>
+    <td><img src="holemanTiles/10_Chain.png" alt="chain tile"/></td>
+    <td>Chains can be used to move over gaps</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td><img src="holemanTiles/11_PortableHole.png" alt="portable hole tile"/></td>
+    <td><img src="holemanTiles/11_PortableHole.png" alt="portable hole tile"/></td>
+    <td>Portable holes can be moved around and let pass through solid tiles</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td><img src="holemanTiles/12_Gem.png" alt="Gem tile"/></td>
+    <td><img src="holemanTiles/12_Gem.png" alt="Gem tile"/></td>
+    <td>Gems that the player has to collect</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td><img src="holemanTiles/13_ExitGate.png" alt="exit tile"/></td>
+    <td><img src="holemanTiles/00_Empty.png" alt="empty tile"/></td>
+    <td>Exit from level only appears when all gems gathered</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td><img src="holemanTiles/14_Player.png" alt="player tile"/></td>
+    <td><img src="holemanTiles/14_Player.png" alt="player tile"/></td>
+    <td>The player</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td><img src="holemanTiles/15_Slime.png" alt="slime tile"/></td>
+    <td><img src="holemanTiles/15_Slime.png" alt="slime tile"/></td>
+    <td>Enemy slimes</td>
+  </tr>
+</table>
+<p>Making columns span multiple columns can be done using the colspan attribute in the &lt;th&gt; or &lt;td&gt; attribute
+but it is up to you to track the columns.</p>
+<table>
+  <caption>GANTT Chart horizontal</caption>
+  <tr>
+    <td></td>
+    <th>week 1</th>
+    <th>week 2</th>
+    <th>week 3</th>
+    <th>week 4</th>
+    <th>week 5</th>
+  </tr>
+  <tr>
+    <th>Billy</th>
+    <td colspan="3">task A</td>
+    <td>task B</td>
+    <th>spare</th>
+  </tr>
+  <tr>
+    <th>Bob</th>
+    <td colspan="5">task C</td>
+  </tr>
+  <tr>
+    <th>Patricia</th>
+    <td colspan="2">task D</td>
+    <th>spare</th>
+    <td colspan="2">task E</td>
+  </tr>
+</table>
+
+<p>
+  And rows can be spanned using the rowspan attribute.
+  This is tricky to code as need to remember to skip spanning columns.
+</p>
+<table>
+  <caption>GANTT Chart vertical</caption>
+  <tr>
+    <td></td>
+    <th>Billy</th>
+    <th>Bob</th>
+    <th>Patricia</th>
+  </tr>
+  <tr>
+    <th>week 1</th>
+    <td rowspan="3">Task A</td>
+    <td rowspan="5">Task C</td>
+    <td rowspan="2">Task D</td>
+  </tr>
+  <tr>
+    <th>week 2</th>
+  </tr>
+  <tr>
+    <th>week 3</th>
+    <td>spare</td>
+  </tr>
+  <tr>
+    <th>week 4</th>
+    <td>Task B</td>
+    <td rowspan="2">Task E</td>
+  </tr>
+  <tr>
+    <th>week 5</th>
+    <td>Spare</td>
+  </tr>
+</table>
+
+<p>
+  And of course, they can be combined.
+  Note that this table renders correctly on firefox but
+  does not on chrome as of version 114.
+</p>
+<table>
+  <caption>Compass</caption>
+  <tr>
+    <td rowspan="2">North<br/>west</td>
+    <td colspan="3" style="text-align: center">North</td>
+    <td rowspan="2">North<br/>east</td>
+  </tr>
+  <tr>
+    <td colspan="3" rowspan="3"></td>
+  </tr>
+  <tr>
+    <td>West</td>
+    <td>East</td>
+  </tr>
+  <tr>
+    <td rowspan="2">South<br/>west</td>
+    <td rowspan="2">South<br/>east</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center">South</td>
+  </tr>
+</table>
+
+<p>Even tables within tables are possible </p>
+<table>
+  <tr>
+    <th>Horizontal GANTT chart</th>
+    <th>Vertical GANTT chart</th>
+  </tr>
+  <tr>
+    <td>
+      <table>
+        <caption>GANTT Chart horizontal</caption>
+        <tr>
+          <td></td>
+          <th>week 1</th>
+          <th>week 2</th>
+          <th>week 3</th>
+          <th>week 4</th>
+          <th>week 5</th>
+        </tr>
+        <tr>
+          <th>Billy</th>
+          <td colspan="3">task A</td>
+          <td>task B</td>
+          <th>spare</th>
+        </tr>
+        <tr>
+          <th>Bob</th>
+          <td colspan="5">task C</td>
+        </tr>
+        <tr>
+          <th>Patricia</th>
+          <td colspan="2">task D</td>
+          <th>spare</th>
+          <td colspan="2">task E</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table>
+        <caption>GANTT Chart vertical</caption>
+        <tr>
+          <td></td>
+          <th>Billy</th>
+          <th>Bob</th>
+          <th>Patricia</th>
+        </tr>
+        <tr>
+          <th>week 1</th>
+          <td rowspan="3">Task A</td>
+          <td rowspan="5">Task C</td>
+          <td rowspan="2">Task D</td>
+        </tr>
+        <tr>
+          <th>week 2</th>
+        </tr>
+        <tr>
+          <th>week 3</th>
+          <td>spare</td>
+        </tr>
+        <tr>
+          <th>week 4</th>
+          <td>Task B</td>
+          <td rowspan="2">Task E</td>
+        </tr>
+        <tr>
+          <th>week 5</th>
+          <td>Spare</td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+</body>
+</html>
