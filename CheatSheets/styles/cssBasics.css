@@ -1,0 +1,80 @@
+body {
+    font-size: larger;
+    text-align: center;
+    background: darkblue;
+    color: yellow;
+}
+
+.main {
+    width: 8.5in;
+    margin: auto;
+    text-align: left;
+    color: #304;
+    background: #edf;
+}
+.source {
+    font-family: "Courier New", monospace;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.05;
+    color: #131;
+    background: #EFE;
+}
+
+.red {
+    color: red;
+}
+
+.angry {
+    color: red;
+    background: #FDD;
+}
+
+.critical {
+    color: darkred;
+}
+
+.tabbedList {
+    list-style-type: none;
+}
+
+.oddDemo li:nth-child(odd) {
+    color:darkblue;
+    list-style-type: square;
+}
+
+table, td, th {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+tr:nth-child(2n) {
+    background-color: lightblue;
+}
+td:nth-child(3n), th:nth-child(3n) {
+    background: lightgreen;
+}
+
+/*
+  Navigation buttons that look and act like buttons,
+
+*/
+a.nav_btn, a.arrow_btn {
+    display: inline-block;
+    text-align: center;
+    font-size: 15pt;
+    text-decoration: none;
+    font-weight: bold;
+    color: #CAD;
+    padding: 1em;
+    margin: 5pt;
+    background-color: #250030;
+    border: 3pt outset #101;
+    border-radius: 1em;
+    box-shadow: 3px 3px 5px rgba(0,0,0,.80);
+}
+
+a:hover.nav_btn  {
+    background-color: #400030;
+    color: #ECF;
+}

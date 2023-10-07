@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Basics Cheat Sheet</title>
+    <link href="styles/cssBasics.css" rel="stylesheet">
+</head>
+<body>
+<h1>CSS Basics Cheat Sheet</h1>
+<div class="main">
+<h2>Three Ways of Style</h2>
+<ul>
+    <li>
+        <b>inline</b> - style within the tag using the style attribute.<br>
+        <span class="source">&lt;span style="color:red"&gt;</span>
+        <span style="color:red">This Text is RED!</span>
+        <span class="source">&lt;/span&gt;</span>
+    </li>
+    <li>
+        <b>embedded</b> - style defined in style block within file<br/>
+        <style>
+            label {
+                color:blue;
+                font-size:larger;
+            }
+        </style>
+        <span class="source">&lt;style&gt;<br/>
+            label {<br/>
+                color:blue;<br/>
+                font-size:larger;<br/>
+            }<br/>
+        &lt;/style&gt;<br/>
+        &lt;label&gt;</span>
+        <label>This text should be blue and large</label>
+        <span class="source">&lt;/label&gt;</span>
+    </li>
+    <li>
+        <b>external</b> - an external file that provides styles for document.<br/>
+        <span class="source">&lt;link href="styles/cssBasics.css" rel="stylesheet"&gt;</span>
+    </li>
+</ul>
+<p>Best idea is to keep bulk of style in external style sheet and only use internal formats for special cases</p>
+
+<h2>Blocks, Spans, and Selectors</h2>
+<p>
+    Different CSS elements have different properties. You have block elements (with &lt;p&gt; being a special case of a
+    block elements) and inline elements. Blocks take up entire areas of the block they are in while inline elements cover
+    just the area of content they represent. You can use div tags to have a generic block and span tags to have a generic inline block.
+</p>
+<div style="color:blue;background:red">Red with blue text div</div>
+<div style="color:yellow;background:blue">Blue with yellow text div</div>
+<div style="color:orange;background:green">Green with orange text div</div>
+<div>
+    <span style="color:blue;background:red">Red with blue text span</span>
+    <span style="color:yellow;background:blue">Blue with yellow text span</span>
+    <span style="color:orange;background:green">Green with orange text span</span>
+</div>
+
+<p> The format of a style is:<br/>
+    <span class="source">selector {<br/>
+        &nbsp; &nbsp;attribute: value;<br/>
+        }    </span>
+</p><p>
+    The selector is the element that you wish to apply the styling to.
+    You can have more than one selector by having space between them.
+    * is used to select all elements and shouldn't be used unless resetting things.
+    You can create a class to apply a set of styles to any tag with that class as follows:<br/>
+    <span class="source">.red {<br/>
+        &nbsp; &nbsp;color: red;<br/>
+        } <br/> </span>
+    To use this class in the html file you would simply use:<br/>
+    <span class="source">&lt;b class="red"&gt;</span><b class="red">Bold red text!</b><span class="source">&lt;/b&gt;</span>
+    You could even apply to text in the middle of a paragraph using
+    <span class="source">&lt;span class="red"&gt;</span><span class="red">red text here!</span><span class="source">&lt;/span&gt;</span>
+</p>
+
+<p>Some selectors can have multiple states such as anchors.
+Different states are distinguished using colon, so a:link, a:visited, a:hover, a:active.</p>
+<p>
+    Values are the property specific values for that property. Sizes are common, with a variety of size units supported:
+    <ul>
+    <li>px - pixels the dots that make up your display</li>
+    <li>pt - point, typesetting standard, 1/72 of an inch</li>
+    <li>% - percentage of the block item is in</li>
+    <li>rem - Root Element M, relative to how wide an M is on the root element</li>
+    <li>em - Elements M, relative to width of M on current element</li>
+    <li>cm - metric centimeter (10 millimeters)</li>
+    <li>mm - metric millimeter </li>
+    <li>in - imperial Inch</li>
+    </ul>
+note that pt, cm, mm, inch are based on display settings, so may not be accurate, and some devices treat pixels as 1/96 inch but some devices will use multiple pixels to represent a pixel unit.
+</p>
+
+<h1>Colors</h1>
+<p>
+    Colors can use named values, with
+    <a href="https://www.w3.org/wiki/CSS/Properties/color/keywords">https://www.w3.org/wiki/CSS/Properties/color/keywords</a>
+    being a good source for color names. This is only a small subset of colors, you can have the full spectrum of colors
+    by using RGB(r g b) with ranges being between 0 (none) and 255 (full) for each of Red, Green, and Blue.
+    Alpha (transparency) components can be added to the color using rgb(r g b / a) though the a parameter is between 0 and 1.
+    You can use hex codes to access any of
+    the 16 million available colors using #<span style="color:red">RR</span><span style="color:green">GG</span><span style="color:blue">BB</span>
+    with hexadecimal numbers being used for the red, green, and blue components.
+    A shorthand format #<span style="color:red">R</span><span style="color:green">G</span><span style="color:blue">B</span>
+    can be used, in which case the hex value is the digit used twice, so 1 would be 11 and b would be bb.
+</p>
+<p>
+    The parameters used for controlling the color of a block are:
+    <ul>
+    <li>color: the color of the text being displayed</li>
+    <li>background: the color of the text being displayed</li>
+    <li>border-color: the color of the border around the block (see box model)</li>
+    </ul>
+</p>
+
+<h2>Fonts</h2>
+The font attribute is shorthand for the individual properties, with skipped attributes using the existing value. <br/>
+<span class="source">font: style variant weight size line-height family</span>
+<ul class="tabbedList">
+    <li><b>font-style</b> is how italic a font is, with options being none (whatever it was), normal, italic or oblique.<br/></li>
+    <li><b>font-variant</b> is how text is displayed: none, normal, or small-caps</br></li>
+    <li><b>font-weight</b> is a number indicating how bold a number is, with 400 being normal, 700 bold, 900 extra bold, 100 thin, etc.</li>
+<li><b>font-size</b> required font size, with units (example 24pt)</li>
+    <li><b>line-height</b> how big the gap between lines is in lines.</li>
+    <li><b>font-family</b> list of fonts, with first on list that is also on users system used. All browsers support:</li>
+    <ul>
+        <li style="font-family:serif">serif - The quick brown fox jumps over the lazy dog.</li>
+        <li style="font-family:sans-serif">sans-serif - The quick brown fox jumps over the lazy dog.</li>
+        <li style="font-family:fantasy">fantasy - The quick brown fox jumps over the lazy dog.</li>
+        <li style="font-family:monospace">monospace - The quick brown fox jumps over the lazy dog.</li>
+        <li style="font-family:cursive">cursive - The quick brown fox jumps over the lazy dog.</li>
+    </ul>
+</ul>
+Another useful shortcut is text-decoration: <br>
+<span class="source">text-decoration line style color thickness</span>
+<ul class="tabbedList">
+    <li><b>text-decoration-line:</b> none,
+        <span style="text-decoration-line: underline">underline</span>
+        <span style="text-decoration-line: overline">overline</span>
+        <span style="text-decoration-line: line-through">line-through</span>
+        <span style="text-decoration-line: blink">blink</span> (depreciated)</b></li>
+    <li><b>text-decoration-style: style of line : </b>
+        <span style="text-decoration: underline solid">solid, </span>
+        <span style="text-decoration: underline double">double, </span>
+        <span style="text-decoration: underline dotted">dotted, </span>
+        <span style="text-decoration: underline wavy">wavy, </span>
+        none
+    </li>
+    <li><b>text-decoration-color</b>:
+        <span style="text-decoration: underline red">The </span>
+        <span style="text-decoration: underline purple">color </span>
+        <span style="text-decoration: underline green">of </span>
+        <span style="text-decoration: underline orange">the </span>
+        <span style="text-decoration: underline blue">line </span>
+    </li>
+    <li><b>text-decoration-thickness:</b>
+        <span style="text-decoration: underline 1px">The </span>
+        <span style="text-decoration: underline 2px">thickness </span>
+        <span style="text-decoration: underline 3px">of </span>
+        <span style="text-decoration: underline 4px">the </span>
+        <span style="text-decoration: underline 5px">line </span>
+    </li>
+</ul>
+You can also control the spacing between words and lines using the following properties:
+<ul class="tabbedList">
+    <li><b>line-height:</b> spacing between lines. Can be number (1.5 for half line) or in units</li>
+    <li><b>letter-spacing:</b> adjusts space between characters</li>
+    <li><b>word-spacing:</b> gap between words</li>
+    <li><b>text-align:</b> controls how text aligned using left, center, right, justify</li>
+    <li><b>text-transform:</b>Changes the text to desired format: none, uppercase, lowercase, capitalize</li>
+</ul>
+
+
+<h2>Box Model</h2>
+<div style="width:500px;background: yellow">
+    <br/>&nbsp; margin
+    <div style="width:400px; margin-left: 50px; background:lightblue;">
+        <br/>&nbsp; border
+      <div style="width:300px; margin-left: 50px; background: lightgreen;">
+          <br/>&nbsp; padding
+          <div style="width:200px; margin-left: 50px; background: white;">
+              <br/>&nbsp; content<br/>&nbsp;
+          </div>
+          <br/><br/>
+      </div>
+        <br/><br/>
+    </div>
+    <br/><br/>
+</div>
+
+<p>margin is gap between elements attribute combines 4: <br/>
+    <span class="source">margin: sides</span><br />
+    <span class="source">margin: top/bottom left/right </span><br />
+    <span class="source">margin: top left/right bottom</span><br />
+    <span class="source">margin: top right bottom left</span><br />
+    with margin-top, margin-right, margin-left, and margin-bottom being available.
+    Using auto for the margin will have it set margins to empty space, effectively centering if width specified.
+</p>
+<p>
+    Padding distance between border and contents. Same as margin but using padding.
+</p>
+<p>
+    Borders are a bit more complicated. If all sides same can use:
+    <span class="source">border: width style color</span><br/>
+</p>
+<ul>
+    <li>border-width border-top-width, border-right-width, border-bottom-width border-left-width</li>
+    <li>border-style border-top-style, border-right-style, border-bottom-style border-left-style<br/>
+        (styles: none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset)
+    </li>
+    <li>border-color border-top-color, border-right-color, border-bottom-color border-left-color</li>
+</ul>
+<p>Borders can be rounded by using <span class="source">border-radius top right bottom left</span></p>
+
+<h2>Styling links</h2>
+    <p>Different states are distinguished using colon, so a:link, a:visited, a:hover, a:active.</p>
+    <ul>
+        <li><b>a:link</b> An unvisited link</li>
+        <li><b>a:visited</b> A link whose page is in your history</li>
+        <li><b>a:hover</b> A link that has the mouse over top of it</li>
+        <li><b>a:active</b> A link that is actively being clicked or touched</li>
+    </ul>
+
+    <p> By taking advantage of the box model and link types, can style a link to act like a button.
+    <a class="nav_btn" href="#">To top</a>
+    </p>
+
+<h2>List styles</h2>
+Lists can be styled using the list-style shorthand:
+<span class="source">list-style image position type</span>
+<ul>
+    <li><b>list-style-image:</b> an image to display for the bullet
+        with none being the marker type specified,
+        url("image") use to specify an image
+    </li>
+    <li><b>list-style-position:</b> where the bullet will be displayed for multi-line list items. Choices are inside or outside</li>
+    <li style="list-style-type: '&#x1f44d'"><b>list-style-type:</b> controls the marker<br/>
+        unordered types are none, disc, circle, square, or string (ie "&amp;#x1f44d;"<br/>
+        ordered types include decimal, decimal-leading-zero, lower-roman, upper-roman, upper-alpha, lower-alpha (and other languages)
+    </li>
+</ul>
+<p>
+:nth-child() can be used to change style of every nth row expressed using algebraic notation.<br/>
+    :nth-child(odd) is shorthand for :nth-child(2n+1)<br/>
+    :nth-child(even) is shorthand for :nth-child(2n)<br/>
+    Here we are setting odd children of the ul class "oddDemo" to blue with square markers using the style:<br/>
+    <span class="source">
+        .oddDemo li:nth-child(odd) { <br />
+    &nbsp; color:darkblue;<br/>
+    &nbsp; list-style-type: square;<br>
+}</span>
+</p>
+<ul class="oddDemo">
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+    <li>four</li>
+</ul>
+<h2>Table styles</h2>
+<p>
+    To have a grid in table, need to use borders with common way of doing this being:<br/>
+    <span class="source"> table, td, th {<br />
+    &nbsp; border: 1px solid;<br/>
+    }<br/>
+</span>
+    <span class="source">border-collapse: collapsed</span> can be used to collapse element borders into a single border to make table more table like.
+</p><p>
+    As with lists, can control nth elements by applying this to <span class="source">&lt;tr&gt;</span> for rows.
+    Columns can be nthed by applying nth-child to <span class="source">&lt;td&</span> and <span class="source">&lt;th&</span> elements.<br/>
+<span class="source">
+    tr:nth-child(2n) {<br />
+    &nbsp; background-color: lightblue;<br />
+    }<br />
+    td:nth-child(3n), th:nth-child(3n) {<br />
+    &nbsp; background: lightgreen;<br />
+    }
+    </span>
+</p>
+    <table>
+        <tr>
+            <th>first col</th>
+            <th>second col</th>
+            <th>third col</th>
+            <th>fourth col</th>
+        </tr>
+        <tr>
+            <td>R2C1</td>
+            <td>R2C2</td>
+            <td>R2C3</td>
+            <td>R2C4</td>
+        </tr>
+        <tr>
+            <td>R3C1</td>
+            <td>R3C2</td>
+            <td>R3C3</td>
+            <td>R3C4</td>
+        </tr>
+        <tr>
+            <td>R4C1</td>
+            <td>R4C2</td>
+            <td>R4C3</td>
+            <td>R4C4</td>
+        </tr>
+
+    </table>
+    <p>
+        There is a lot more to CSS, with page arrangement and animation being separate cheat sheets.
+    </p>
+</div>
+</body>
+</html>
