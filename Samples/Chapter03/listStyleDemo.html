@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Style Demo</title>
+    <style>
+        ul.crystalBullets {
+            list-style-image: url("crystal.png");
+        }
+        .listBox {
+            width: 150pt;
+            border: 1px solid darkblue;
+            display: inline-block;
+        }
+        .rgbList li:nth-child(3n+1) {
+            color:red;
+        }
+        .rgbList li:nth-child(3n+2) {
+            color:green;
+        }
+        .rgbList li:nth-child(3n) {
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+<h1>List styles</h1>
+<h2>list-style-image: url("crystal.png");</h2>
+<ul class="crystalBullets">
+    <li>First crystal bullet item</li>
+    <li>Second crystal bullet item</li>
+</ul>
+
+<h2>list-style-position:</h2>
+<div class="listBox">
+    <h2>outside (default)</h2>
+    <ul style="list-style-position: outside">
+        <li>Here is the first item in the list</li>
+        <li>Here is the second item in the list</li>
+    </ul>
+</div>
+<div class="listBox">
+    <h2>inside</h2>
+    <ul style="list-style-position: inside">
+        <li>Here is the first item in the list</li>
+        <li>Here is the second item in the list</li>
+    </ul>
+</div>
+
+<h2>list-style-types</h2>
+<h3>unordered lists</h3>
+<div class="listBox">
+    <strong>none</strong>
+    <ul style="list-style-type: none">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ul>
+</div>
+<div class="listBox">
+    <strong>disc</strong>
+    <ul style="list-style-type: disc">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ul>
+</div>
+<div class="listBox">
+    <strong>circle</strong>
+    <ul style="list-style-type: circle">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ul>
+</div><br />
+<div class="listBox">
+    <strong>square</strong>
+    <ul style="list-style-type: square">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ul>
+</div>
+<div class="listBox">
+    <strong>string "*"</strong>
+    <ul style="list-style-type: '*'">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ul>
+</div>
+<div class="listBox">
+    <strong>string "&amp;#x1f44d;" </strong>
+    <ul style="list-style-type: '&#x1f44d;'">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ul>
+</div><br />
+
+
+<h3>ordered lists</h3>
+<div class="listBox">
+    <strong>decimal</strong>
+    <ol style="list-style-type: decimal">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+</div>
+<div class="listBox">
+    <strong>decimal-leading-zero</strong>
+    <ol style="list-style-type: decimal-leading-zero">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+</div>
+<div class="listBox">
+    <strong>lower-roman</strong>
+    <ol style="list-style-type: lower-roman">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+</div><br />
+
+<div class="listBox">
+    <strong>upper-roman</strong>
+    <ol style="list-style-type: upper-roman">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+</div>
+<div class="listBox">
+    <strong>upper-alpha</strong>
+    <ol style="list-style-type: upper-alpha">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+</div>
+<div class="listBox">
+    <strong>lower-alpha</strong>
+    <ol style="list-style-type: lower-alpha">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+</div><br />
+
+<h2>:nth-child()</h2>
+<div class="listBox">
+    <strong>unordered</strong>
+    <ul class="rgbList">
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+        <li>fourth</li>
+        <li>fifth</li>
+        <li>sixth</li>
+    </ul>
+</div>
+<div class="listBox">
+    <strong>ordered</strong>
+    <ol class="rgbList">
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+        <li>fourth</li>
+        <li>fifth</li>
+        <li>sixth</li>
+    </ol>
+</div>
+
+</body>
+</html>
