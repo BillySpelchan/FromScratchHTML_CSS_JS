@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table style demo</title>
+    <style>
+        .tableBox {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 1em;
+            margin-bottom: 1em;
+        }
+
+        .borderedCells, .borderedCells th, .borderedCells td {
+            border: 1px solid black;
+        }
+        .collapsedCells, .collapsedCells th, .collapsedCells td {
+            border-collapse: collapse;
+        }
+
+
+        .tableRColoring, .tableRColoring td, .tableRColoring th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .tableRColoring tr:nth-child(2n) {
+            background-color: lightblue;
+        }
+
+        .tableCColoring, .tableCColoring td, .tableCColoring th  {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .tableCColoring td:nth-child(3n), .tableCColoring th:nth-child(3n) {
+            background-color: lightgreen;
+        }
+
+
+        .tableCRColoring, .tableCRColoring td, .tableCRColoring th  {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .tableCRColoring tr:nth-child(2n) {
+            background-color: lightblue;
+        }
+
+        .tableCRColoring td:nth-child(3n), .tableCRColoring th:nth-child(3n) {
+            background: lightgreen;
+        }
+
+
+        .tableRCColoring, .tableRCColoring td, .tableRCColoring th  {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .tableRCColoring td:nth-child(3n), .tableRCColoring th:nth-child(3n) {
+            background: lightgreen;
+        }
+
+        .tableRCColoring tr:nth-child(2n),
+        .tableRCColoring tr:nth-child(2n) td {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Table Demos</h1>
+
+<h2> Different border arrangements</h2>
+
+<div class="tableBox">
+<strong>default table</strong>
+<table>
+    <tr><th>first col</th><th>second col</th><th>third col</th><th>fourth col</th></tr>
+    <tr><td>R2C1</td><td>R2C2</td><td>R2C3</td><td>R2C4</td></tr>
+    <tr><td>R3C1</td><td>R3C2</td><td>R3C3</td><td>R3C4</td></tr>
+    <tr><td>R4C1</td><td>R4C2</td><td>R4C3</td><td>R4C4</td></tr>
+</table>
+</div>
+
+<div class="tableBox">
+<strong>table with border</strong>
+<table style="border:1px solid black">
+    <tr><th>first col</th><th>second col</th><th>third col</th><th>fourth col</th></tr>
+    <tr><td>R2C1</td><td>R2C2</td><td>R2C3</td><td>R2C4</td></tr>
+    <tr><td>R3C1</td><td>R3C2</td><td>R3C3</td><td>R3C4</td></tr>
+    <tr><td>R4C1</td><td>R4C2</td><td>R4C3</td><td>R4C4</td></tr>
+</table>
+</div>
+
+<br style="clear: both">
+
+<div class="tableBox">
+<strong>borders around cells</strong>
+<table class="borderedCells">
+    <tr><th>first col</th><th>second col</th><th>third col</th><th>fourth col</th></tr>
+    <tr><td>R2C1</td><td>R2C2</td><td>R2C3</td><td>R2C4</td></tr>
+    <tr><td>R3C1</td><td>R3C2</td><td>R3C3</td><td>R3C4</td></tr>
+    <tr><td>R4C1</td><td>R4C2</td><td>R4C3</td><td>R4C4</td></tr>
+</table>
+</div>
+<div class="tableBox">
+    <strong>borders around cells</strong>
+    <table class="collapsedCells">
+        <tr><th>first col</th><th>second col</th><th>third col</th><th>fourth col</th></tr>
+        <tr><td>R2C1</td><td>R2C2</td><td>R2C3</td><td>R2C4</td></tr>
+        <tr><td>R3C1</td><td>R3C2</td><td>R3C3</td><td>R3C4</td></tr>
+        <tr><td>R4C1</td><td>R4C2</td><td>R4C3</td><td>R4C4</td></tr>
+    </table>
+</div>
+
+<br style="clear: both">
+<h2>Styling rows and columns</h2>
+
+<div class="tableBox">
+    <strong>row styling</strong>
+    <table class="tableRColoring">
+        <tr><th>first col</th><th>second col</th><th>third col</th><th>fourth col</th></tr>
+        <tr><td>R2C1</td><td>R2C2</td><td>R2C3</td><td>R2C4</td></tr>
+        <tr><td>R3C1</td><td>R3C2</td><td>R3C3</td><td>R3C4</td></tr>
+        <tr><td>R4C1</td><td>R4C2</td><td>R4C3</td><td>R4C4</td></tr>
+    </table>
+</div>
+
+<div class="tableBox">
+    <strong>column styling</strong>
+    <table class="tableCColoring">
+        <tr><th>first col</th><th>second col</th><th>third col</th><th>fourth col</th></tr>
+        <tr><td>R2C1</td><td>R2C2</td><td>R2C3</td><td>R2C4</td></tr>
+        <tr><td>R3C1</td><td>R3C2</td><td>R3C3</td><td>R3C4</td></tr>
+        <tr><td>R4C1</td><td>R4C2</td><td>R4C3</td><td>R4C4</td></tr>
+    </table>
+</div>
+
+<br style="clear: both">
+
+<div class="tableBox">
+    <strong>rows and columns styled</strong>
+    <table class="tableCRColoring">
+        <tr><th>first col</th><th>second col</th><th>third col</th><th>fourth col</th></tr>
+        <tr><td>R2C1</td><td>R2C2</td><td>R2C3</td><td>R2C4</td></tr>
+        <tr><td>R3C1</td><td>R3C2</td><td>R3C3</td><td>R3C4</td></tr>
+        <tr><td>R4C1</td><td>R4C2</td><td>R4C3</td><td>R4C4</td></tr>
+    </table>
+</div>
+
+<div class="tableBox">
+<strong>rows and columns styled, prioritize rows</strong>
+<table class="tableRCColoring">
+    <tr><th>first col</th><th>second col</th><th>third col</th><th>fourth col</th></tr>
+    <tr><td>R2C1</td><td>R2C2</td><td>R2C3</td><td>R2C4</td></tr>
+    <tr><td>R3C1</td><td>R3C2</td><td>R3C3</td><td>R3C4</td></tr>
+    <tr><td>R4C1</td><td>R4C2</td><td>R4C3</td><td>R4C4</td></tr>
+</table>
+</div>
+
+
+</body>
+</html>
