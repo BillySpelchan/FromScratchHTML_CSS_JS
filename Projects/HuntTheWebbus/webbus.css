@@ -1,0 +1,37 @@
+/* Layout */
+.outerwrap {
+    text-align: center;
+    background-color: #404;
+}
+
+.contentwrap {
+    border-width: 1em;
+    display: inline-block;
+    background-color: darkblue;
+    width: 820px;
+    color: ghostwhite;
+}
+
+/*
+  Navigation buttons that look and act like buttons,
+
+*/
+a.nav_btn, a.arrow_btn {
+    display: inline-block;
+    text-align: center;
+    font-size: 15pt;
+    text-decoration: none;
+    font-weight: bold;
+    color: #CAD;
+    padding: 1em;
+    margin: 5pt;
+    background-color: #250030;
+    border: 3pt outset #101;
+    border-radius: 1em;
+    box-shadow: 3px 3px 5px rgba(0,0,0,.80);
+}
+
+a:hover.nav_btn  {
+    background-color: #400030;
+    color: #ECF;
+}
