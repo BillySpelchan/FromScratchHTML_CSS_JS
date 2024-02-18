@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Basics Cheat Sheet</title>
+    <link href="styles/cssBasics.css" rel="stylesheet">
+</head>
+<body>
+<div class="main">
+    <h1>JavaScript Basics Cheat Sheet</h1>
+    <p>JavaScript, as it was modelled after other C-like languages, uses two types of comments:</p>
+    <div class="source">
+        // Single line comments start with double slashes<br />
+        /* <br />
+         Multi-line comments start with a slash asterisk and<br>
+        can span<br />
+        as many lines as desired.<br/>
+        They end with a asterisk slash.<br/>
+        */
+    </div>
+
+    <!-- ------------------------------------------------------- -->
+
+    <h2>Variables and expressions</h2>
+    <p>Three ways of declaring a variable legitimately
+    (possible to just assign variable a value, but that always becomes global variable and is a bad practice)
+    </p>
+    <ul>
+        <li><strong>const</strong> - Using const technically not a variable as value is a constant and can not change.</li>
+        <li><strong>var</strong> - was the original way of defining variable but all variables are placed on the function’s scope.</li>
+        <li><strong>let</strong> - uses the scope of where the variable was defined.</li>
+    </ul>
+    <p>Assignment is with the <strong>=</strong> symbol.
+        Equality is <strong>==</strong> and will be discussed in conditionals.
+        When you are assigning a variable, it will be internally represented as one of eight types.
+    </p>
+    <ul>
+        <li><strong>Number</strong> - a number</li>
+        <li><strong>String</strong> - &quot;text&quot;. Use quotes to declare. </li>
+        <li><strong>Boolean</strong> - can be <strong>true</strong> or <strong>false</strong></li>
+        <li><strong>BigInt</strong> - an integer with arbitrary magnitude </li>
+        <li><strong>Symbol</strong> - a guaranteed to be unique object</li>
+        <li><strong>Objects</strong> - a collection of properties</li>
+        <li><strong>Null</strong> - used to indicate no variable</li>
+        <li><strong>Undefined</strong> - used to indicate a variable with no value </li>
+    </ul>
+    <p>Math operations follow normal algebra rules (parentheses, multiplication or division, addition or subtraction).
+        <strong>+</strong> and <strong>-</strong> are as you expect.
+        Division is <strong>/</strong> and multiplication is <strong>*</strong>.
+        To get the remainder (modulus) use <strong>%</strong>.
+    As assigning math results using a variable to that variable, such as x = x + 1, is so common, there are shortcuts: </p>
+    <ul>
+        <li><strong>++</strong> increment (eg x + 1). ++x increments before applying x, x++ applies value then increments</li>
+        <li><strong>--</strong> decrement. same as increment but subtracts 1</li>
+        <li><strong>+=</strong> adds value to variable. x += 3 is same as x = x + 3.</li>
+        <li><strong>-=</strong> adds value to variable. x -= 3 is same as x = x - 3.</li>
+        <li><strong>*=</strong> adds value to variable. x *= 3 is same as x = x * 3.</li>
+        <li><strong>/=</strong> adds value to variable. x /= 3 is same as x = x / 3.</li>
+    </ul>
+<p>
+    Can also do logical operations.
+    <strong>&amp;</strong> is logical and, <strong>|</strong> is logical or <strong>^</strong> is xor
+    <strong>&gt;&gt;</strong> is shift right, <strong>&lt;&lt;</strong> is shift left.
+    <strong>&gt;&gt;=</strong> and <strong>&lt;&lt;=</strong> are shortcuts.
+</p>
+
+    <!-- ------------------------------------------------------- -->
+
+    <h2>Strings</h2>
+
+    <p>
+    Strings are immutable.
+    Can use &quot; or &apos; for strings, can have opposite symbol.
+    For templates, &acute; is used. &acute;used to easily show ${variable}&acute;
+    length property gives number of characters in string.
+    Common Methods:</p>
+    <ul>
+        <li><strong>charAt()</strong> returns character at index (nrgative counts back from end)</li>
+        <li><strong>charCodeAt()</strong> same as charAt but returns UTF-16 code</li>
+        <li><strong>concat()</strong> same as adding strings</li>
+        <li><strong>endsWith()</strong> checks if last characters match string</li>
+        <li><strong>includes()</strong> checks if provided string contained within string</li>
+        <li><strong>indexOf()</strong> finds first index of provided string with optional start index, -1 if not in string</li>
+        <li><strong>lastIndexOf()</strong> same as index of but from end</li>
+        <li><strong>replace()</strong> replaces occurrences of first string with second string</li>
+        <li><strong>slice()</strong> returns substring between start and ending indexes (not including ending index character)</li>
+        <li><strong>split()</strong> breaks string into array based on split string. will cover arrays later.</li>
+        <li><strong>substring()</strong> same as slice but will order indexes</li>
+        <li><strong>toLowerCase()</strong> converts string to lower case</li>
+        <li><strong>toUpperCase()</strong> converts string to UPPER CASE</li>
+        <li><strong>trim()</strong> removes whitespace from beginning and ending of string</li>
+        <li><strong>trimEnd()</strong> removes whitespace from ending of string</li>
+        <li><strong>trimStart()</strong> removes whitespace from beginning of string</li>
+    </ul>
+
+    <!-- ------------------------------------------------------- -->
+
+    <h2>Math functions</h2>
+
+    <p>A holdover from Java. Math function not built in but part of library. Common variables:</p>
+    <ul>
+        <li><strong>Math.E</strong> is the base of natural logarithms aka Euler's number</li>
+        <li><strong>Math.PI</strong> is the ratio of a circle's circumference to its diameter</li>
+    </ul>
+    <p>methods are static so you must specify Math. Common methods:</p>
+    <ul>
+        <li><strong>Math.abs()</strong> the absolute value</li>
+        <li><strong>Math.acos()</strong> the arccosine</li>
+        <li><strong>Math.acosh()</strong> the hyperbolic arccosine</li>
+        <li><strong>Math.asin()</strong> the arcsine</li>
+        <li><strong>Math.asinh()</strong> the hyperbolic arcsine</li>
+        <li><strong>Math.atan()</strong> the arctangent</li>
+        <li><strong>Math.atan2()</strong> the arctangent of the quotient of the arguments</li>
+        <li><strong>Math.atanh()</strong> the hyperbolic arctangent</li>
+        <li><strong>Math.cbrt()</strong> the cube root</li>
+        <li><strong>Math.ceil()</strong> the smallest integer greater than or equal to provided value</li>
+        <li><strong>Math.cos()</strong> the cosine</li>
+        <li><strong>Math.cosh()</strong> the hyperbolic cosine</li>
+        <li><strong>Math.floor()</strong> the largest integer less than or equal to provided value</li>
+        <li><strong>Math.hypot()</strong> the square root of the sum of squares of the arguments</li>
+        <li><strong>Math.log()</strong> the natural logarithm</li>
+        <li><strong>Math.log10()</strong> the base-10 logarithm</li>
+        <li><strong>Math.log2()</strong> the base-2 logarithm</li>
+        <li><strong>Math.max()</strong> the largest of the provided numbers</li>
+        <li><strong>Math.min()</strong> the smallest of the provided numbers</li>
+        <li><strong>Math.pow(x, y)</strong> x to the power of y</li>
+        <li><strong>Math.random()</strong> Generates a pseudo-random number between 0 and 1</li>
+        <li><strong>Math.round()</strong> rounds number to nearest integer</li>
+        <li><strong>Math.sign()</strong> -1 if negative, 0 if 0, 1 if positive</li>
+        <li><strong>Math.sin()</strong> the sine</li>
+        <li><strong>Math.sinh()</strong> the hyperbolic sine</li>
+        <li><strong>Math.sqrt()</strong> the positive square root</li>
+        <li><strong>Math.tan()</strong> the tangent</li>
+        <li><strong>Math.tanh()</strong> the hyperbolic tangent</li>
+        <li><strong>Math.trunc()</strong> the integer portion of the provided value</li>
+    </ul>
+
+    <!-- ------------------------------------------------------- -->
+
+    <h2>Conditional Statements</h2>
+
+    <p>if (condition) <br/>
+    &nbsp; &nbsp; statement_to_perform_if_condition_is_true<br/>
+    else<br/>
+    &nbsp; &nbsp; statement_to_perform_if_condition_is_false
+    </p>
+    <p>Condition operators:</p>
+    <ul>
+        <li><strong>==</strong> equals</li>
+        <li><strong>===</strong> strictly equals (same type)</li>
+        <li><strong>!=</strong> not equals</li>
+        <li><strong>!==</strong> strictly not equals (same type)</li>
+        <li><strong>&lt;</strong> less than</li>
+        <li><strong>&lt;=</strong> less than or equals</li>
+        <li><strong>&gt;</strong> greater than</li>
+        <li><strong>&gt;=</strong> greater than or equals</li>
+        <li><strong>!</strong> not (flips true/false)</li>
+        <li><strong>&&</strong> and</li>
+        <li><strong>||</strong> or</li>
+    </ul>
+
+    <!-- ------------------------------------------------------- -->
+
+    <h2>Switch Statements</h2>
+
+    <p>Switch statements are a condensed way of having several if statements.
+    One advantage they have over if statements is that condition code can flow through multiple cases.
+    This is also the biggest disadvantage as it is easy to forget a break statement.
+    The following if statement:</p>
+    <div class="source">
+        if (number == 1) {<br>
+        &nbsp; &nbsp; console.log("The number is one");<br>
+        } else if (number == 2) {<br>
+        &nbsp; &nbsp; console.log("The number is two");<br>
+        } else if (number == 3) {<br>
+        &nbsp; &nbsp; console.log("The number is three");<br>
+        } else {<br>
+        &nbsp; &nbsp; console.log("The number is not one, two or three");<br>
+        }
+    </div>
+    <p> is equivalent to the following switch statement:</p>
+    <div class="source">
+    switch (number) { <br>
+    case 1:<br>
+    &nbsp; &nbsp; console.log("The number is one");<br>
+    &nbsp; &nbsp; break;<br>
+    case 2:<br>
+    &nbsp; &nbsp; console.log("The number is two");<br>
+    &nbsp; &nbsp; break;<br>
+    case 3:<br>
+    &nbsp; &nbsp; console.log("The number is three");<br>
+    &nbsp; &nbsp; break;<br>
+    default:<br>
+    &nbsp; &nbsp; console.log("The number is not one, two or three");<br>
+    }
+    </div>
+
+    <!-- ------------------------------------------------------- -->
+
+    <h2>Functions</h2>
+
+    <p>Functions can be defined using the function statement and return a value with return.
+    Calling a function is done by using the name of the function</p>
+    <div class="source">
+    function squared(x) {<br />
+    &nbsp; &nbsp; return x * x;<br />
+    }<br />
+    console.log(`square of 8 is ${squared(8)}`);
+    </div>
+
+    <p>They can also be assigned to a variable.</p>
+    <div class="source">
+    let square=function(x) {return x*x;}<br />
+    console.log("square of 7 is " + square(7));
+    </div>
+
+    <p>There is a shortcut (used for lambdas which will be in a future cheat-sheet)</p>
+    <div class="source">
+    let sqr = (x)=>x*x;<br />
+    console.log("square of 6 is " + sqr(6))<br />
+    </div>
+    <!-- ------------------------------------------------------- -->
+
+    <h2>Loops</h2>
+
+    <p>Doing things multiple times, we have the for loop:</p>
+    <div class="source">
+    for (let i = 0; i < 10; ++i) {<br />
+    &nbsp; &nbsp; console.log(`i is ${i}.`);<br />
+    }
+    </div>
+
+    <p>While loops loop until a condition is met.
+    The above for loop is essentially a macro for a while statement.
+    here is the for loop written as a while:</p>
+    <div class="source">
+    let i = 0;<br />
+    while (i < 10) {<br />
+    &nbsp; &nbsp; console.log(`i is ${i}.`);<br />
+    &nbsp; &nbsp; ++i;<br />
+    }
+    </div>
+
+    <p>Do..while loops are while loops but will always run at least one time:</p>
+    <div class="source">
+    i = 0;<br />
+    do {<br />
+    &nbsp; &nbsp; console.log(`i is ${i}.`);<br />
+    &nbsp; &nbsp; ++i;<br />
+    } while (i < 10);
+    </div>
+
+    <!-- ------------------------------------------------------- -->
+
+    <h2>Accessing Elements</h2>
+    <p>
+    We will assign elements we wish to access a unique id using the id tag as follows:
+    </p><div class="source">
+        &lt;p id="myText"&gt;&lt;/p&gt;
+    </div><p>
+    Then within a script section you can access the element using something like:
+    </p><div class="source">
+    let myText = document.getElementById("myText");
+    </div><p>
+    It lets us put something between the &lt;p&gt; and &lt;/p&gt; (or whatever tag you are using).
+    Example:
+    </p><div class="source">
+    myText.innerHTML = "&lt;b&gt;Welcome to the &lt;i&gt;Universe&lt;/i&gt;!&lt;/b&gt;“;
+    </div><p>
+    Notice that the string you are using can have other tags inside of it!
+    </p><p>
+    Borders, and other tags that have - in them are not proper JavaScript variables so use camelCase instead
+    </p><div class="source">
+    myText.style.fontSize = "24pt";<br />
+    myText.style.backgroundColor = "#CAF";<br />
+    myText.style.borderBottom = "5px solid red";<br />
+    </div>
+
+    <p>
+        We will continue our coverage of JavaScript in the JavaScript Classes cheat sheet.
+    </p>
+</div>
+<script>
+    foo = 42;
+    console.log(foo);
+    function squared(x) {
+        return x * x;
+    }
+    console.log(`square of 8 is ${squared(8)}`);
+    let square=function(x) {return x*x;}
+    console.log("square of 7 is " + square(7));
+
+    let sqr = (x)=>x*x;
+    console.log("square of 6 is " + sqr(6))
+
+    for (let i = 0; i < 10; ++i) {
+        console.log(`i is ${i}.`);
+    }
+    let i = 0;
+    while (i < 10) {
+        console.log(`i is ${i}.`);
+        ++i;
+    }
+    i = 0;
+    do {
+        console.log(`i is ${i}.`);
+        ++i;
+    } while (i < 10);
+
+</script>
+</body>
+</html>
