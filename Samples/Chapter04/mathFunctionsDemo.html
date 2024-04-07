@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math functions demo</title>
+</head>
+<body>
+<h1>Math functions</h1>
+<p>The common properties are:</p>
+<ul>
+    <li><strong>Math.E</strong> is the base of natural logarithms aka Euler's number</li>
+    <li><strong>Math.PI</strong> is the ratio of a circle's circumference to its diameter</li>
+</ul>
+<p>The common trigonometry functions are:</p>
+<ul>
+    <li><strong>Math.abs(number)</strong> the absolute value</li>
+    <li><strong>Math.acos(number_between_negative_1_and_1)</strong> the arccosine</li>
+    <li><strong>Math.acosh(number_greater_or_equal_to_1)</strong> the hyperbolic arccosine</li>
+    <li><strong>Math.asin(number_between_negative_1_and_1)</strong> the arcsine</li>
+    <li><strong>Math.asinh(number)</strong> the hyperbolic arcsine</li>
+    <li><strong>Math.atan(number)</strong> the arctangent</li>
+    <li><strong>Math.atan2(x, y)</strong> the arctangent of the quotient of the arguments</li>
+    <li><strong>Math.atanh(number)</strong> the hyperbolic arctangent</li>
+    <li><strong>Math.cbrt(number)</strong> the cube root</li>
+    <li><strong>Math.cos(number)</strong> the cosine</li>
+    <li><strong>Math.cosh(number)</strong> the hyperbolic cosine</li>
+    <li><strong>Math.hypot(lengthA, lengthB)</strong> the square root of the sum of squares of the arguments</li>
+    <li><strong>Math.log(number)</strong> the natural logarithm</li>
+    <li><strong>Math.log10(number)</strong> the base-10 logarithm</li>
+    <li><strong>Math.log2(number)</strong> the base-2 logarithm</li>
+    <li><strong>Math.pow(x, y)</strong> x to the power of y</li>
+    <li><strong>Math.sign(number)</strong> -1 if negative, 0 if 0, 1 if positive</li>
+    <li><strong>Math.sin(number)</strong> the sine</li>
+    <li><strong>Math.sinh(number)</strong> the hyperbolic sine</li>
+    <li><strong>Math.sqrt(number_greater_than_0)</strong> the positive square root</li>
+    <li><strong>Math.tan(number)</strong> the tangent</li>
+    <li><strong>Math.tanh(number)</strong> the hyperbolic tangent</li>
+</ul>
+
+<p>The commonly used functions are:</p>
+<ul>
+    <li><strong>Math.ceil(number)</strong> the smallest integer greater than or equal to provided value</li>
+    <li><strong>Math.floor(number)</strong> the largest integer less than or equal to provided value</li>
+    <li><strong>Math.max(numberA, numberB [...])</strong> the largest of the provided numbers</li>
+    <li><strong>Math.min(numberA, numberB [...])</strong> the smallest of the provided numbers</li>
+    <li><strong>Math.random()</strong> Generates a pseudo-random number between 0 and 1</li>
+    <li><strong>Math.round(number)</strong> rounds number to nearest integer</li>
+    <li><strong>Math.trunc(number)</strong> the integer portion of the provided value</li>
+</ul>
+<p>Look at the console output to see these functions in use.</p>
+<script>
+    console.log("Euler's number is " + Math.E)
+    let radius = 11;
+    let circumference = radius * 2 * Math.PI;
+    console.log("The circumference of a radius " + radius + " circle is " + circumference);
+
+    console.log("The absolute value of -42 is " + Math.abs(-42));
+    console.log("The arccosine of .5 is " + Math.acos(.5));
+    console.log("The hyperbolic arccosine of 11 is " + Math.acosh(11));
+    console.log("The arcsine of .5 is " + Math.asin(.5));
+    console.log("The hyperbolic arcsine of 11 is " + Math.asinh(11));
+    console.log("The arctangent of PI is " + Math.atan(Math.PI));
+    console.log("The arctangent of the quotient of the arguments from the point 11,11 is " + Math.atan2(11,11));
+    console.log("The arctangent of the quotient of the arguments from the point 11,-11 is " + Math.atan2(11,-11));
+    console.log("The arctangent of the quotient of the arguments from the point -11,11 is " + Math.atan2(-11,11));
+    console.log("The arctangent of the quotient of the arguments from the point -11,-11 is " + Math.atan2(-11,-11));
+    console.log("The hyperbolic arctangent of .5 is " + Math.atanh(.5));
+    console.log("The cube root of 27 is " + Math.cbrt(27));
+    console.log("The cosine of PI is " + Math.cos(Math.PI));
+    console.log("The hyperbolic cosine of PI is " + Math.cosh(Math.PI));
+    console.log("The hypotenuse of sides with lengths of 7 and 5 is " + Math.hypot(7, 5));
+    console.log("The natural logarithm of 10000 is " + Math.log(10000));
+    console.log("The base-10 logarithm of 10000 is " + Math.log10(10000));
+    console.log("The base-2 logarithm of 10000 is " + Math.log2(10000));
+    console.log("2 to the power of 8 is " + Math.pow(2, 8));
+    console.log("The sign of -11 is " + Math.sign(-11));
+    console.log("The sine of PI is " + Math.sin(Math.PI));
+    console.log("The hyperbolic sine of 11 is " + Math.sinh(11));
+    console.log("The positive square root of 16 is " + Math.sqrt(16));
+    console.log("The tangent of PI is "+ Math.tan(Math.PI));
+    console.log("The hyperbolic tangent of 11 is " + Math.tanh(11));
+
+    console.log("The ceiling of 10.0001 is "+ Math.ceil(10.0001));
+    console.log("The floor of 11.9999 is " + Math.floor(11.9999));
+    console.log("The max of 7 and 11 is ", Math.max(7, 11));
+    console.log("The max of 7, 42, and 11 is ", Math.max(7, 42, 11));
+    console.log("The max of 7, 42, 21, and 11 is ", Math.max(7, 42, 21, 11));
+    console.log("The min of 7 and 11 is ", Math.min(7, 11));
+    console.log("The min of 7, 42, and 11 is ", Math.min(7, 42, 11));
+    console.log("The min of 7, 42, 21, and 11 is ", Math.min(7, 42, 21, 11));
+    console.log("Generating a pseudo-random number between 0 and 1: " + Math.random());
+    console.log("Rounding 5.7 is " + Math.round(5.7));
+    console.log("Rounding 5.4 is " + Math.round(5.4));
+    console.log("The truncation of 5.7 is " + Math.trunc(5.7));
+    console.log("The truncation of 5.4 is " + Math.trunc(5.4));
+
+</script>
+</body>
+</html>
