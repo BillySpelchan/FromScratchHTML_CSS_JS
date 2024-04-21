@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculating Truth demo</title>
+    <style>
+        table, td, th {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        .source {
+            font-family: "Courier New", monospace;
+            font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 1.05;
+            color: #131;
+            background: #EFE;
+        }
+    </style>
+</head>
+<body>
+<h1>Calculating truth demo</h1>
+<h2>boolean expressions</h2>
+<p>It is possible to assign the results of a boolean expression to a variable.
+The table below shows the different expressions.</p>
+<table>
+    <tr>
+        <th>Description</th>
+        <th>Math</th>
+        <th>JavaScript</th>
+        <th>&nbsp;</th>
+        <th>Description</th>
+        <th>Math</th>
+        <th>JavaScript</th>
+    </tr>
+    <tr>
+        <td>equals</td>
+        <td>&equals;</td>
+        <td>==</td>
+        <td>&nbsp;</td>
+        <td>not equals</td>
+        <td>&ne;</td>
+        <td>!=</td>
+    </tr>
+    <tr>
+        <td>strict equals</td>
+        <td>&equals;</td>
+        <td>===</td>
+        <td>&nbsp;</td>
+        <td>strict not equals</td>
+        <td>&ne;</td>
+        <td>!==</td>
+    </tr>
+    <tr>
+        <td>less than</td>
+        <td>&lt;</td>
+        <td>&lt;</td>
+        <td>&nbsp;</td>
+        <td>less than or equals</td>
+        <td>&le;</td>
+        <td>&lt;=</td>
+    </tr>
+    <tr>
+        <td>less than</td>
+        <td>&lt;</td>
+        <td>&lt;</td>
+        <td>&nbsp;</td>
+        <td>less than or equals</td>
+        <td>&le;</td>
+        <td>&lt;=</td>
+    </tr>
+    <tr>
+        <td>greater than</td>
+        <td>&gt;</td>
+        <td>&gt;</td>
+        <td>&nbsp;</td>
+        <td>greater than or equals</td>
+        <td>&ge;</td>
+        <td>&gt;=</td>
+    </tr>
+    <tr>
+        <td>boolean AND</td>
+        <td>&and;</td>
+        <td>&amp;&amp;</td>
+        <td>&nbsp;</td>
+        <td>boolean OR</td>
+        <td>&or;</td>
+        <td>||</td>
+    </tr>
+    <tr>
+        <td>NOT</td>
+        <td>&not;</td>
+        <td>!</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+
+<h2>truth tables</h2>
+<table>
+    <tr>
+        <th>first<br>boolean</th>
+        <th>second<br>boolean</th>
+        <th>&nbsp; &nbsp;</th>
+        <th>&amp;&amp;<br>AND</th>
+        <th>||<br>OR</th>
+        <th>!(a&amp;&amp;b)<br>NAND</th>
+        <th>!(a||b)<br>NOR</th>
+        <th>&nbsp;<br>XOR</th>
+    </tr>
+    <tr>
+        <td>False</td>
+        <td>False</td>
+        <td>&nbsp; &nbsp;</td>
+        <td>False</td>
+        <td>False</td>
+        <td>True</td>
+        <td>True</td>
+        <td>False</td>
+    </tr>
+    <tr>
+        <td>False</td>
+        <td>True</td>
+        <td>&nbsp; &nbsp;</td>
+        <td>False</td>
+        <td>True</td>
+        <td>True</td>
+        <td>False</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td>True</td>
+        <td>False</td>
+        <td>&nbsp; &nbsp;</td>
+        <td>False</td>
+        <td>True</td>
+        <td>True</td>
+        <td>False</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td>True</td>
+        <td>True</td>
+        <td>&nbsp; &nbsp;</td>
+        <td>True</td>
+        <td>True</td>
+        <td>False</td>
+        <td>False</td>
+        <td>False</td>
+    </tr>
+</table>
+
+<h2>Ternary operator</h2>
+<p>Takes the form result = condition ? true_result : false_result;
+</p>
+<p>
+Example: If strength is higher than 18 then cap it at 18<br>
+<span class="source">
+strength = (strength > 18) ? 18 : strength;
+</span>
+</p>
+<p>
+    Example If value is negative, add 10 to it<br>
+    <span class="source">
+    value = (value < 0) ? value + 10 : value;
+    </span>
+</p>
+<p>
+Make sure a value is positive<br>
+    <span class="source">
+    value = (value < 0) ? value * -1 : value;
+    </span>
+</p>
+<p>
+    We can have the conditions return a string result as well.
+    Return words true or false based on if b is true or false:<br>
+    <span class="source">S = (b) ? "true" : "false"</span>
+</p>
+
+<p>
+    Return string stating if a leap year<br>
+    <span class="source">S = (isLeapYear) ? "This is a leap year" : "This is not a leap year";</span>
+</p>
+
+<p>
+    Return message stating if strength value is valid<br>
+    <span class="source">S = (strength > 18) ? "Inhuman strength" : "Valid strength";</span>
+</p>
+
+Can be nested just like with if statements by having another ternary operator inside the parts of another nested ternary
+Clamp value to 0 and 100
+value = value < 0 ? 0 : (value > 100 ? 100 : value);
+Print day of the week (0 = Sunday … 6 = Saturday)
+
+let S = weekday == 0 ? "Sunday" :<br>
+&nbsp; &nbsp; weekday === 1 ? "Monday" :<br>
+&nbsp; &nbsp; weekday === 2 ? "Tuesday" :<br>
+&nbsp; &nbsp; weekday === 3 ? "Wednesday" :<br>
+&nbsp; &nbsp; weekday === 4 ? "Thursday" :<br>
+&nbsp; &nbsp; weekday === 5 ? "Friday" : "Saturday;
+
+<script>
+    let a = 7, b = 11;
+    console.log("a == b is " + a == b );
+    console.log("a != b is " + a != b );
+    console.log("a === b is " + a === b );
+    console.log("a !== b is " + a !== b );
+    console.log("a > b is " + a < b );
+    console.log("a >= b is " + a <= b );
+    console.log("a > b is " + a > b );
+    console.log("a >= b is " + a >= b );
+
+    console.log("(a >= 1) && (a <= 10) " + (a >= 1) && (a <= 10));
+    console.log("(b >= 1) && (b <= 10) " + (b >= 1) && (b <= 10));
+
+    console.log("(a < 1) || (a > 10) " + (a < 1) && (a > 10));
+    console.log("(b < 1) || (b > 10) " + (b < 1) && (b > 10));
+
+    let strength = 23;
+    console.log("Strength of " + strength + " is " +
+    (strength > 18) ? "Inhuman strength" : "Valid strength");
+    console.log("clamping strength");
+    strength = (strength > 18) ? 18 : strength;
+    console.log("Strength of " + strength + " is " +
+    (strength > 18) ? "Inhuman strength" : "Valid strength");
+
+    let value = -3;
+    value = (value < 0) ? value + 10 : value;
+    console.log("value -3 is now " + value);
+    value = (value < 0) ? value * -1 : value;
+    console.log("value is now " + value);
+
+    let t = true, f=false;
+    console.log("t is " + (t) ? "true" : "false");
+    console.log("f is " + (f) ? "true" : "false");
+
+    let leapyear = true;
+    console.log("2024 " +
+    (leapyear) ? "This is a leap year" : "This is not a leap year");
+    leapyear = false;
+    console.log("2025 " +
+    (leapyear) ? "This is a leap year" : "This is not a leap year");
+
+    let weekday = 3;
+    let S = weekday === 0 ? "Sunday" :
+        weekday === 1 ? "Monday" :
+        weekday === 2 ? "Tuesday" :
+        weekday === 3 ? "Wednesday" :
+        weekday === 4 ? "Thursday" :
+        weekday === 5 ? "Friday" : "Saturday";
+    console.log("The weekday is " + s);
+</script>
+</body>
+</html>
