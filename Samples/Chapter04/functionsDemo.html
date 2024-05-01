@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 4.13 Functions Demo</title>
+</head>
+<body>
+<h1>Functions demo</h1>
+<p> some of the function demo is in the console.
+    You can see the console by bringing up the developer tools (ctrl-shift-I on Windows Chrome).
+</p>
+
+<h2>Character sheet demo</h2>
+<p id="sheet"></p>
+<a href="#" onclick="generateCharacter(roll3D6)">Generate new character</a><br>
+<a href="#" onclick="generateCharacter(roll3D6Cheat)">Generate new character by cheating</a>
+
+<script>
+    function separator() {
+        console.log("   ---------------------------");
+    }
+
+    separator();
+    console.log("Here is a message between two separators");
+    separator();
+
+    function printRandomRange(low, high) {
+        let range = high - low + 1;
+        let r = Math.floor(Math.random() * range + low)
+        console.log(r);
+    }
+
+    printRandomRange(7, 11);
+
+    // we will make this function better in a later demo
+    function roll3D6() {
+        let d1 = Math.floor(Math.random()*6+1);
+        let d2 = Math.floor(Math.random()*6+1);
+        let d3 = Math.floor(Math.random()*6+1);
+
+        return d1+d2+d3;
+    }
+
+    let roll1 = roll3D6();
+    let roll2 = roll3D6();
+    console.log("The rolls were " + roll1 + " and " + roll2);
+
+    let variable_holding_3D6 = roll3D6;
+    console.log("rolling3D6 with variable " + variable_holding_3D6());
+    let roll3 = variable_holding_3D6();
+    console.log("another variable roll " + variable_holding_3D6());
+
+    // roll 4 dice taking the highest 3
+    function roll3D6Cheat() {
+        let d1 = Math.floor(Math.random()*6+1);
+        let d2 = Math.floor(Math.random()*6+1);
+        let d3 = Math.floor(Math.random()*6+1);
+        let d4 = Math.floor(Math.random()*6+1);
+
+        return d1+d2+d3+d4-Math.min(d1,d2,d3,d4)
+    }
+
+    function generateCharacter(roller, lineEnd="\n") {
+        let s = "Strength: " + roller() + lineEnd;
+        s += "Intelligence: " + roller() + lineEnd;
+        s += "Wisdom: " + roller() + lineEnd;
+        s += "Dexterity: " + roller() + lineEnd;
+        s += "Constitution: " + roller() + lineEnd;
+        s += "Charisma: " + roller() + lineEnd;
+
+        return s;
+    }
+
+    separator();
+    console.log(generateCharacter(variable_holding_3D6));
+    separator();
+    console.log(generateCharacter(roll3D6Cheat));
+    separator();
+    console.log(generateCharacter(function(){
+        return 18;
+    }));
+    // future section "magic" for displaying results on page
+    function displayCharacter(roller) {
+        document.getElementById("sheet").innerHTML =
+            generateCharacter(roller, "<br>");
+    }
+</script>
+</body>
+</html>
