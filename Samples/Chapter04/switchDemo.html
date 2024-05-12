@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch demo</title>
+</head>
+<body>
+To help explain switch statements, we will use some material covered in future sections and chapters.
+Don't worry about this material, just focus on looking at the switch statements in the script section.
+</p>
+<!-- Forms will be covered in Chapter 5, so Don't worry about this section -->
+<form>
+    <fieldset>
+        <legend>Rock, Scissors, Paper</legend>
+        <label for="p1Choice">Player one</label><br>
+        <select id="p1Choice" onchange="updateRSP();">
+            <option value="Rock">Rock</option>
+            <option value="Scissors">Scissors</option>
+            <option value="Paper">Paper</option>
+        </select>
+        <br>
+        <hr>
+        <label for="p2Choice">Player two</label><br>
+        <select id="p2Choice" onchange="updateRSP();">
+            <option value="Rock">Rock</option>
+            <option value="Scissors">Scissors</option>
+            <option value="Paper">Paper</option>
+        </select>
+        <br>
+        <hr>
+        <p id="results"></p>
+    </fieldset>
+</form>
+<script>
+    let s="foo";
+    switch (s) {
+        case "bar":
+            console.log("Bar was selected");
+            break;
+        case "foo":
+            console.log("Foo was selected");
+            break;
+        default:
+            console.log("Unknown command")
+    }
+
+    // Functions will be covered in section 4.13 but the condition statement in the function showcases nested ifs.
+    function updateRSP() {
+        let p1 = document.getElementById("p1Choice");
+        let p1Choice = "" + p1.options[p1.selectedIndex].value;
+        let p2 = document.getElementById("p2Choice");
+        let p2Choice = "" + p2.options[p2.selectedIndex].value;
+        let results = document.getElementById("results");
+
+        // Here is the if statement for handling the game logic
+        let s = p1Choice + " vs " + p2Choice;
+        if (p1Choice === p2Choice) {
+            s += " is a draw"
+        } else {
+            switch (p1Choice) {
+                case "Rock":
+                    if (p2Choice === "Scissors")
+                        s += " Rock smashes Scissors so Player one wins!";
+                    else
+                        s += " Paper covers Rock so Player two wins!";
+                    break;
+                case "Scissors":
+                    if (p2Choice === "Paper")
+                        s += " Scissors cuts Paper so Player one wins!";
+                    else
+                        s += " Rock smashes Scissors so Player two wins!";
+                    break;
+                case "Paper":
+                    if (p2Choice === "Rock")
+                        s += " Paper covers Rock so Player one wins!";
+                    else
+                        s += " Scissors cuts Paper so Player two wins!";
+                    break;
+                default:
+                    s = "Unknown choice.";
+            }
+        }
+        results.innerText = s;
+    }
+
+</script>
+</body>
+</html>
