@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 4.14 Looping demos</title>
+</head>
+<body>
+
+<h1>Looping demos</h1>
+<p>
+Please note that this page uses form components that will be covered in chapter 5.
+Do not worry about those components, as how they work will be made clear next chapter.
+These are used to make the demo's more dynamic.
+</p>
+<h2>Gravity demo</h2>
+<form id="gravity_form">
+  <fieldset>
+    <legend>Gravity demo</legend>
+    <label for="acceleration">Gravity Acceleration:</label>
+    <input type="text" width="10" value="9.8" id="acceleration"><br>
+    <label for="distance">Distance to fall</label>
+    <input type="text" width="10" value="100" id="distance"><br>
+    <input type="button" onclick="calculateFallFromForm()" value="Show fall"><br>
+
+    <p id="gravity"></p>
+  </fieldset>
+</form>
+
+<!-- -->
+
+<h2>3x+1 Demo</h2>
+<form id="3x+1Form">
+  <fieldset>
+    <legend>3X+1 conjecture</legend>
+    <label for="conjectureStart">Starting value:</label>
+    <input type="text" id="conjectureStart" value="27"><br>
+    <input type="button" onclick="calculate3xPlus1ConjectureFromForm()" value="Show sequence"><br>
+    <p id="conjecture"></p>
+  </fieldset>
+</form>
+
+<!-- -->
+
+<h2>Summation of Range Demo</h2>
+<form id="summationDemo">
+  <fieldset>
+    <legend>Summing a range with steps</legend>
+    <label for="iterationStart">Starting value:</label>
+    <input type="text" id="iterationStart" value="3"><br>
+    <label for="iterationEnd">Starting value:</label>
+    <input type="text" id="iterationEnd" value="30"><br>
+    <label for="iterationStep">Starting value:</label>
+    <input type="text" id="iterationStep" value="3"><br>
+
+    <input type="button" onclick="calculateRangeFromForm()" value="Show Summation"><br>
+    <p id="iteration"></p>
+  </fieldset>
+</form>
+
+<script>
+  function calculateFall(acceleration, distance, endLine="\n") {
+    let s = "Starting fall at " + distance + endLine;
+    let distanceRemaining = distance;
+    let velocity = acceleration;
+    let time = 0;
+    while (distanceRemaining > 0) {
+      distanceRemaining -= velocity;
+      velocity += acceleration;
+      time++;
+      s += "Time " + time + ": at " +
+              (distanceRemaining > 0 ? distanceRemaining : 0) +
+              " (speed " + velocity +")" + endLine;
+    }
+    return s;
+  }
+
+  function calculate3xPlus1Conjecture(start) {
+    let s = ""+start
+    let value = start;
+    do {
+      if ((value % 2) === 0)
+        value /= 2;
+      else
+        value = value * 3 + 1;
+      s += ", " + value;
+    } while (value > 1);
+    return s;
+  }
+
+  function calculateRange(start, end, step) {
+    let sum = 0;
+    for (let i = start; i <= end; i+=step)
+      sum += i;
+
+    return sum;
+  }
+
+  // processes forms and calls our demo code
+
+  function calculateFallFromForm() {
+    let grav = parseFloat(document.getElementById("acceleration").value);
+    let dist = parseFloat(document.getElementById("distance").value);
+    let s = calculateFall(grav, dist, "<br>");
+    document.getElementById("gravity").innerHTML = s;
+  }
+
+  function calculate3xPlus1ConjectureFromForm() {
+    let start = parseInt(document.getElementById("conjectureStart").value);
+    let s = calculate3xPlus1Conjecture(start);
+    document.getElementById("conjecture").innerHTML = s;
+  }
+
+  function calculateRangeFromForm() {
+    let start  = parseInt(document.getElementById("iterationStart").value);
+    let end = parseInt(document.getElementById("iterationEnd").value);
+    let step  = parseInt(document.getElementById("iterationStep").value);
+    let s = "" + calculateRange(start, end, step);
+    document.getElementById("iteration").innerHTML = s;
+  }
+</script>
+<h2></h2>
+</body>
+</html>
