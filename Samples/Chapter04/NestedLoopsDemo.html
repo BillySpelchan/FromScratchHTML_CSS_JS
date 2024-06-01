@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 4.15 Nested Loops Demo</title>
+</head>
+<body>
+<h1>Nested Loop Demo</h1>
+<p>The forms on this page are covered in chapter 5, but are here to allow more interactive demos for the looping concepts.</p>
+
+<h2>Drawing a rectangle</h2>
+<form id="rectForm">
+<fieldset>
+    <legend>Text Rectangle</legend>
+    <label for="rectWidth">Width of rectangle: </label>
+    <input type="number" min="1" max="20" id="rectWidth" value="7"><br>
+    <label for="rectHeight">Height of rectangle: </label>
+    <input type="number" min="1" max="20" id="rectHeight" value="5"><br>
+    <input type="button" value="Draw Rectangle" onclick="generateRectangleForForm()"><br>
+    <pre id="rect"></pre>
+</fieldset>
+</form>
+
+<h2>Drawing a diamond</h2>
+<form id="diamondForm">
+    <fieldset>
+        <legend>Diamond</legend>
+        <label for="diamondSize">Size of the diamond: </label>
+        <input type="number" min="1" max="20" id="diamondSize" value="7"><br>
+        <input type="button" value="Draw Diamond" onclick="generateDiamondForForm()"><br>
+        <pre id="diamond"></pre>
+    </fieldset>
+</form>
+
+<h2>Pyramid floors</h2>
+<form id="pyramidForm">
+    <fieldset>
+        <legend>Pyramid</legend>
+        <label for="pyramidFloors">Size of the diamond: </label>
+        <input type="number" min="1" max="10" id="pyramidFloors" value="3"><br>
+        <input type="button" value="Draw Pyramid floors" onclick="generatePyramidForForm()"><br>
+        <pre id="pyramid"></pre>
+    </fieldset>
+</form>
+
+<script>
+    function generateRectangleIncorrectly(w, h) {
+        let s = "";
+        for (let i = 0; i < w; ++i) {
+            for (let j = 0; j < h; ++j) {
+                s += "*";
+            }
+            s += "\n";
+        }
+        return s;
+    }
+
+    function generateRectangle(w, h) {
+        let s = "";
+        for (let row = 0; row < h; ++row) {
+            for (let col = 0; col < w; ++col) {
+                s += "*";
+            }
+            s += "\n";
+        }
+        return s;
+    }
+
+    function repeatChar(ch, count) {
+        let s = "";
+        for (let i = 0; i < count; ++i)
+            s += ch;
+        return s;
+    }
+
+    function generateDiamond(size) {
+        let half = Math.ceil(size / 2);
+        let odd = size % 2;
+        let s = "";
+        for (let row = 0; row < half; ++row) {
+            s += repeatChar(' ', half-row-1);
+            s += repeatChar('$', (row+1)*2-odd);
+            s += "\n";
+        }
+        for (let row = (half-odd-1); row >= 0; --row) {
+            s += repeatChar(' ', half-row-1);
+            s += repeatChar('$', (row+1)*2-odd);
+            s += "\n";
+        }
+        return s;
+    }
+
+    function generatePyramid(floors) {
+        let s = "";
+        let floorSize = 1;
+        for (let floor = floors; floor > 0; --floor) {
+            s += "Floor " + floor + "\n";
+            for (let row = 0; row < floorSize; ++row) {
+                for (let gap = 0; gap < floor; ++gap) {
+                    s += " ";
+                }
+                for (let col = 0; col < floorSize; ++col) {
+                    s += "X";
+                }
+                s += "\n";
+            }
+            floorSize += 2;
+        }
+        return s;
+    }
+    // ===========================================================
+    // Form code for demonstration purposes
+    // don't worry if you don't understand this code, concepts will be covered in chapter 5.
+    // ============================================================
+
+    function generateRectangleForForm() {
+        let w = parseInt(document.getElementById("rectWidth").value);
+        let h = parseInt(document.getElementById("rectHeight").value);
+        document.getElementById("rect").innerText=generateRectangle(w, h);
+    }
+
+    function generateDiamondForForm() {
+        let size = parseInt(document.getElementById("diamondSize").value);
+        document.getElementById("diamond").innerText=generateDiamond(size);
+    }
+
+    function generatePyramidForForm() {
+        let floors = parseInt(document.getElementById("pyramidFloors").value);
+        document.getElementById("pyramid").innerText=generatePyramid(floors);
+    }
+
+</script>
+</body>
+</html>
