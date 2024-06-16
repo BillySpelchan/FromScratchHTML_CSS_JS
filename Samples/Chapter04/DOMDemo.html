@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 4.16 DOM Demo</title>
+    <style>
+        td, th {
+            border:solid 2px darkslateblue;
+
+        }
+    </style>
+</head>
+<body>
+<h1>DOM Demo</h1>
+<p>The Document Object Model is how you access the web page</p>
+<h2>Multiplication table</h2>
+<p>This table was entirely generated in JavaScript.</p>
+<div id="multiply"></div>
+<h2>Dynamic Style</h2>
+<p id="myStyle">This is some text that can be styled dynamically.</p>
+<a href="#" onclick="makeFont('24pt')">Make text big</a>
+<a href="#" onclick="makeFont('8pt')">Make text small</a>
+<a href="#" onclick="makeColor('red')">Make text red</a>
+<a href="#" onclick="makeColor('green')">Make text green</a>
+<a href="#" onclick="makeColor('blue')">Make text blue</a>
+
+<script>
+    function generateMultiplicationTable() {
+        let s = "<table>\n" // todo style here
+        // generate header
+        s += "<tr><th>&nbsp;</th>";
+        for (let i = 1; i < 13; ++i){
+            s += "<th>"+i+"</th>"
+        }
+        s += "</tr>"
+        for (let row = 1; row < 13; ++row) {
+            s += "<tr><th>"+row+"</th>";
+            for (let col = 1; col < 13; ++col) {
+                s += "<td>"+(row*col)+"</td>";
+            }
+            s += "</tr>\n";
+        }
+        s += "</table>\n";
+
+        document.getElementById("multiply").innerHTML=s;
+    }
+
+    generateMultiplicationTable()
+
+    function makeFont(size) {
+        document.getElementById("myStyle").style.fontSize=size;
+    }
+    function makeColor(c) {
+        document.getElementById("myStyle").style.color=c;
+    }
+
+</script>
+</body>
+</html>
