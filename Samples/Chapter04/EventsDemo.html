@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--suppress EqualityComparisonWithCoercionJS -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 4.17 Events Demo</title>
+</head>
+<body>
+<h1>DOM Events Demo</h1>
+<h2 id="inCode">Event handlers here set up in the code!</h2>
+<h2 id="inElement" onclick="handleElementClick()"
+    onmouseenter="new function(){document.getElementById('inElement').style.backgroundColor='#FAC';} "
+    onmouseleave="document.getElementById('inElement').style.backgroundColor='#CAF';">
+    Event handlers here set up right in the element tag!</h2>
+<p>This demo simply shows how you can set up the event handlers in JavaScript or right inside the tag itself.</p>
+
+<script>
+    // code to set up the handlers
+    let inCode = document.getElementById("inCode");
+    inCode.style.backgroundColor = "#888";
+    inCode.style.color = "blue";
+    inCode.onclick = handleInCodeClick;
+    inCode.onmouseenter = function() {inCode.style.backgroundColor="#CCC"}
+    inCode.onmouseleave = function() {inCode.style.backgroundColor="#888"}
+
+    // function for inCode click handler
+    function handleInCodeClick() {
+        if (inCode.style.color == "blue")
+            inCode.style.color="green";
+        else
+            inCode.style.color="blue";
+    }
+
+    // function called by the inElement tag
+    function handleElementClick() {
+        let myText = document.getElementById('inElement');
+        if (myText.style.color == "red")
+            myText.style.color="black";
+        else
+            myText.style.color="red";
+    }
+</script>
+</body>
+</html>
