@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button Demo</title>
+</head>
+<body>
+<form action="FormSubmitPage.html" >
+    <!-- This line creates a box around the form components in it and is covered in later section -->
+    <fieldset>
+    <p>If inside a form, default is to act like submit button.</p>
+    <button>This button is in a form</button>
+    <button formaction="https://spelchan.com/index.php"
+            formtarget="_blank">
+        Also in form but goes to spelchan.com</button>
+    <button type="button">In form but no action</button>
+    </fieldset>
+</form>
+<p>Default outside of form is not to submit, so these buttons don't do anything.</p>
+<button>This button is not in a form</button>
+<button formaction="https://spelchan.com/index.php"
+        formtarget="_blank">Not in form but set to spelchan.com</button>
+
+<p>But you can use buttons to call code by setting its onclick event</p>
+<button onclick="inTagClick()">onclick in tag</button>
+<button id="scriptButton">onclick set in script</button>
+<div id="hello"></div>
+<script>
+    function inTagClick() {
+        document.getElementById("hello").innerHTML = "You clicked on the button with script set inside the tag.";
+    }
+    function scriptClick() {
+        document.getElementById("hello").innerHTML = "You clicked on the button with script set through a script.";
+    }
+    document.getElementById("scriptButton").onclick = scriptClick;
+</script>
+</body>
+</html>
