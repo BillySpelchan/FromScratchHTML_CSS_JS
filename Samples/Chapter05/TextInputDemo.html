@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Input Demo</title>
+    <style>
+        input {
+            margin-bottom: .5em;
+        }
+    </style>
+</head>
+<body>
+<h1>Text Input Demo</h1>
+<form id="inputForm">
+    <label for="textInput">Basic text input:</label> <input type="text" id="textInput" name="textInput"><br>
+    <label for="textAutoCapitalize">auto capitalize words on virtual keyboards:</label> <input type="text" id="textAutoCapitalize" name="textAutoCapitalize" autocapitalize="words"><br>
+    <label for="textDisabled">disabled:</label> <input type="text" id="textDisabled" name="textDisabled" disabled="true" value="You can't edit this input"><br>
+    <label for="textLength">5 to 10 characters:</label> <input type="text" id="textLength" name="textLength" minlength="5" maxlength="10"><br>
+    <label for="textPlaceholder"></label>Placeholder text:<input type="text" id="textPlaceholder" name="textPlaceholder" placeholder="text when none entered"><br>
+    <label for="textReadOnly">Read only:</label> <input type="text" id="textReadOnly" name="textReadOnly" readonly="readonly" value="You can only read this."><br>
+    <label for="textRequired">Required:</label> <input type="text" id="textRequired" name="textRequired" required><br>
+    <label for="textSize5">size (5 chars):</label> <input type="text" id="textSize5" name="textSize5" size="5"><br>
+    <label for="textSize40">size (40 chars):</label> <input type="text" id="textSize40" name="textSize40" size="40"><br>
+    <label for="textbox">TextArea:<br></label><textarea id="textbox" name="textbox">default text</textarea><br>
+    <label for="bigTextBox">Another TextArea<br></label><textarea rows="10" cols="50" id="bigTextBox" name="bigTextBox">default text</textarea><br>
+</form>
+<button onclick="updateResults()">Show form results</button>
+
+<div id="inputResults"></div>
+
+<script>
+    function updateResults() {
+        let inhtml = "<h2>Form contents from last submission</h2>";
+        inhtml += "<p><b>entered basic text:</b>" +
+            document.getElementById("textInput").value;
+        inhtml += "</p><p><b>Auto Capitalize:</b>" +
+            document.getElementById("textAutoCapitalize").value;
+        inhtml += "</p><p><b>disabled text:</b>" +
+            document.getElementById("textDisabled").value;
+        inhtml += "</p><p><b>5 to 10 characters:</b>" +
+            document.getElementById("textLength").value;
+        inhtml += "(valid=" +
+            document.getElementById("textLength").checkValidity() + ")";
+        inhtml += "</p><p><b>Placeholder:</b>" +
+            document.getElementById("textPlaceholder").value;
+        inhtml += "</p><p><b>Read only:</b>" +
+            document.getElementById("textReadOnly").value;
+        inhtml += "</p><p><b>Required:</b>" +
+            document.getElementById("textRequired").value;
+        inhtml += "(valid=" +
+            document.getElementById("textRequired").checkValidity() + ")";
+        inhtml += "</p><p><b>size (5 chars):</b>" +
+            document.getElementById("textSize5").value;
+        inhtml += "</p><p><b>size (40 chars):</b>" +
+            document.getElementById("textSize40").value;
+        inhtml += "</p><p><b>TextArea:</b>" +
+            document.getElementById("textbox").value;
+        inhtml += "</p><p><b>Another TextArea:</b>" +
+            document.getElementById("bigTextBox").value;
+
+        document.getElementById("inputResults").innerHTML=inhtml;
+    }
+</script>
+</body>
+</html>
