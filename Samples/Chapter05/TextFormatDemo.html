@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Format Demo</title>
+    <style>
+        input {
+            margin-bottom: .5em;
+        }
+    </style>
+</head>
+<body>
+<h1>Text Format Demo</h1>
+<form id="inputForm">
+    <label for="textInput">User Name:</label> <input type="text" id="textInput" name="textInput"><br>
+    <label for="textEmail">email:</label> <input type="email" id="textEmail" name="textEmail"><br>
+    <label for="textPassword">password:</label> <input type="password" id="textPassword" name="textPassword"><br>
+    <label for="textHidden"></label> <input type="hidden" id="textHidden" name="textHidden" value="Secret info here">
+    <label for="textTel">telephone number:</label> <input type="tel" id="textTel" name="textTel"><br>
+    <label for="textURL">Favorite site:</label> <input type="url" id="textURL" name="textURL"><br>
+    <label for="textNumber">Favorite Number:</label> <input type="number" id="textNumber" name="textNumber"><br>
+    <label for="textSearch">Favorite Search term:</label> <input type="search" id="textSearch" name="textSearch"><br>
+    <label for="textbox">Description:<br></label><textarea rows="5" cols="40" id="textbox" name="textbox">default text</textarea><br>
+</form>
+<button onclick="updateResults()">Show form results</button>
+
+<div id="inputResults"></div>
+<div>
+    <label for="showPassword">Demo of revealable password.</label>
+<input id="showPassword" type="password">
+    <span onmousedown='document.getElementById("showPassword").type="text"' onmouseup='document.getElementById("showPassword").type="password"'><sub>show password</sub></span>
+</div>
+<script>
+    function updateResults() {
+        let inhtml = "<h2>Form contents from last submission</h2>";
+        inhtml += "<p><b>entered name:</b>" +
+            document.getElementById("textInput").value;
+        inhtml += "</p><p><b>Email address:</b>" +
+            document.getElementById("textEmail").value;
+        inhtml += "(valid = " +
+            document.getElementById("textEmail").checkValidity() + ")";
+        inhtml += "</p><p><b>password:</b>" +
+            document.getElementById("textPassword").value;
+        inhtml += "</p><p><b>hidden:</b>" +
+            document.getElementById("textHidden").value;
+        inhtml += "</p><p><b>Telephone:</b>" +
+            document.getElementById("textTel").value;
+        inhtml += "(valid = " +
+            document.getElementById("textTel").checkValidity() + ")";
+        inhtml += "</p><p><b>Favorite site:</b>" +
+            document.getElementById("textURL").value;
+        inhtml += "(valid = " +
+            document.getElementById("textURL").checkValidity() + ")";
+        inhtml += "</p><p><b>Favorite Number:</b>" +
+            document.getElementById("textNumber").value;
+        inhtml += "</p><p><b>Favorite Search Term:</b>" +
+            document.getElementById("textSearch").value;
+        inhtml += "</p><p><b>Description:</b>" +
+            document.getElementById("textbox").value + "</p>";
+
+        document.getElementById("inputResults").innerHTML = inhtml;
+    }
+
+
+</script>
+</body>
+</html>
