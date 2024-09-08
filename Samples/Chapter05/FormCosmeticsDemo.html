@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Cosmetics Demo</title>
+</head>
+<body>
+<h2>Basic field set</h2>
+<fieldset>
+    <p>This is some text in a <b>fieldset</b>.
+    While field sets are generally used only in forms,
+    there is nothing stopping you from using a fieldset outside a form.</p>
+</fieldset>
+
+<h2>Field set with a legend</h2>
+<fieldset>
+    <legend>Field sets can have names</legend>
+    <p>The <b>fieldset</b> element can have a <b>legend</b> element inside of it.
+        The <b>legend</b> tag provides a name for the fieldset.
+    </p>
+</fieldset>
+
+<h2>Nesting field sets</h2>
+<form action="FormSubmitPage.html" method="post">
+<fieldset>
+    <legend>Nesting</legend>
+    <fieldset>
+        <legend>personal information</legend>
+        <label for="userName">Name: </label>
+        <input type="text" name="userName" id="userName">
+        <label for="userEmail">Email: </label>
+        <input type="email" name="userEmail" id="userEmail">
+    </fieldset>
+    <fieldset style="width: 45%; margin-right: 2%; display: inline-block;">
+        <legend>Checkboxes</legend>
+        <input type="checkbox" id="cb1" name="cb1">
+        <label for="cb1">Sample checkbox #1</label><br>
+        <input type="checkbox" id="cb2" name="cb2">
+        <label for="cb2">Sample checkbox #2</label><br>
+        <input type="checkbox" id="cb3" name="cb3">
+        <label for="cb3">Sample checkbox #3</label><br>
+    </fieldset>
+    <fieldset style="width: 45%; display: inline-block;">
+        <legend>Radio Buttons</legend>
+        <input type="radio" id="rb1" name="radioGroup">
+        <label for="rb1">Sample radio button #1</label><br>
+        <input type="radio" id="rb2" name="radioGroup">
+        <label for="rb2">Sample radio button #2</label><br>
+        <input type="radio" id="rb3" name="radioGroup">
+        <label for="rb3">Sample radio button #3</label><br>
+    </fieldset>
+    <fieldset>
+        <legend>other information</legend>
+        <label for="topic">Topic: </label>
+        <input type="text" name="topic" id="topic"><br>
+        <label for="desc">Description:</label><br>
+        <textarea id="desc" rows="5" name="desc"></textarea>
+    </fieldset>
+</fieldset>
+    <input type="submit" name="sampleSubmit" value="Submit sample form">
+</form>
+
+</body>
+</html>
