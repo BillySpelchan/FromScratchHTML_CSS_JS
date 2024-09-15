@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkbox and radio buttons demo</title>
+
+</head>
+<body>
+<h1>Checkbox and Radio buttons</h1>
+<h2>Basic checkbox</h2>
+<input type="checkbox" name="firstCheckbox" id="firstCheckbox" value="1">
+<label for="firstCheckbox">Your typical checkbox</label> <br>
+
+<input type="checkbox" name="checkedCheckbox" id="checkedCheckbox" checked>
+<label for="checkedCheckbox">Your typical checkbox</label> <br>
+
+<h2>Custom checkbox</h2>
+<img id="soundState" src="soundOn.png" onclick="toggleSound()" alt="Sound toggle"><br>
+<p>Radio buttons:</p>
+
+<h2>Radio buttons</h2>
+<fieldset>
+<legend>basic set</legend>
+    <label>
+        <input type="radio" name="set1" value="1">
+        First choice
+    </label><br>
+    <label>
+        <input type="radio" name="set1" value="2">
+        Second choice
+    </label><br>
+    <label>
+        <input type="radio" name="set1" value="3">
+        Third choice
+    </label><br>
+</fieldset>
+
+<fieldset>
+    <legend>default choice set</legend>
+    <label>
+        <input type="radio" name="set2" value="A">
+        (A) First choice
+    </label><br>
+    <label>
+        <input type="radio" name="set2" value="B" checked>
+        (B) Second choice
+    </label><br>
+    <label>
+        <input type="radio" name="set2" value="C">
+        (C) Third choice
+    </label><br>
+</fieldset>
+
+<fieldset>
+    <legend>don't mix radio buttons with different names</legend>
+    <label>
+        <input type="radio" name="setOdd" value="odd1">
+        First Odd choice
+    </label><br>
+    <label>
+        <input type="radio" name="setEven" value="even1" checked>
+        First Even choice
+    </label><br>
+    <label>
+        <input type="radio" name="setOdd" value="odd2" checked>
+        Second Odd choice
+    </label><br>
+    <label>
+        <input type="radio" name="setEven" value="even2">
+        Second Even choice
+    </label><br>
+    <label>
+        <input type="radio" name="setOdd" value="odd3">
+        Third Odd choice
+    </label><br>
+    <label>
+        <input type="radio" name="setEven" value="even3">
+        Third Even choice
+    </label><br>
+</fieldset>
+
+<button onclick="showResults();">Show check results</button>
+
+<!-- placeholder for showing results when button clicked -->
+<p id="checkResults"></p>
+
+<script>
+    let isSoundOn = true;
+
+    function toggleSound() {
+        let soundState = document.getElementById("soundState");
+        if (isSoundOn) {
+            isSoundOn = false;
+            soundState.src="soundOff.png";
+        } else {
+            isSoundOn = true;
+            soundState.src="soundOn.png";
+        }
+    }
+
+    function showResults() {
+        let checkResults = document.getElementById("checkResults");
+        let s="first checkbox checked: " +
+            document.getElementById("firstCheckbox").checked;
+        s += "<br>Second checkbox checked: " +
+            document.getElementById("checkedCheckbox").checked;
+        s += "<br>sound enabled: " + isSoundOn;
+
+        let set1 = document.querySelector(
+            'input[name="set1"]:checked');
+        let set1choice = set1 === null ? "No choice" : set1.value;
+        s += "<br>First radio group choice: " + set1choice;
+
+        s+= "<br>Second radio group choice: " +
+            document.querySelector('input[name="set2"]:checked').value;
+
+        s+= "<br>Odd radio group choice: " +
+            document.querySelector('input[name="setOdd"]:checked').value;
+        s+= "<br>Even radio group choice: " +
+            document.querySelector('input[name="setEven"]:checked').value;
+
+        checkResults.innerHTML=s;
+    }
+</script>
+</body>
+</html>
