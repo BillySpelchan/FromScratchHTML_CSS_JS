@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Numbers and Dates Demo</title>
+
+</head>
+<body>
+<h1>Numbers and Dates Demo</h1>
+<h2>Numbers</h2>
+<label>
+    type="number" &nbsp;
+<input id="DandD" type="number" min="3" max="18" step="1" oninput="updateDandDValidity()">
+</label>
+
+<br><br>
+<label>
+    type="range" &nbsp;
+<input id="defaultRange" type="range" oninput="updateRange('defaultRange', 'defaultRangeValue')">
+    <span id="defaultRangeValue"></span>
+</label>
+<br>
+<label>
+    range 3-18 &nbsp;
+    <input id="DandDRange" type="range"
+           min="3" max="18"
+           oninput="updateRange('DandDRange', 'DandDRangeValue')">
+    <span id="DandDRangeValue"></span>
+</label>
+
+<br><br>
+<h2>Dates</h2>
+<label>
+    type="date" &nbsp;
+    <input type="date" min="2001-01-01" max="2061-12-31">
+</label>
+
+<label>
+    type="month" &nbsp;
+    <input type="month" min="2001-01-01" max="2061-12-31">
+</label>
+
+<label>
+    month ranges &nbsp;
+    <input type="month" min="2001-01" max="2061-12">
+</label>
+<br><br>
+
+<label>
+    type="week" &nbsp;
+    <input type="week" min="2001-03-01" max="2601-10-21">
+</label>
+
+<label>
+    validated with W10-W30
+    <input id="wk" type="week" min="2004-W10" max="2004-W30" oninput="checkId('wk')">
+</label>
+<br><br>
+
+<h2>Time</h2>
+<label>
+    type="datetime-local"
+    <input type="datetime-local" min="2001-01-01T08:30" max="2061-12-31T17:00">
+</label>
+
+<br><br>
+<label>
+    type="time"
+    <input id="tm" type="time" min="09:00" max="18:00" oninput="checkId('tm')">
+</label>
+<br>
+
+</body>
+<script>
+    function updateDandDValidity() {
+        let dandd = document.getElementById("DandD");
+        let c = dandd.checkValidity() ? "#102" : "#c00";
+        dandd.style.color = c;
+        dandd.style.borderColor = c;
+    }
+
+    function updateRange(rng, lbl) {
+        let inputRange = document.getElementById(rng);
+        document.getElementById(lbl).innerHTML= inputRange.value;
+    }
+
+    function initInputs() {
+        updateDandDValidity();
+        updateRange('defaultRange', 'defaultRangeValue')
+        updateRange('DandDRange', 'DandDRangeValue');
+    }
+
+    function checkId(ident) {
+        let element = document.getElementById(ident);
+        let c = element.checkValidity() ? "#102" : "#c00";
+        element.style.color = c;
+        element.style.borderColor = c;
+    }
+
+    initInputs();
+</script>
+</html>
