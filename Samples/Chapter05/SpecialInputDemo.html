@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Special input types demo</title>
+</head>
+<body>
+<h1>Special input types demo</h1>
+<h2>Buttons (yes, seriously)</h2>
+<form action="">
+    <fieldset>
+        <legend>input reset and buttons</legend>
+        <label>
+            Input some text then hit reset:
+            <input type="text">
+        </label><br><br>
+        <input type="reset"><br><br>
+        <input type="button" value="click me" onclick="buttonDemo()">
+        <span id="inputButtonClicked"></span>
+    </fieldset>
+</form>
+
+<h2>images (again, seriously)</h2>
+<form action="">
+    <fieldset>
+        <legend>Image type used as submit button</legend>
+        <input type="image" src="imageTagSubmit.png"
+               width="512" height="32"
+               alt="fancy submit button">
+    </fieldset>
+</form>
+
+<h2>Colors</h2>
+<label>
+<input id="colorPicker" type="color" value="#660077" onchange="changeColor()"> Pick your favorite color.
+</label>
+<p id="colorText" style="color:#607;">Here is text in the selected color.</p>
+
+<h2>Files</h2>
+You may have to run this in a server to see results.
+<input type="file" id="textfilePicker"
+       accept=".txt,.js,.html,.css"
+       onchange="fileDemo()">
+<pre id="fileContents"></pre>
+</body>
+<script>
+    function buttonDemo() {
+        document.getElementById("inputButtonClicked").
+            innerHTML = "<b>Thanks for clicking me!</b>";
+    }
+
+    function fileDemo() {
+        let picker = document.getElementById("textfilePicker");
+        const selectedFile = picker.files[0];
+        const reader = new FileReader();
+        reader.addEventListener("load" , ()=> {
+           document.getElementById("fileContents").innerText=reader.result;
+        });
+        reader.readAsText(selectedFile);
+    }
+
+    function changeColor() {
+        let picker = document.getElementById("colorPicker");
+        let colorText = document.getElementById("colorText");
+        colorText.style.color=picker.value;
+    }
+</script>
+</html>
