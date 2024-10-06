@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Option Select Demo</title>
+</head>
+<body>
+<h1>Option Select Demo</h1>
+<label>
+    Select a card suit:
+    <select id="suit">
+        <option value="Club" style="color:green">&clubsuit; Club</option>
+        <option value="Diamond" style="color:blue">&diamondsuit; Diamond</option>
+        <option value="Heart" style="color:red">&heartsuit; Heart</option>
+        <option value="Spade" style="color:black">&spadesuit; Spade</option>
+    </select>
+</label> <br><br>
+
+<label>
+    Select a Face Value other than 4:
+    <select id="faceValue">
+    <option value="1">Ace</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+    <option value="4" disabled>Four</option>
+    <option value="5">Five</option>
+    <option value="6">Six</option>
+    <option value="7">Seven</option>
+    <option value="8">Eight</option>
+    <option value="9">Nine</option>
+    <option value="10">Ten</option>
+    <option value="11" selected>Jack</option>
+    <option value="12">Queen</option>
+    <option value="13">King</option>
+    </select>
+</label> <br><br>
+
+<label>
+    Select a cards:
+    <select id="card" >
+        <optgroup label="Clubs">
+            <option value="CA">Ace of Clubs</option>
+            <option value="C2">Two of Clubs</option>
+            <option value="C3">Three of Clubs</option>
+            <option value="C4">Four of Clubs</option>
+            <option value="C5">Five of Clubs</option>
+            <option value="C6">Six of Clubs</option>
+            <option value="C7">Seven of Clubs</option>
+            <option value="C8">Eight of Clubs</option>
+            <option value="C9">Nine of Clubs</option>
+            <option value="CT">Ten of Clubs</option>
+            <option value="CJ">Jack of Clubs</option>
+            <option value="CQ">Queen of Clubs</option>
+            <option value="CK">King of Clubs</option>
+        </optgroup>
+        <optgroup label="Diamonds">
+            <option value="DA">Ace of Diamonds</option>
+            <option value="D2">Two of Diamonds</option>
+            <option value="D3">Three of Diamonds</option>
+            <option value="D4">Four of Diamonds</option>
+            <option value="D5">Five of Diamonds</option>
+            <option value="D6">Six of Diamonds</option>
+            <option value="D7">Seven of Diamonds</option>
+            <option value="D8">Eight of Diamonds</option>
+            <option value="D9">Nine of Diamonds</option>
+            <option value="DT">Ten of Diamonds</option>
+            <option value="DJ">Jack of Diamonds</option>
+            <option value="DQ">Queen of Diamonds</option>
+            <option value="DK">King of Diamonds</option>
+        </optgroup>
+        <optgroup label="Hearts">
+            <option value="HA">Ace of Hearts</option>
+            <option value="H2">Two of Hearts</option>
+            <option value="H3">Three of Hearts</option>
+            <option value="H4">Four of Hearts</option>
+            <option value="H5">Five of Hearts</option>
+            <option value="H6">Six of Hearts</option>
+            <option value="H7">Seven of Hearts</option>
+            <option value="H8">Eight of Hearts</option>
+            <option value="H9">Nine of Hearts</option>
+            <option value="HT">Ten of Hearts</option>
+            <option value="HJ">Jack of Hearts</option>
+            <option value="HQ">Queen of Hearts</option>
+            <option value="HK">King of Hearts</option>
+        </optgroup>
+        <optgroup label="Spades">
+            <option value="SA">Ace of Spades</option>
+            <option value="S2">Two of Spades</option>
+            <option value="S3">Three of Spades</option>
+            <option value="S4">Four of Spades</option>
+            <option value="S5">Five of Spades</option>
+            <option value="S6">Six of Spades</option>
+            <option value="S7">Seven of Spades</option>
+            <option value="S8">Eight of Spades</option>
+            <option value="S9">Nine of Spades</option>
+            <option value="ST">Ten of Spades</option>
+            <option value="SJ">Jack of Spades</option>
+            <option value="SQ">Queen of Spades</option>
+            <option value="SK">King of Spades</option>
+        </optgroup>
+    </select>
+</label><br><br>
+
+<label>
+    Select one or more cards:
+    <select id="cards" multiple size="8">
+        <optgroup label="Clubs">
+            <option value="CA">Ace of Clubs</option>
+            <option value="C2">Two of Clubs</option>
+            <option value="C3">Three of Clubs</option>
+            <option value="C4">Four of Clubs</option>
+            <option value="C5">Five of Clubs</option>
+            <option value="C6">Six of Clubs</option>
+            <option value="C7">Seven of Clubs</option>
+            <option value="C8">Eight of Clubs</option>
+            <option value="C9">Nine of Clubs</option>
+            <option value="CT">Ten of Clubs</option>
+            <option value="CJ">Jack of Clubs</option>
+            <option value="CQ">Queen of Clubs</option>
+            <option value="CK">King of Clubs</option>
+        </optgroup>
+        <optgroup label="Diamonds">
+            <option value="DA">Ace of Diamonds</option>
+            <option value="D2">Two of Diamonds</option>
+            <option value="D3">Three of Diamonds</option>
+            <option value="D4">Four of Diamonds</option>
+            <option value="D5">Five of Diamonds</option>
+            <option value="D6">Six of Diamonds</option>
+            <option value="D7">Seven of Diamonds</option>
+            <option value="D8">Eight of Diamonds</option>
+            <option value="D9">Nine of Diamonds</option>
+            <option value="DT">Ten of Diamonds</option>
+            <option value="DJ">Jack of Diamonds</option>
+            <option value="DQ">Queen of Diamonds</option>
+            <option value="DK">King of Diamonds</option>
+        </optgroup>
+        <optgroup label="Hearts">
+            <option value="HA">Ace of Hearts</option>
+            <option value="H2">Two of Hearts</option>
+            <option value="H3">Three of Hearts</option>
+            <option value="H4">Four of Hearts</option>
+            <option value="H5">Five of Hearts</option>
+            <option value="H6">Six of Hearts</option>
+            <option value="H7">Seven of Hearts</option>
+            <option value="H8">Eight of Hearts</option>
+            <option value="H9">Nine of Hearts</option>
+            <option value="HT">Ten of Hearts</option>
+            <option value="HJ">Jack of Hearts</option>
+            <option value="HQ">Queen of Hearts</option>
+            <option value="HK">King of Hearts</option>
+        </optgroup>
+        <optgroup label="Spades">
+            <option value="SA">Ace of Spades</option>
+            <option value="S2">Two of Spades</option>
+            <option value="S3">Three of Spades</option>
+            <option value="S4">Four of Spades</option>
+            <option value="S5">Five of Spades</option>
+            <option value="S6">Six of Spades</option>
+            <option value="S7">Seven of Spades</option>
+            <option value="S8">Eight of Spades</option>
+            <option value="S9">Nine of Spades</option>
+            <option value="ST">Ten of Spades</option>
+            <option value="SJ">Jack of Spades</option>
+            <option value="SQ">Queen of Spades</option>
+            <option value="SK">King of Spades</option>
+        </optgroup>
+    </select>
+</label><br><br>
+
+<button onclick="dumpOptions()">Show picked items</button>
+<div id="picked"></div>
+
+</body>
+<script>
+    function dumpOptions() {
+        let picked = document.getElementById("picked");
+        let s = "<p>The suit that was picked was ";
+        let suit = document.getElementById("suit").value;
+        s += suit
+
+        s += "</p><p>The card that was picked was "
+        let faceValue = document.getElementById("faceValue").value;
+        s += faceValue;
+
+        s += "</p><p>The card that was picked was "
+        // if we want the text in the option, we need to get the index and grab the option
+        let card = document.getElementById("card");
+        let indx = Math.max(card.selectedIndex, 0);
+        s += card.options[indx].text;
+
+        // for multiple we need to get the list of options that were selected
+        s+="</p><p>The cards that were selected were:<ol>"
+        let cards = document.getElementById("cards").selectedOptions
+        for (let i = 0; i < cards.length; ++i)
+            s += "<li>" + cards[i].text + "</li>";
+        s += "</ol></p>";
+        picked.innerHTML = s;
+    }
+</script>
+</html>
