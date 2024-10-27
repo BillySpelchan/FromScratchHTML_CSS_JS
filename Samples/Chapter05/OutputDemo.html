@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Output Demo</title>
+</head>
+<body>
+<h1>Output demo</h1>
+<form oninput="updateResults()">
+    <label>
+        Strength:
+        <input name="strength" id="strength" type="range" min="3" max="18" value="10" ></input>
+        <output id="strOut" for="strength"></output>
+    </label><br><br>
+    <label>
+        Intelligence:
+        <input name="intelligence" id="intelligence" type="range" min="3" max="18" value="10" ></input>
+        <output id="intOut" for="intelligence"></output>
+    </label><br><br>
+    <label>
+        Dexterity:
+        <input name="dexterity" id="dexterity" type="range" min="3" max="18" value="10" ></input>
+        <output id="dexOut" for="dexterity"></output>
+    </label><br><br>
+</form>
+<script>
+    function updateResults() {
+        var strength = document.getElementById("strength").value;
+        var intelligence = document.getElementById("intelligence").value;
+        var dexterity = document.getElementById("dexterity").value;
+        document.getElementById("strOut").value = strength;
+        document.getElementById("intOut").value = intelligence;
+        document.getElementById("dexOut").value = dexterity;
+    }
+    updateResults();
+</script>
+</body>
+</html>
