@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Datalist Demo</title>
+</head>
+<body>
+<h1>datalist Demo</h1>
+
+<h2>datalist with text input</h2>
+<label>
+  Pick a suit:
+<input id="suitInput" type="text" list="suits" />
+  <span id="validSuit"></span>
+</label>
+<datalist id="suits">
+    <option value="Club"></option>
+    <option value="Diamond"></option>
+    <option value="Heart"></option>
+    <option value="Spade"></option>
+</datalist>
+
+<label>
+    Pick another suit:
+    <input id="suitInput2" type="text" list="suits" />
+</label> <br><br>
+
+<h2>datalist with ranges and numbers</h2>
+<datalist id="normRanges">
+    <option value="0"></option>
+    <option value="25"></option>
+    <option value="50"></option>
+    <option value="75"></option>
+    <option value="100"></option>
+</datalist>
+<label>
+    Set your score:
+    <input id="normRange" type="range" list="normRanges"
+           oninput="updateRange('normRange', 'normValue')" >
+    <span id="normValue"></span>
+</label><br><br>
+
+<datalist id="rollRanges">
+    <option value="3">Low</option>
+    <option value="6">Below average</option>
+    <option value="10">Normal</option>
+    <option value="15">Above Average</option>
+    <option value="18">High</option>
+</datalist>
+<label>
+    Set your attribute:
+    <input id="rollRange" type="range" list="rollRanges"
+       min="3" max="18"
+       oninput="updateRange('rollRange', 'rollValue')" >
+    <span id="rollValue"></span>
+</label><br><br>
+
+<label>
+    Attributes as number:
+    <input id="attributeNumber" type="number" list="rollRanges">
+</label>
+
+<h2>Color palette using a datalist</h2>
+<datalist id="colors">
+    <option value="#DD0000"></option>
+    <option value="#DDDD00"></option>
+    <option value="#00DD00"></option>
+    <option value="#00DDDD"></option>
+    <option value="#0000DD"></option>
+    <option value="#550055"></option>
+</datalist>
+<label>
+    Pick a color:
+    <input id="colorInput" type="color" list="colors" >
+</label>
+
+<script>
+  function updateRange(rng, lbl) {
+      let inputRange = document.getElementById(rng);
+      document.getElementById(lbl).innerHTML= inputRange.value;
+  }
+  updateRange('normRange', 'normValue');
+  updateRange('rollRange', 'rollValue');
+</script>
+</body>
+</html>
