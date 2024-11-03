@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual Dialog Demo</title>
+</head>
+<body>
+<h1>Manual Dialog Demo</h1>
+<h2>Built-in dialog boxes</h2>
+<p>There are several built-in dialog boxes accessed through the window class.</p>
+<ul>
+  <li><button id="alert" onclick="showAlert()">window.alert("message");</button></li>
+  <li><button id="confirm" onclick="showConfirm()">window.confirm("message");</button></li>
+  <li><button id="prompt" onclick="showPrompt()">window.prompt("message");</button></li>
+</ul>
+<h2>faking dialog boxes</h2>
+<button id="modelessButton" onclick="showFakeDialog(false)">Show dialog box modeless</button>
+<button id="modalButton" onclick="showFakeDialog(true)">Show dialog box modal</button>
+<div id="characterResults"></div>
+<form id="dialogForm" style="visibility:hidden;">
+    <fieldset>
+        <legend>Fake Dialog box</legend>
+        <label for="dialogName">Name:
+            <input type="text" id="dialogName" name="dialogName" placeholder="Enter name"></input>
+        </label>
+        <fieldset>
+            <legend>Gender</legend>
+            <label><input type="radio" name="gender" value="male">Male</label><br>
+            <label><input type="radio" name="gender" value="female">Female</label><br>
+            <label><input type="radio" name="gender" value="other" checked>Other</label><br>
+        </fieldset>
+        <label>
+            Class:
+            <select id="dialogClass" name="dialogClass">
+                <option value="Fighter">Fighter</option>
+                <option value="Healer">Healer</option>
+                <option value="Rogue">Rogue</option>
+                <option value="Wizard">Wizard</option>
+            </select>
+        </label><br>
+        <button type="button" onclick="closeFakeDialog()">Done!</button>
+    </fieldset>
+</form>
+
+
+
+<script>
+  function showAlert() {
+      window.alert("This is an Alert");
+  }
+  function showConfirm() {
+    let conf = window.confirm("This is an Confirm\nDid you read this?");
+    if (conf) {
+      window.alert("Thanks for reading the message!");
+      } else {
+      window.alert("Why didn't you read the message?");
+    }
+  }
+  function showPrompt() {
+    let msg = window.prompt("This is an Prompt", "no text entered");
+    window.alert("You entered: \n" + msg);
+  }
+
+  function showFakeDialog(modeless) {
+      document.getElementById("characterResults").innerHTML="";
+      document.getElementById("dialogForm").style.visibility = "visible";
+      if (modeless) {
+          document.getElementById("alert").disabled = true;
+          document.getElementById("confirm").disabled = true;
+          document.getElementById("prompt").disabled = true;
+          document.getElementById("modelessButton").disabled = true;
+          document.getElementById("modalButton").disabled = true;
+      }
+  }
+
+  function closeFakeDialog() {
+      // display the dialog input
+      let character = document.getElementById("characterResults");
+      let s = "<h2>Generated Character</h2><p><b>Name: </b>";
+      s += document.getElementById("dialogName").value;
+      s += "<br><b>Gender: </b>";
+      s += document.querySelector('input[name="gender"]:checked').value;
+      //document.getElementById("gender").value;
+      s += "<br><b>Class: </b>";
+      s += document.getElementById("dialogClass").value;
+      s += "</p>";
+      character.innerHTML = s;
+
+      // hide the dialog window
+      document.getElementById("dialogForm").style.visibility = "hidden";
+      // this only has to be done if modeless, but will do it in both cases
+      document.getElementById("alert").disabled = false;
+      document.getElementById("confirm").disabled = false;
+      document.getElementById("prompt").disabled = false;
+      document.getElementById("modelessButton").disabled = false;
+      document.getElementById("modalButton").disabled = false;
+  }
+</script>
+</body>
+</html>
