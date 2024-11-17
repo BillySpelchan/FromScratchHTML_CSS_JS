@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dialog Demo</title>
+</head>
+<body>
+<h1>Dialog Demo</h1>
+<h2>Modal Dialog using form</h2>
+<p>This type of dialog blocks other input until closed.</p>
+<button onclick="modalDialog()">Open modal dialog</button>
+<dialog id="testModalDialog">
+    <form method="dialog">
+        <fieldset>
+            <legend>Personal Details</legend>
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstName" placeholder="First Name"><br>
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastName" placeholder="Last Name"><br>
+            <label for="email">email:</label>
+            <input type="email" id="email" name="email" placeholder="Email Address"><br>
+        </fieldset>
+        <button>Close</button>
+    </form>
+</dialog>
+<h2>Modeless Dialog using form</h2>
+<p>This type of dialog lets you continue working with other components on the page.
+    You could even open the modal dialog above (but it would then block this dialog's input).</p>
+<button onclick="modelessDialog()">Open modeless dialog</button>
+<dialog id="testModelessDialog">
+    <form method="dialog">
+    <fieldset>
+        <legend>Personal Details</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Name"><br>
+        <label for="rank">Name:</label>
+        <input type="text" id="rank" name="rank" placeholder="Rank"><br>
+        <label for="serialNumber">Name:</label>
+        <input type="text" id="serialNumber" name="serialNumber" placeholder="Serial number"><br>
+    </fieldset>
+    <button>Close</button>
+</form>
+</dialog>
+
+<h2>required fields in a dialog</h2>
+<p>Required fields must be filled before you can close. This can be annoying if the dialog is modal!</p>
+<button onclick="requiredDialog()">Open modeless dialog</button>
+<dialog id="testRequiredDialog">
+    <form method="dialog">
+        <fieldset>
+            <legend>Important Question</legend>
+            <label for="question">What is the meaning of life?</label>
+            <input type="text" id="question" name="question" placeholder="answer" required><br>
+        </fieldset>
+        <button onclick="questionAnswered()">Close</button>
+    </form>
+</dialog>
+<p id="meaningOfLife"></p>
+
+<h2>Dialog boxes without form tags</h2>
+
+<button onclick="document.getElementById('formless').showModal()">Not a form</button>
+<dialog id="formless">
+    <fieldset>
+        Formless dialog
+    <p>Do you like HTML dialogs?</p>
+    </fieldset>
+    <button onclick="likeDialog(0)">Yes</button> &nbsp;
+    <button onclick="likeDialog(1)">No</button> &nbsp;
+    <button onclick="likeDialog(2)">Maybe</button>
+</dialog>
+<p id="formlessAnswer"></p>
+<script>
+    function modalDialog() {
+        let dialog = document.getElementById('testModalDialog');
+        dialog.showModal();
+    }
+
+    function modelessDialog() {
+        let dialog = document.getElementById('testModelessDialog');
+        dialog.show();
+    }
+
+    function requiredDialog() {
+        let dialog = document.getElementById('testRequiredDialog');
+        dialog.showModal();
+    }
+
+    function questionAnswered() {
+        let answer = document.getElementById('question');
+        document.getElementById('meaningOfLife').textContent =
+            "You think the meaning of life is " + answer.value;
+    }
+
+    function likeDialog(v) {
+        let txt = document.getElementById("formlessAnswer");
+        if (v == 0) txt.innerText = "You like dialog boxes.";
+        else if (v == 1) txt.innerText = "You hate dialog boxes.";
+        else txt.innerText = "You aren't sure about dialog boxes."
+        document.getElementById("formless").close();
+    }
+</script>
+</body>
+</html>
