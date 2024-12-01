@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validation Demo</title>
+</head>
+<body>
+<h1>Validation Demo</h1>
+<form name="testForm" action="FormSubmitPage.html" onsubmit="return validateForm()" method="post">
+    <label>
+        Text: <input type="text" name="testText"><br />
+    </label>
+    <label>
+        Number: <input type="number" name="testNumber"><br />
+    </label>
+    <label>
+        Pick: <input type="radio" name="g1" value="a">Alpha
+        <input type="radio" name="g1" value="b">Beta
+        <input type="radio" name="g1" value="c">Gamma
+        <br/>
+    </label>
+    <label>
+        <input type="checkbox" name="cb">I am not a robot
+        <br />
+    </label>
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    function validateForm() {
+        // Test text
+        let testText = document.forms["testForm"]["testText"].value;
+        if (testText.length < 3) {
+            alert("Name must be at least 3 characters");
+            return false;
+        }
+
+        // Test number range
+        let testNumber = Math.floor(document.forms["testForm"]["testNumber"].value);
+        if ((testNumber < 1) || (testNumber > 10)) {
+            alert("Number must be between 1 and 10");
+            return false;
+        }
+
+        // Test radio button
+        let rad = document.forms["testForm"]["g1"].value;
+        if (rad == "") {
+            alert("Must select greek letter");
+            return false;
+        }
+        // Test checkbox
+        let cb =  document.forms["testForm"]["cb"].value;
+        console.log("checkboxes always have name as value: "+cb);
+        cb = document.forms["testForm"]["cb"].checked;
+        if ( ! cb) {
+            alert("No robots allowed!");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+</body>
+</html>
