@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!--suppress HtmlFormInputWithoutLabel -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trivia</title>
+    <style>
+        body {
+            background: #204;
+        }
+        .gameDiv {
+            text-align: left;
+            font-size: larger;
+            color: #103;
+            display: inline-block;
+            background: #CBF;
+            width: 800px;
+        }
+
+        select {
+            font-size: large;
+        }
+
+        legend {
+            font-size: x-large;
+            font-weight: bolder;
+        }
+
+        input[type="number"] {
+            width: 5em;
+            font-size: large;
+        }
+
+        input[type="text"] {
+            font-size: larger;
+        }
+        #gameOver {
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+<div style="text-align: center;">
+    <div class="gameDiv">
+
+        <h1>Chapter 1 through 4 Trivia</h1>
+        <form>
+            <fieldset>
+                <legend>Chapter 1</legend>
+                <p><span id="c1q1mark"></span>The purpose of this book is to give the programming foundation necessary for a future book on?</p>
+                <input type="radio" name="c1q1" id="c1q1a" value="c1q1a"><label for="c1q1a">Learning TypeScript</label><br>
+                <input type="radio" name="c1q1" id="c1q1b" value="c1q1b"><label for="c1q1b">Writing an Operating System</label><br>
+                <input type="radio" name="c1q1" id="c1q1c" value="c1q1c"><label for="c1q1c">Writing a Game Engine</label><br>
+                <input type="radio" name="c1q1" id="c1q1d" value="c1q1d"><label for="c1q1d">Creating our AI Overlord</label><br>
+
+                <hr>
+
+                <p>The tools needed for creating HTML pages are (select all that are required):</p>
+                <span id="c1q2mark0"></span><input type="checkbox" name="c1Q2a" id="c1q2_0" value="T"><label for="c1q2_0">Text editor</label><br>
+                <span id="c1q2mark1"></span><input type="checkbox" name="c1Q2b" id="c1q2_1" value="F"><label for="c1q2_1">Word processor</label><br>
+                <span id="c1q2mark2"></span><input type="checkbox" name="c1Q2c" id="c1q2_2" value="F"><label for="c1q2_2">Spreadsheet</label><br>
+                <span id="c1q2mark3"></span><input type="checkbox" name="c1Q2d" id="c1q2_3" value="T"><label for="c1q2_3">Browser</label><br>
+
+                <hr>
+
+                <p>What order did we cover the three technologies we cover in this book?</p>
+                <span id="c1q3mark0"></span><select id="c1q3_0">
+                    <option value="1">CSS</option>
+                    <option value="0">HTML</option>
+                    <option value="2">JavaScript</option>
+                </select><br>
+                <span id="c1q3mark1"></span><select id="c1q3_1">
+                    <option value="1">CSS</option>
+                    <option value="0">HTML</option>
+                    <option value="2">JavaScript</option>
+                </select><br>
+                <span id="c1q3mark2"></span><select id="c1q3_2">
+                    <option value="1">CSS</option>
+                    <option value="0">HTML</option>
+                    <option value="2">JavaScript</option>
+                </select>
+
+                <hr>
+
+                <p><span id="c1q4mark"></span>The I in IDE stands for
+                <input type="text" id="c1q4">.
+                </p>
+
+                <hr>
+
+                <p><span id="c1q5mark"></span>This book is expected to have how many chapters?
+                    <input type="number" id="c1q5">.
+                </p>
+            </fieldset>
+
+            <!-- ---------------------------------- -->
+
+            <fieldset>
+                <legend>Chapter 2</legend>
+                <p><span id="c2q1mark"></span>HTML was developed in the CERN physics research lab by Tim Berners-Lee.
+                    In what year did Tim come up with the idea of connecting the research papers by a hyperlink system?
+                    <input type="number" id="c2q1">.
+                </p>
+
+                <hr>
+
+                <p>Place the following events in the order they occurred?</p>
+                <span id="c2q2mark0"></span><select id="c2q2_0">
+                <option value="5">HTML5 becoming a Living Standard so is always being "improved"</option>
+                <option value="2">NCSA developed a browser called Mosaic</option>
+                <option value="0">Created a server with the HTTP Protocol</option>
+                <option value="1">Created a text-based format based on SGML called HTML</option>
+                <option value="4">W3 Consortum forming to become the standards body for html</option>
+                <option value="3">Netscape creating their browser which would eventually become FireFox</option>
+                </select><br>
+                <span id="c2q2mark1"></span><select id="c2q2_1">
+                <option value="5">HTML5 becoming a Living Standard so is always being "improved"</option>
+                <option value="2">NCSA developed a browser called Mosaic</option>
+                <option value="0">Created a server with the HTTP Protocol</option>
+                <option value="1">Created a text-based format based on SGML called HTML</option>
+                <option value="4">W3 Consortum forming to become the standards body for html</option>
+                <option value="3">Netscape creating their browser which would eventually become FireFox</option>
+            </select><br>
+                <span id="c2q2mark2"></span><select id="c2q2_2">
+                <option value="5">HTML5 becoming a Living Standard so is always being "improved"</option>
+                <option value="2">NCSA developed a browser called Mosaic</option>
+                <option value="0">Created a server with the HTTP Protocol</option>
+                <option value="1">Created a text-based format based on SGML called HTML</option>
+                <option value="4">W3 Consortum forming to become the standards body for html</option>
+                <option value="3">Netscape creating their browser which would eventually become FireFox</option>
+            </select><br>
+                <span id="c2q2mark3"></span><select id="c2q2_3">
+                <option value="5">HTML5 becoming a Living Standard so is always being "improved"</option>
+                <option value="2">NCSA developed a browser called Mosaic</option>
+                <option value="0">Created a server with the HTTP Protocol</option>
+                <option value="1">Created a text-based format based on SGML called HTML</option>
+                <option value="4">W3 Consortum forming to become the standards body for html</option>
+                <option value="3">Netscape creating their browser which would eventually become FireFox</option>
+            </select><br>
+                <span id="c2q2mark4"></span><select id="c2q2_4">
+                <option value="5">HTML5 becoming a Living Standard so is always being "improved"</option>
+                <option value="2">NCSA developed a browser called Mosaic</option>
+                <option value="0">Created a server with the HTTP Protocol</option>
+                <option value="1">Created a text-based format based on SGML called HTML</option>
+                <option value="4">W3 Consortum forming to become the standards body for html</option>
+                <option value="3">Netscape creating their browser which would eventually become FireFox</option>
+            </select><br>
+                <span id="c2q2mark5"></span><select id="c2q2_5">
+                <option value="5">HTML5 becoming a Living Standard so is always being "improved"</option>
+                <option value="2">NCSA developed a browser called Mosaic</option>
+                <option value="0">Created a server with the HTTP Protocol</option>
+                <option value="1">Created a text-based format based on SGML called HTML</option>
+                <option value="4">W3 Consortum forming to become the standards body for html</option>
+                <option value="3">Netscape creating their browser which would eventually become FireFox</option>
+            </select><br>
+
+            <hr>
+
+            <p>What is true about HTML elements:</p>
+            <span id="c2q3mark0"></span><input type="checkbox" name="c2Q3a" id="c2q3_0" value="F"><label for="c2q3_0">All elements require a start tag and an end tag with content in between.</label><br>
+            <span id="c2q3mark1"></span><input type="checkbox" name="c2Q3b" id="c2q3_1" value="T"><label for="c2q3_1">If used, a close tag has the same name as the start tag but starts with a /.</label><br>
+            <span id="c2q3mark2"></span><input type="checkbox" name="c2Q3c" id="c2q3_2" value="T"><label for="c2q3_2">Additional variable can be within the tag, these are called attributes.</label><br>
+            <span id="c2q3mark3"></span><input type="checkbox" name="c2Q3d" id="c2q3_3" value="T"><label for="c2q3_3">It is possible to nest tags in HTML.</label><br>
+
+                <hr>
+
+                <p><span id="c2q4mark"></span>In order to create a space character that won't be ignored, you use
+                    <input type="text" id="c2q4">.
+                </p>
+
+                <hr>
+
+                <p><span id="c2q5mark"></span>Creating a link to another page is done through what type of tag?</p>
+                <input type="radio" name="c2q5" id="c2q5a" value="c2q5a"><label for="c2q5a">Link</label><br>
+                <input type="radio" name="c2q5" id="c2q5b" value="c2q5b"><label for="c2q5b">Anchor</label><br>
+                <input type="radio" name="c2q5" id="c2q5c" value="c2q5c"><label for="c2q5c">Hyperlink</label><br>
+                <input type="radio" name="c2q5" id="c2q5d" value="c2q5d"><label for="c2q5d">Reference</label><br>
+
+            </fieldset>
+
+            <!-- ---------------------------------- -->
+
+            <fieldset>
+                <legend>Chapter 3</legend>
+
+                <p>When creating a HTML Hex color, what order are the parts that make up the code?</p>
+                <span id="c3q1mark0"></span><select id="c3q1_0">
+                <option value="3">Blue intensity (00 to FF)</option>
+                <option value="2">Green intensity (00 to FF)</option>
+                <option value="1">Red intensity (00 to FF)</option>
+                <option value="0">Hash symbol (#)</option>
+                </select><br>
+                <span id="c3q1mark1"></span><select id="c3q1_1">
+                <option value="3">Blue intensity (00 to FF)</option>
+                <option value="2">Green intensity (00 to FF)</option>
+                <option value="1">Red intensity (00 to FF)</option>
+                <option value="0">Hash symbol (#)</option>
+                </select><br>
+                <span id="c3q1mark2"></span><select id="c3q1_2">
+                <option value="3">Blue intensity (00 to FF)</option>
+                <option value="2">Green intensity (00 to FF)</option>
+                <option value="1">Red intensity (00 to FF)</option>
+                <option value="0">Hash symbol (#)</option>
+                </select><br>
+                <span id="c3q1mark3"></span><select id="c3q1_3">
+                <option value="3">Blue intensity (00 to FF)</option>
+                <option value="2">Green intensity (00 to FF)</option>
+                <option value="1">Red intensity (00 to FF)</option>
+                <option value="0">Hash symbol (#)</option>
+                </select><br>
+
+                <p><span id="c3q2mark"></span>To represent margins, padding, and borders, CSS uses a
+                    <input type="text" id="c3q2"> Model.
+                </p>
+
+                <p><span id="c3q3mark"></span>What tag would you use to load an external style sheet CSS?</p>
+                <input type="radio" name="c3q3" id="c3q3a" value="c3q3a"><label for="c3q3a">Link</label><br>
+                <input type="radio" name="c3q3" id="c3q3b" value="c3q3b"><label for="c3q3b">CSS</label><br>
+                <input type="radio" name="c3q3" id="c3q3c" value="c3q3c"><label for="c3q3c">Style</label><br>
+                <input type="radio" name="c3q3" id="c3q3d" value="c3q3d"><label for="c3q3d">import</label><br>
+
+                <p>which are valid units in CSS:</p>
+                <span id="c3q4mark0"></span><input type="checkbox" name="c3Q4a" id="c3q4_0" value="F"><label for="c3q4_0">Quaternions.</label><br>
+                <span id="c3q4mark1"></span><input type="checkbox" name="c3Q4b" id="c3q4_1" value="T"><label for="c3q4_1">Percent.</label><br>
+                <span id="c3q4mark2"></span><input type="checkbox" name="c3Q4c" id="c3q4_2" value="F"><label for="c3q4_2">Dots.</label><br>
+                <span id="c3q4mark3"></span><input type="checkbox" name="c3Q4d" id="c3q4_3" value="T"><label for="c3q4_3">pixels.</label><br>
+
+                <p><span id="c3q5mark"></span>How many generic font families are there?
+                    <input type="number" id="c3q5">.
+                </p>
+
+            </fieldset>
+
+            <!-- ---------------------------------- -->
+
+            <fieldset>
+                <legend>Chapter 4</legend>
+
+                <p><span id="c4q1mark"></span>Brendan Eich needed to create JavaScript in
+                    <input type="number" id="c4q1"> days.
+                </p>
+
+                <p><span id="c4q2mark"></span>Which of the following variable names is not valid?</p>
+                <input type="radio" name="c4q2" id="c4q2a" value="c4q2a"><label for="c4q2a">TooCool</label><br>
+                <input type="radio" name="c4q2" id="c4q2b" value="c4q2b"><label for="c4q2b">2Cool</label><br>
+                <input type="radio" name="c4q2" id="c4q2c" value="c4q2c"><label for="c4q2c">twoCool</label><br>
+                <input type="radio" name="c4q2" id="c4q2d" value="c4q2d"><label for="c4q2d">too_cool</label><br>
+
+                <p><span id="c4q3mark"></span>In order to use trigonometric functions, you need to use the
+                    <input type="text" id="c4q3"> Class.
+                </p>
+
+                <p>Which statements about strings are true</p>
+                <span id="c4q4mark0"></span><input type="checkbox" name="c4Q4a" id="c4q4_0" value="T"><label for="c4q4_0">Are immutable.</label><br>
+                <span id="c4q4mark1"></span><input type="checkbox" name="c4Q4b" id="c4q4_1" value="T"><label for="c4q4_1">Are objects.</label><br>
+                <span id="c4q4mark2"></span><input type="checkbox" name="c4Q4c" id="c4q4_2" value="F"><label for="c4q4_2">First character is at index 1.</label><br>
+                <span id="c4q4mark3"></span><input type="checkbox" name="c4Q4d" id="c4q4_3" value="F"><label for="c4q4_3">Are called strings because they were invented by Samuel String.</label><br>
+
+                <p>Organize the code below so it counts from 0 to 9 using a while loop:</p>
+                <span id="c4q5mark0"></span><select id="c4q5_0">
+                <option value="0">let i = 0;</option>
+                <option value="2">console.log("count is" + i)</option>
+                <option value="1">while (i < 10) {</option>
+                <option value="4">}</option>
+                <option value="3">i++;</option>
+                </select><br>
+                <span id="c4q5mark1"></span><select id="c4q5_1">
+                <option value="0">let i = 0;</option>
+                <option value="2">console.log("count is" + i)</option>
+                <option value="1">while (i < 10) {</option>
+                <option value="4">}</option>
+                <option value="3">i++;</option>
+            </select><br>
+                <span id="c4q5mark2"></span><select id="c4q5_2">
+                <option value="0">let i = 0;</option>
+                <option value="2">console.log("count is" + i)</option>
+                <option value="1">while (i < 10) {</option>
+                <option value="4">}</option>
+                <option value="3">i++;</option>
+            </select><br>
+                <span id="c4q5mark3"></span><select id="c4q5_3">
+                <option value="0">let i = 0;</option>
+                <option value="2">console.log("count is" + i)</option>
+                <option value="1">while (i < 10) {</option>
+                <option value="4">}</option>
+                <option value="3">i++;</option>
+            </select><br>
+                <span id="c4q5mark4"></span><select id="c4q5_4">
+                <option value="0">let i = 0;</option>
+                <option value="2">console.log("count is" + i)</option>
+                <option value="1">while (i < 10) {</option>
+                <option value="4">}</option>
+                <option value="3">i++;</option>
+            </select><br>
+
+            </fieldset>
+        </form>
+        <div id="gameOver">
+        <button id="triviaSubmit" value="Check answers" onclick="checkAnswers()">Check Answers</button>
+        </div>
+    </div>
+</div>
+<script>
+    function setCheckmark(idLabel) {
+        let markSpan = document.getElementById(idLabel);
+        markSpan.style.color = "green";
+        markSpan.innerHTML = "&#x2714; ";
+    }
+
+    function setXMark(idLabel) {
+        let markSpan = document.getElementById(idLabel);
+        markSpan.style.color = "red";
+        markSpan.innerHTML = "&#x2716; ";
+    }
+
+    function processMultipleChoice(baseLabel, correct) {
+        let ans = document.querySelector(`input[name=${baseLabel}]:checked`);
+        if (ans != null) {
+            if (ans.id===(baseLabel+correct) ) {
+                setCheckmark(baseLabel+"mark");
+                return 1;
+            }
+        }
+        setXMark(baseLabel+"mark");
+        return 0;
+    }
+
+    function processMultipleCorrect(baseLabel, numChoices) {
+        let score = 0;
+        for (let i = 0; i < numChoices; ++i) {
+            let cbx = document.getElementById(baseLabel+"_"+i);
+            let correct = (cbx.value==="T") ? cbx.checked : ! cbx.checked;
+            if (correct) {
+                score++;
+                setCheckmark(baseLabel+"mark"+i);
+            } else {
+                setXMark(baseLabel+"mark"+i)
+            }
+        }
+        return score / numChoices;
+    }
+
+    function processOrdering(baseLabel, numChoices) {
+        let score = 0;
+        for (let i = 0; i < numChoices; i++) {
+            let op = document.getElementById(baseLabel+"_"+i);
+            // noinspection EqualityComparisonWithCoercionJS
+            if (op.value == i) {
+                score++;
+                setCheckmark(baseLabel+"mark"+i);
+            } else {
+                setXMark(baseLabel+"mark"+i)
+            }
+        }
+        return score / numChoices;
+    }
+
+    function processFillInTheBlank(baseLabel, answer) {
+        let ans = document.getElementById(baseLabel).value;
+        if (ans.trim().toUpperCase() === answer.toUpperCase()) {
+            setCheckmark(baseLabel+"mark");
+            return 1;
+        }
+        setXMark(baseLabel+"mark")
+        return 0;
+    }
+
+    function processNumeric(baseLabel, answer) {
+        let ans = document.getElementById(baseLabel).value;
+        // noinspection EqualityComparisonWithCoercionJS
+        if (ans == answer) {
+            setCheckmark(baseLabel+"mark");
+            return 1;
+        }
+        setXMark(baseLabel+"mark")
+        return 0;
+    }
+
+    function processChapter1() {
+        let count = processMultipleChoice("c1q1", "c");
+        count += processMultipleCorrect("c1q2", 4);
+        count += processOrdering("c1q3", 3);
+        count += processFillInTheBlank("c1q4", "INTEGRATED");
+        count += processNumeric("c1q5", 11);
+        return count;
+    }
+
+    function processChapter2() {
+        let count = processNumeric("c2q1", 1989);
+        count += processOrdering("c2q2", 6);
+        count += processMultipleCorrect("c2q3", 4);
+        count += processFillInTheBlank("c2q4", "&nbsp;");
+        count += processMultipleChoice("c2q5", "b");
+        return count;
+    }
+
+    function processChapter3() {
+        let count = processOrdering("c3q1", 4);
+        count += processFillInTheBlank("c3q2", "box");
+        count += processMultipleChoice("c3q3", "a");
+        count += processMultipleCorrect("c3q4", 4);
+        count += processNumeric("c3q5", 5);
+        return count;
+    }
+
+    function processChapter4() {
+        let count = processNumeric("c4q1", 10);
+        count += processMultipleChoice("c4q2", "b");
+        count += processFillInTheBlank("c4q3", "Math");
+        count += processMultipleCorrect("c4q4", 4)
+        count += processOrdering("c4q5", 5);
+        return count;
+    }
+
+    function checkAnswers() {
+        console.log("processing answers")
+        let finalScore = processChapter1();
+        finalScore += processChapter2();
+        finalScore += processChapter3();
+        finalScore += processChapter4();
+        document.getElementById("gameOver").innerHTML =
+            `Final score was ${finalScore} out of 20!`;
+    }
+
+</script>
+</body>
+</html>
