@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Layout Cheat Sheet</title>
+    <link href="styles/cssLayout.css" rel="stylesheet">
+</head>
+<body>
+<div class="main">
+    <h1> CSS Layout cheat sheet</h1>
+    <h2>display</h2>
+    <p>
+        While we mentioned this earlier, the <strong>display</strong> attribute determines how the block will be displayed.
+    </p>
+    <div class="blockDemo">
+        Here is our normal <em>block</em> display type.<br>
+        This line will be overlapped with the inline tagged element.<br>
+        Here is an <span class="inlineDemo"><em>inline</em> element</span> with padding and margins.
+    </div>
+    <p>&nbsp;</p>
+    <div class="blockDemo">
+        Here is another of our normal <em>block</em> display type.<br>
+        This line will not be overlapped with the inline-block tagged element.<br>
+        Here is an <span class="inlineBlockDemo"><em>inline-block</em> element</span> with padding and margins.
+    </div>
+
+    <!-- -->
+
+    <h2>Flex</h2>
+
+    <p>The <em>flex</em> display option allows you to control the positioning of several elements in a container element.</p>
+    <ul>
+        <li>The <strong>gap</strong> attribute lets you add a gap between elements</li>
+        <li>can also have spacing using <strong>justify-content</strong> using the following:</li>
+        <ul>
+            <li><em>normal</em></li>
+            <li><em>space-between</em> - extra space used as gap between</li>
+            <li><em>space-around</em> - as between but also gap on edges</li>
+            <li><em>space-evenly</em></li>
+            <li><em>stretch</em></li>
+        </ul>
+        <li><strong>align-items</strong></li>
+        <li><strong>flex-direction</strong> - can be <em>row</em>, <em>columm</em>, <em>reverse-row</em>, <em>reverse-column</em></li>
+        <li><strong>flex-wrap</strong> - can be <em>wrap</em> or <em>nowrap</em></li>
+    </ul>
+    <p>can apply to items being used as well, with the primary reason for doing this is for the flex attribute
+        <b>flex: grow shrink basis</b> which can also use individual attributes</p>
+    <ul>
+        <li><strong>flex-grow</strong>: <em>weight</em></li>
+        <li><strong>flex-shrink</strong>: <em>weight</em></li>
+        <li><strong>flex-basis</strong>: <em>size</em></li>
+    </ul>
+    <div class="flexContainer">
+        <img src="images/dice/side_1.jpg" alt="die1" class="flexDie">
+        <img src="images/dice/side_2.jpg" alt="die2" class="flexDie">
+        <img src="images/dice/side_3.jpg" alt="die3" class="flexDie">
+        <img src="images/dice/side_4.jpg" alt="die4" class="flexDie">
+        <img src="images/dice/side_5.jpg" alt="die5" class="flexDie">
+        <img src="images/dice/side_6.jpg" alt="die6" class="flexDie">
+    </div>
+
+    <!-- -->
+
+    <h2>Grid</h2>
+    <p>
+        The <strong>display</strong>: <em>grid</em> layout lets you specify a grid made up of rows and columns.
+        Use <strong>grid-template-columns</strong> attribute followed by a series of sizes for each column.
+        The new <em>fr</em> measurment will take the width and divide it based on the total number of fr units.
+    </p><p>
+        As you often want columns repeated you can use the <strong>repeat(count, format)</strong> function.
+        The count is the number of times to repeat the specified size(s) so you can have something like repeat(3, 1fr 2fr 2fr).
+    </p><p>
+        You can use <strong>grid-template-rows</strong> for doing the same thing with rows. If you want more flexible
+        column or row counts you can set one of the templates to auto by using
+        <strong>grid-auto-rows</strong> or <strong>grid-auto-columns</strong>. You can also have <strong>gap</strong>.
+    </p>
+
+    <div class="diceGrid">
+        <img src="images/dice/side_1.jpg" alt="die1">
+        <img src="images/dice/side_2.jpg" alt="die2">
+        <img src="images/dice/side_3.jpg" alt="die3">
+        <img src="images/dice/side_4.jpg" alt="die4">
+        <img src="images/dice/side_5.jpg" alt="die5">
+        <img src="images/dice/side_6.jpg" alt="die6">
+    </div>
+
+    <p>Can also use a template by using the <strong>grid-template</strong> attribute. This lets you have multiple rows of strings that
+        describe the layout with short text descriptions specifying what component appears in that grid tile. You let
+        css know that an element belongs at that location by having a grid-area block that uses the name you used in the
+        grid. For example, the dice grid below uses the following template:
+    </p>
+    <div class="source">
+        grid-template:<br>
+        ". thd thd thd"<br>
+        "lhd die die die"<br>
+        "lhd die die die";
+    </div>
+
+    <p>
+        The thd and lhd sections have classes that use grids to define a row or a column (flex could also have been used
+        here). The dice section is also a grid, but a 3x2 one holding dice.
+        The result of all of this is below.
+    </p>
+
+    <div class="diceGridTemplate">
+        <div class="diceTopHeader">
+            <p> column 1</p>
+            <p> column 2</p>
+            <p> column 3</p>
+        </div>
+        <div class="diceLeftHeader">
+            <p > row 1</p>
+            <p > row 2</p>
+        </div>
+        <div class="gridDie">
+        <img  src="images/dice/side_1.jpg" alt="die1">
+        <img  src="images/dice/side_2.jpg" alt="die2">
+        <img  src="images/dice/side_3.jpg" alt="die3">
+
+        <img  src="images/dice/side_4.jpg" alt="die4">
+        <img  src="images/dice/side_5.jpg" alt="die5">
+        <img  src="images/dice/side_6.jpg" alt="die6">
+        </div>
+    </div>
+
+    <!-- -->
+
+    <h2>Multiple columns</h2>
+
+    <div class="columnDemo">
+        <p>One handy feature that CSS has for layouts is the <strong>columns</strong> attribute.
+        It lets you specify that you want the text to be divided into multiple columns by using columns-count.
+    </p><p>
+        You do not have control over what is put into each column, instead CSS uses a newspaper
+        or magazine approach of filling each column with as much text that will fit before going
+        to the next column. The <strong>column-fill</strong> attribute with <em>auto</em> being default,
+        <em>balanced</em> trying to split text evenly.
+        Balanced can have less in the final column so <em>balance-all</em> forces all columns to be equal.
+    </p><p>
+        The size of the columns will be dependent on the width so if not in a container can vary.
+        You can force a specific size using <strong>column-width</strong> attribute.
+    </p><p>
+        Finally, the gap can be controlled by setting <strong>column-gap</strong> <em>size style color</em>.
+    </p>
+    </div>
+
+    <!-- -->
+
+    <h2>Floats</h2>
+
+    <p>A common occurrence in magazines and newspapers is wrapping text around images.</p>
+    <img src="images/coin.png" alt="coin" class="left">
+    <p>This can be done in css by using the <strong>float</strong> attribute. Float has <em>left</em> or <em>right</em>
+        options so you can float objects to the left or to the right.</p>
+    <img src="images/chest.png" alt="treasure chest" class="right">
+    <p>usually the object to be floated is an image but it can be any element that you want.
+    You can have multiple floats at the same time, with them forming a line if on the same side.
+    </p>
+    <p style="clear:both"> You can also skip over the rest of a float's section by using the clear attribute which lets
+    you clear left, right, or both. This can be done as part of any tag, and is one of the rare cases I use inline styles.
+    If you want a float to stay within a div, you can also use the overflow property.</p>
+
+    <div class="source">
+        &lt;br style="clear:both"&gt>
+    </div>
+
+    <!-- -->
+
+    <h2>Position</h2>
+
+    <div style="position:relative; background-color:#BAC">
+        <p>This is some text within a div that has been set as relative.
+            You will notice that unlike floats, any text that a positioned element overlaps is covered.
+            Thankfully, I made the color of the absolution positioned box transparent by taking advantage of the alpha channel.
+            The top, bottom, left, right attributes are used to position an element.
+            The type of positioning is determined by the position attribute as follows.
+        </p>
+        <div class="stickyBox">Sticky position box</div>
+        <ul>
+            <li>relative to parent box</li>
+            <li>absolute positions based on the first relative positioned container, with the root (document) being the last option.</li>
+            <li>fixed is always based on root</li>
+            <li>sticky sticks to indicated relative position but tied to container so if container goes off screen so does it.</li>
+        </ul>
+
+        <div class="absoluteBox">Absolute</div>
+        <div class="fixedBox">Fixed position box</div>
+        <p>
+            As you can position several boxes at the same time, there is a z-index
+        </p>
+    </div>
+
+    <h2>Media Queries</h2>
+    <p>To properly take advantage of media queries, you need to have a meta element in your header:</p>
+    <div class="source">
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    </div>
+    <p>This then allows you to take advantage of the <strong>@media type (condition: value)</strong> rule that lets you adjust CSS settings based on properties
+    of the device you are using. The types are <em>all</em>, <em>screen</em>, and <em>printer</em>.
+    There were other types but most of those have been depreciated. The condition would then be the property you are checking for,
+    with <em>min-width</em> being the commonly used one as it lets you know the size of the display. While px is often used
+    for making size decisions, pt or is also useful. The value then is the value you wish to use. Here is what I used
+    for this page:</p>
+    <div class="source">
+        font-size: 1.2rem;<br>
+        @media screen and (min-width: 8.5in) {<br>
+        &nbsp; &nbsp; font-size: 1.6rem;<br>
+        }<br>
+        @media screen and (min-width: 12in) {<br>
+        &nbsp; &nbsp; font-size: 2rem;<br>
+        }<br>
+    </div>
+</div>
+
+</body>
+</html>

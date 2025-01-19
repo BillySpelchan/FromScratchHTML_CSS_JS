@@ -1,0 +1,174 @@
+body {
+    font-size: 1.2rem;
+    @media screen and (min-width: 8.5in) {
+        font-size: 1.6rem;
+    }
+    @media screen and (min-width: 12in) {
+        font-size: 2rem;
+    }
+
+    text-align: center;
+    background: darkblue;
+    color: yellow;
+}
+
+.source {
+    font-family: "Courier New", monospace;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.05;
+    color: #131;
+    background: #EFE;
+}
+
+.main {
+    @media screen and (min-width: 8.5in) {
+        width: 8.5in;
+    }
+    @media screen and (min-width: 12in) {
+        width: 12in;
+    }
+    margin: auto;
+    text-align: left;
+    color: #304;
+    background: #edf;
+}
+
+p {
+    text-align: left;
+}
+
+.blockDemo {
+    text-align: left;
+    display: block;
+    background-color: lavenderblush;
+}
+
+.inlineDemo {
+    display: inline;
+    padding: 2em;
+    margin: 1em;
+    background-color: rgba(36,0,72,70%);
+    color: whitesmoke;
+}
+
+.inlineBlockDemo {
+    display: inline-block;
+    padding: 2em;
+    margin: 1em;
+    background-color: #110055;
+    color: whitesmoke;
+}
+
+.flexContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 2pt;
+    width: 100%;
+}
+
+.flexDie {
+    display: flex;
+    flex: 1 1 256px;
+    min-width: 64px;
+}
+
+.diceGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2pt;
+}
+
+.diceGridTemplate {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 2fr);
+    grid-template-rows: 1fr repeat(2, 2fr);
+    gap: 2pt;
+    grid-template:
+            ". thd thd thd"
+            "lhd die die die"
+            "lhd die die die";
+}
+
+.diceTopHeader {
+    display: grid;
+    grid-area: thd;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: center;
+    color: wheat;
+    background-color: darkblue;
+}
+.diceTopHeader p {
+    text-align: center;
+}
+
+.diceLeftHeader {
+    display: grid;
+    grid-area: lhd;
+    grid-template-rows: 1fr 1fr;
+    align-content: center;
+    color: wheat;
+    background-color: darkblue;
+    gap: 2pt;
+    text-align: center;
+    align-items: center;
+}
+
+.gridDie {
+    display: grid;
+    grid-area: die;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2pt;
+}
+
+/*
+    columns
+ */
+
+.columnDemo {
+    column-count: 3;
+    column-rule: 1pt dashed #220044;
+    column-fill: balance;
+    column-gap: 4pt;
+}
+
+.left {
+    float: left;
+    margin-right: 2pt;
+}
+
+.right {
+    float: right;
+    margin-left: 2pt;
+}
+
+.absoluteBox {
+    position: absolute;
+    top: 10pt;
+    left: 10pt;
+    background-color: rgba(30,30,30,40%);
+    color: yellow;
+    width: 60pt;
+    height: 50pt;
+    z-index: 1;
+}
+.fixedBox {
+    position: fixed;
+    top: 10pt;
+    left: 10pt;
+    background-color: #303;
+    color: goldenrod;
+    width: 60pt;
+    height: 50pt;
+}
+
+.stickyBox {
+    position: sticky;
+    top: 0;
+    width: 200pt;
+    height: 100pt;
+    background-color: #020;
+    color: greenyellow;
+}
