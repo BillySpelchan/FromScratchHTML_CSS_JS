@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inline and Block demo</title>
+</head>
+<body>
+  <h2>display:block;</h2>
+  <div style="padding:10px; background: burlywood;">
+    <div style="padding:20px; width:50%; background:green">
+      This is 50%
+    </div>
+    <div style="width:25%; padding:20px; background:blue; color:yellow">This is 25% but doesn't show on same line!</div>
+  </div>
+
+  <h2>display:inline;</h2>
+  <div style="padding:10px; background: bisque;">
+  <div style="display:inline; background:green">
+    This is a div but...
+  </div>
+    <div style="display:inline; background:yellow">
+      it acts like a span...
+    </div>
+    <div style="display:inline; background:blue; color:yellow">
+      because the display attribute determines layout.
+    </div><br>
+    <p>The problem is they take the size of their content.</p>
+    <p>As you can see, this means that the margins overlap.</p>
+    <div>
+      <p>Here is some text with spans of
+      <span style="background:RGBA(0,255,0,50%); padding:2em; margin:1em">Green</span> and
+      <span style="background:RGBA(255,255,0,50%); padding:2em; margin:1em">Yellow </span>
+      </p>
+      <p>Notice the top/bottom margins are collapsed and padding goes outside of span box.</p>
+      <p>The width and height isn't used</p>
+      <span style="background:green; width:50%; height:50%">Green width/height 50%</span>
+      <span style="background:yellow; width:50%; height:50%">Yellow width/height 50%</span>
+    </div>
+  </div>
+
+  <h2>display:inline-block;</h2>
+  <div style="background: blanchedalmond">
+    <div style="display:inline-block; background: green; width:48%; padding:5px">
+      Green block that can have a large amount of text in it but even so the text will fit within the 49% bounds that
+      were specified and will even let you have something beside it.
+    </div>
+    <div style="display:inline-block; background: yellow; width:48%; padding:5px">
+      Yellow block that can have a large amount of text in it but even so the text will fit within the 49% bounds that
+      were specified and will even let you have something beside it.
+    </div>
+  </div>
+
+
+</body>
+</html>
