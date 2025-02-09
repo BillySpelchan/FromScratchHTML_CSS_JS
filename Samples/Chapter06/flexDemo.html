@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexible Boxes Demo</title>
+  <style>
+    .flexNormal {
+      display: flex;
+      justify-content: normal;
+      gap: 5px 5px;
+    }
+    .flexSpaceBetween {
+      display: flex;
+      justify-content: space-between;
+      gap: 5px 5px;
+    }
+    .flexSpaceAround {
+      display: flex;
+      justify-content: space-around;
+      gap: 5px 5px;
+    }
+    .flexSpaceEvenly {
+      display: flex;
+      justify-content: space-evenly;
+      gap: 5px 5px;
+    }
+    .flexStretch {
+      display: flex;
+      justify-content: stretch;
+      gap: 5px 5px;
+    }
+    .flexCenter {
+      display: flex;
+      justify-content: center;
+      gap: 5px 5px;
+    }
+    .flexRight {
+      display: flex;
+      justify-content: right;
+      gap: 5px 5px;
+    }
+
+    .halfBox {
+      width:50%;
+      text-align: center;
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+
+    .quarterBoxRed {
+      width:25%;
+      text-align: center;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      background: red;
+      color: #FCC;
+    }
+    .quarterBoxGreen {
+      width:25%;
+      text-align: center;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      background: green;
+      color: #CFC;
+    }
+    .quarterBoxBlue {
+      width:25%;
+      text-align: center;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      background: blue;
+      color: #CCF;
+    }
+
+    .bar {
+      flex: 0 0 .5em;
+      background: black;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Normal flex box</h1>
+<p>Half (50% width) boxes</p>
+<div class="flexNormal">
+  <div class="halfBox" style="background: red; color: #FCC">Red</div>
+  <div class="halfBox" style="background: green; color: #CFC">Green</div>
+  <div class="halfBox" style="background: blue; color: #CCF">Blue</div>
+</div>
+<p>quarter (25% width) boxes</p>
+<div class="flexNormal">
+  <div class="quarterBoxRed">Red</div>
+  <div class="quarterBoxGreen">Green</div>
+  <div class="quarterBoxBlue">Blue</div>
+</div>
+
+
+<h1>Nexted Flex boxes showing alignments</h1>
+<div style="display: flex; flex-direction: column; background: #ECF">
+  <div style="display:flex; width: 100%" >
+    <h3 style="flex:0 0 8em;">normal</h3>
+    <div class="bar"></div>
+    <div class="flexNormal" style="flex:1 1; padding-bottom: 5px;" >
+      <div class="quarterBoxRed">Red</div>
+      <div class="quarterBoxGreen">Green</div>
+      <div class="quarterBoxBlue">Blue</div>
+    </div>
+    <div class="bar"></div>
+  </div>
+
+  <div style="display:flex; width: 100%" >
+    <h3 style="flex:0 0 8em;">space-between</h3>
+    <div class="bar"></div>
+    <div class="flexSpaceBetween" style="flex:1 1; padding-bottom: 5px;">
+      <div class="quarterBoxRed">Red</div>
+      <div class="quarterBoxGreen">Green</div>
+      <div class="quarterBoxBlue">Blue</div>
+    </div>
+    <div class="bar"></div>
+  </div>
+
+  <div style="display:flex; width: 100%" >
+    <h3 style="flex:0 0 8em;">space-around</h3>
+    <div class="bar"></div>
+    <div class="flexSpaceAround" style="flex:1 1; padding-bottom: 5px;">
+      <div class="quarterBoxRed">Red</div>
+      <div class="quarterBoxGreen">Green</div>
+      <div class="quarterBoxBlue">Blue</div>
+    </div>
+    <div class="bar"></div>
+  </div>
+
+  <div style="display:flex; width: 100%" >
+    <h3 style="flex:0 0 8em;">space-evenly</h3>
+    <div class="bar"></div>
+    <div class="flexSpaceEvenly" style="flex:1 1; padding-bottom: 5px;">
+      <div class="quarterBoxRed">Red</div>
+      <div class="quarterBoxGreen">Green</div>
+      <div class="quarterBoxBlue">Blue</div>
+    </div>
+    <div class="bar"></div>
+  </div>
+
+  <div style="display:flex; width: 100%" >
+    <h3 style="flex:0 0 8em;">stretch</h3>
+    <div class="bar"></div>
+    <div class="flexStretch" style="flex:1 1; padding-bottom: 5px;">
+      <div class="quarterBoxRed">Red</div>
+      <div class="quarterBoxGreen">Green</div>
+      <div class="quarterBoxBlue">Blue</div>
+    </div>
+    <div class="bar"></div>
+  </div>
+
+  <div style="display:flex; width: 100%" >
+    <h3 style="flex:0 0 8em;">center</h3>
+    <div class="bar"></div>
+    <div class="flexCenter" style="flex:1 1; padding-bottom: 5px;">
+      <div class="quarterBoxRed">Red</div>
+      <div class="quarterBoxGreen">Green</div>
+      <div class="quarterBoxBlue">Blue</div>
+    </div>
+    <div class="bar"></div>
+  </div>
+
+  <div style="display:flex; width: 100%" >
+    <h3 style="flex:0 0 8em;">right</h3>
+    <div class="bar"></div>
+    <div class="flexRight" style="flex:1 1; padding-bottom: 5px;">
+      <div class="quarterBoxRed">Red</div>
+      <div class="quarterBoxGreen">Green</div>
+      <div class="quarterBoxBlue">Blue</div>
+    </div>
+    <div class="bar"></div>
+  </div>
+
+</div>
+
+
+</body>
+</html>
