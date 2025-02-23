@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Demo</title>
+    <style>
+        .gridStats {
+            display: grid;
+            grid-template-columns: 4fr repeat(4, 2fr) repeat(2, 1fr);
+            gap: 2px;
+            background: black;
+            padding: .25em;
+        }
+        .race {
+            background: #BBAACC;
+            color: blueviolet;
+            align-content: center;
+            padding-left: .25em;
+            padding-top: .5em;
+            padding-bottom:.5em;
+        }
+        .strsta {
+            background: #FAA;
+            color: darkred;
+            align-content: center;
+            text-align: center;
+        }
+        .dexrs {
+            background: #AFA;
+            color: darkgreen;
+            align-content: center;
+            text-align: center;
+        }
+        .intlog {
+            background: #AAF;
+            color: #004;
+            align-content: center;
+            text-align: center;
+        }
+        .perldr {
+            background: #FFA;
+            color: #AA0;
+            align-content: center;
+            text-align: center;
+        }
+        .psim {
+            background: #FFF;
+            color: #222;
+            align-content: center;
+            text-align: center;
+        }
+        .header {
+            font-size: 1.2em;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div class="gridStats">
+
+        <div class="race header">Race</div>
+        <div class="strsta header">STR/STA</div>
+        <div class="dexrs header">DEX/RS</div>
+        <div class="intlog header">INT/LOG</div>
+        <div class="perldr header">PER/LDR</div>
+        <div class="psim header">PS</div>
+        <div class="psim header">IM</div>
+
+        <div class="race">Human</div>
+        <div class="strsta">45/45</div>
+        <div class="dexrs">45/45</div>
+        <div class="intlog">45/45</div>
+        <div class="perldr">45/45</div>
+        <div class="psim">3</div>
+        <div class="psim">5</div>
+
+        <div class="race">Dralasite</div>
+        <div class="strsta">50/50</div>
+        <div class="dexrs">40/40</div>
+        <div class="intlog">45/45</div>
+        <div class="perldr">45/45</div>
+        <div class="psim">3</div>
+        <div class="psim">4</div>
+
+        <div class="race">Vrusk</div>
+        <div class="strsta">40/40</div>
+        <div class="dexrs">50/50</div>
+        <div class="intlog">45/45</div>
+        <div class="perldr">45/45</div>
+        <div class="psim">2</div>
+        <div class="psim">5</div>
+
+        <div class="race">Yazarian</div>
+        <div class="strsta">35/35</div>
+        <div class="dexrs">50/50</div>
+        <div class="intlog">50/50</div>
+        <div class="perldr">45/45</div>
+        <div class="psim">3</div>
+        <div class="psim">5</div>
+
+        <div class="race">Sathar</div>
+        <div class="strsta">40/40</div>
+        <div class="dexrs">40/40</div>
+        <div class="intlog">45/45</div>
+        <div class="perldr">45/65</div>
+        <div class="psim">2</div>
+        <div class="psim">4</div>
+
+    </div>
+</body>
+</html>
