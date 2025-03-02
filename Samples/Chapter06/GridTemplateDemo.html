@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Template Demo</title>
+    <style>
+      .gridPage {
+        display: grid;
+        grid-template: "bg hd hd hd sb sb"
+                       "nv nv nv nv sb sb"
+                       "ar ar ar ar sb sb"
+                       "ft ft ft ft ft ft";
+        grid-template-columns: 5em repeat(5, 1fr);
+      }
+
+      .bug {
+        border: 2px solid #110011;
+        border-radius: 50%;
+        width: 5em;
+        max-width: 5em;
+        height: 5em;
+        text-align: center;
+        align-content: center;
+        background: #220044;
+        color: #BBAACC;
+      }
+      .bug a {
+        color: #BBAACC;
+      }
+
+      header {
+        grid-area: hd;
+        background: darkgoldenrod;
+        text-align: center;
+        font-family: "Impact", fantasy;
+        font-size: xxx-large;
+      }
+
+      nav {
+        grid-area: nv;
+        background: #003;
+        color: silver;
+        height: 2em;
+        align-content: center;
+      }
+      .sidebar {
+        grid-area: sb;
+        background: #030;
+        font-size: larger;
+        color: #00BB00;
+      }
+      article {
+        grid-area: ar;
+        color: orange;
+        background: darkblue;
+      }
+      footer {
+        grid-area: ft;
+        background: black;
+        color:white;
+        text-align: center;
+        font-size: small;
+      }
+
+    </style>
+</head>
+<body>
+<div class="gridPage">
+  <div class="bug">
+    <a href="http://spelchan.com/index.php">HOME</a>
+  </div>
+  <aside class="sidebar">
+    <h2>Sidebar</h2>
+    <p> this is your typical sidebar, with information or maybe links</p>
+    <ul>
+      <li>sidebar item 1</li>
+      <li>sidebar item 2</li>
+      <li>sidebar item 3</li>
+      <li>sidebar item 4</li>
+      <li>sidebar item 5</li>
+    </ul>
+  </aside>
+  <nav>Menus to go to other parts of site go here!</nav>
+  <article>
+    <h2>Semantic web</h2>
+    <p>Even though we are not covering this topic until chapter 8, I have decided that this demo would be using some of
+      the semantic web tags. These are simply tags that are div tags but with names that are related to the type of
+      content that is supposed to go in them. For example, this main area of the page is using a &lt;article&gt; tag as
+      it represents an article portion of a web page.
+    </p><p>
+      The sidebar beside this article, would use something called an &lt;aside&gt; tag as it is material that goes along
+      with the main article. Note that I did not redefine the aside tag but instead created a more specific sidebar
+      class which is used in the aside.
+    </p>
+    <p>The header for this page uses a modified version of the &lt;header&gt; tag. If you look at the source code, you
+      will notice that I accidentally placed the header after this section, yet when the page is generated it is in the
+      correct location. This is because the <em>grid-area</em> attribute is used to place the item in the appropriate
+      area of the grid.
+    </p>
+    <p>The menu bar uses the &lt;nav&gt; tag which is short for navigation. Sadly, the links are not real links but the
+    point is that you can easily define an area for your navigation menus.
+    </p>
+  </article>
+  <header>Grid using Templates Demo</header>
+  <footer>
+    Copyright &copy;2025 Billy D. Spelchan. All rights reserved.
+  </footer>
+</div>
+</body>
+</html>
