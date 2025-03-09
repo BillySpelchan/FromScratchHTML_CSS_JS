@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Columns Demo</title>
+    <style>
+        .cols2 {
+            columns: 2;
+            max-width: 1000px;
+        }
+        .source {
+            font-family: "Courier New", monospace;
+            font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 1.05;
+            color: #131;
+            background: #EFE;
+        }
+
+        .cols250 {
+            columns: 250px;
+            max-width: 1000px;
+        }
+
+        .cols250 p:first-child {
+            margin-top: 0;
+        }
+
+        .colsRule {
+            columns: 3;
+            max-width: 1000px;
+            column-gap: 2em;
+            column-rule: dotted medium #440066;
+        }
+
+        .colsRule p:first-child {
+            margin-top: 0;
+        }
+
+        .colsFillAuto {
+            columns: 2;
+            max-width: 1000px;
+            column-fill: auto;
+        }
+
+        .colsFillBal {
+            columns: 2;
+            max-width: 1000px;
+            column-fill: balance;
+        }
+
+    </style>
+</head>
+<body>
+<div class="cols2">
+    <p>We know that it is very common for newspapers and magazines to break articles down into a multiple-column format.
+        The reason for this is simply because people tend to find it easier to read things when the width of the column
+        is small enough that you don’t have to move your eyes a long distance to get to the next line. As newspapers
+        and magazines tend to use large sized sheets of paper, it makes sense to have multiple columns.
+    </p><p>In the old days, columns had to be laid out by hand where layout boards were used to put pieces of text.
+        We could do the same thing with our flexbox or grid layouts. The issue with doing things manually is getting the
+        paragraphs to properly flow between different columns. Desktop publishing software had the advantage of making
+        laying out pages easier. Balancing text between the columns was handled for you. CSS does the same thing with
+        the <em>columns</em> attribute.
+    </p>
+</div>
+<p>The source for this is:</p>
+<div class="source">
+    .cols2 {<br>
+    &nbsp; columns: 2;<br>
+    &nbsp; max-width: 1000px;<br>
+    }<br>
+</div>
+
+<div class="cols250">
+    <p>There are two ways you can specify the number of columns that you want to use. You can specify the number of columns, as we did above, or you can specify the size of a column. The difference between these approaches is what gets adjusted.
+    By specifying the number of columns, the number will stay the same but the size of the columns will be adjusted as the display gets adjusted. By specifying a column size, the number of columns will be adjusted based on how many columns of the specified size will fit in the available area.
+    </p><p>Another issue that you may have noticed with the above code is that the first paragraph in the first column is laid out below the first paragraph of the second column. Why is this? For some reason, the margins of the first paragraph gets applied. To solve this we can simply set the top margin of the first paragraph’s top to 0.
+    </p>
+</div>
+
+<div class="source">
+    .cols250 {<br>
+    &nbsp; columns: 250px;<br>
+    &nbsp; max-width: 1000px;<br>
+    }<br>
+    .cols250 p:first-child {<br>
+    &nbsp; margin-top: 0;<br>
+    }<br>
+</div>
+
+<div class="colsRule">
+    <p>You can also use <em>column-width</em> or <em>column-count</em> to be specific. You also have control over the
+        gap between the columns by specifying the <em>column-gap</em>. Sometimes, you may want the gap between the
+        columns to be more distinct. Many magazines will have lines between the columns. The term for this line is the
+        rule which is set by using the <em>column-rule</em> attribute. This has three parameters for it, which in
+        typical CSS logic means that it is a shortcut attribute with three additional attributes covering the
+        individual parameters.
+    </p><p>The <em>column-rule-style</em> describes the style of the line that you want to use which includes none,
+    dotted, dashed, solid, double, groove, ridge, inset, and outset.
+    </p><p>The <em>column-rule-width</em> is the size of the line that you are going to draw. This can be done by
+    specifying an actual size that you want (example 2px) or by specifying a generalized constant. The constants are
+    thin, medium, and thick.
+    </p><p>The final column rule attribute is the <em>column-rule-color</em> which determines the color of the line.
+</div>
+<div class="source">
+    .colsRule {<br>
+    &nbsp; columns: 3;<br>
+    &nbsp; max-width: 1000px;<br>
+    &nbsp; column-gap: 2em;<br>
+    &nbsp; column-rule: dotted medium #440066;<br>
+    }<br>
+    .colsRule p:first-child {<br>
+    &nbsp; margin-top: 0;<br>
+    }<br>
+</div>
+
+<div class="colsFillAuto">
+    Finally, you can control how the text is divided between all of the columns. This is done by using the
+    <em>column-fill</em> attribute which has two modes. Your <em>auto</em> mode will fill the columns sequentially so
+    that the space in one column is filled up before it goes to the next column. The <em>balanced</em> mode will
+    attempt to fill the columns equally. This version of the paragraph is using auto, the next is balanced.
+</div>
+<div class="source">
+    .colsFillAuto {<br>
+    &nbsp; columns: 2;<br>
+    &nbsp; max-width: 1000px;<br>
+    &nbsp; column-fill: auto;<br>
+    }<br>
+</div>
+<div class="colsFillBal">
+    Finally, you can control how the text is divided between all of the columns. This is done by using the
+    <em>column-fill</em> attribute which has two modes. Your <em>auto</em> mode will fill the columns sequentially so
+    that the space in one column is filled up before it goes to the next column. The <em>balanced</em> mode will
+    attempt to fill the columns equally. This version of the paragraph is using balanced, the previous was auto.
+</div>
+<div class="source">
+.colsFillBal {<br>
+    &nbsp; columns: 2;<br>
+    &nbsp; max-width: 1000px;<br>
+    &nbsp; column-fill: balance;<br>
+}<br>
+</div>
+
+</body>
+</html>
