@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        article{
+            width: 800px;
+            background: #F0e0FF;
+            font-size: large;
+        }
+        .demoRedBox{
+            background: red;
+            width: 200px;
+            height: 200px;
+            color: darkcyan;
+        }
+        .demoGreenBox{
+            background: green;
+            width: 200px;
+            height: 200px;
+            color: #220044;
+        }
+        .demoBlueBox{
+            background: blue;
+            width: 200px;
+            height: 200px;
+            color: goldenrod;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .leftWithMargin {
+            margin-right: .5em;
+            float: left;
+        }
+
+        .rightWithMargin {
+            margin-left: .5em;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<article>
+<div class="demoRedBox left">box1</div>
+<div class="demoBlueBox left">box2</div>
+<p style="margin:1em">Notice how the text will wrap around the boxes.
+    You will also notice that even though the floating divs were created inside the article they will extend outside of
+    that block if there is not enough room. </p>
+</article>
+<article>
+    <div class="demoRedBox right">box1</div>
+    <div class="demoBlueBox right">box2</div>
+    <p style="margin:1em">This also applies to the right. But when the new article was posted, we had not cleared the
+        height of the previous boxes so there is some overlap. The right, however, does honor the order of the right is
+        rightmost first. You should also note that the 1em margin for the paragraph is ignored by the divs.</p>
+</article>
+<article>
+    <div class="demoRedBox leftWithMargin">box1</div>
+    <p>Now that we have some margins in our floats, our text have some margin to them. To keep the margins only to the
+    material being added, just that side has a margin.</p>
+    <div class="demoBlueBox rightWithMargin">box2</div>
+    <p>Also notice that floats start on the row they are added.</p>
+    <p style="clear:left; margin:1em;">By using clear we can skip over left, right, or both floats.
+        Here I am just skipping the left float.</p>
+</article>
+</body>
+</html>
