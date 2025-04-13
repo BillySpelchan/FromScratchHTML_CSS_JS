@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Media Queries Demo</title>
+    <style>
+        .box {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: lavender;
+        }
+
+        @media screen and (pointer: coarse) {
+            button {
+                min-width: 50px;
+                min-height: 50px;
+            }
+        }
+        @media screen and (hover: hover) {
+            a:link, a:visited, a:active {
+                text-decoration: none;
+            }
+        }
+
+        .landscape {
+            color: #220044;
+        }
+        .portrait {
+            color: #220044;
+        }
+        @media screen and (orientation: landscape) {
+            .portrait {
+                visibility: hidden;
+            }
+        }
+        @media screen and (orientation: portrait) {
+            .landscape {
+                visibility: hidden;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <button>Test</button>
+    </div>
+    <p>The button will take up half the height if using a course pointer.
+        <a href=".">This link will have no underline if hover exists</a>
+        This display is in <span class="landscape">landscape</span><span class="portrait">portrait</span> mode.
+    </p>
+</body>
+</html>
