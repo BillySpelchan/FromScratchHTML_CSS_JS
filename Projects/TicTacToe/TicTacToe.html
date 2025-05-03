@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic-Tac-Toe</title>
+    <link href="TicTacToe.css" rel="stylesheet">
+</head>
+<body>
+<h1>Tic-Tac-Toe</h1>
+<div class="splitGameInst">
+    <div class="TTTContainer">
+        <div class="TTTGame">
+          <div id="t11" class="TTTCell">1</div>
+          <div id="t12" class="TTTCell">2</div>
+          <div id="t13" class="TTTCell">3</div>
+          <div id="t21" class="TTTCell">4</div>
+          <div id="t22" class="TTTCell">5</div>
+          <div id="t23" class="TTTCell">6</div>
+          <div id="t31" class="TTTCell">7</div>
+          <div id="t32" class="TTTCell">8</div>
+          <div id="t33" class="TTTCell">9</div>
+        </div>
+        <div id="message" class="message"></div>
+        <button id="newGame" class="newGame" onclick="restartGame()">Start a new game</button>
+    </div>
+    <div class="instructions">
+        <h2>Tic Tac Toe Instructions</h2>
+        <p>
+            This is the game that will be used as a project for the end of the chapter. The goal of this project is not for the creation of the game but to use the CSS layout properties to lay out the game and instructions. In my version, I am taking advantage of flex, grid, and media queries to have a game that will adjust its size and layout based on the display resolution (and orientation if applicable).
+        </p><p>The game play is your typical hotseat tic-tac-toe game. Player X clicks on an empty tile, then Player O does the same. This continues until a horizontal, vertical, or diagonal line of the same symbol is formed in which case that player is the winner. In the case that the board is filled with no winner, we say it is the cat’s game.
+        </p>
+    </div>
+</div>
+</body>
+<script>
+  let currentPlayer = 0;
+  let t11, t12, t13, t21, t22, t23, t31, t32, t33;
+
+  function init() {
+      // preload elements so don't have to constantly request
+      t11 = document.getElementById("t11");
+      t12 = document.getElementById("t12");
+      t13 = document.getElementById("t13");
+      t21 = document.getElementById("t21");
+      t22 = document.getElementById("t22");
+      t23 = document.getElementById("t23");
+      t31 = document.getElementById("t31");
+      t32 = document.getElementById("t32");
+      t33 = document.getElementById("t33");
+      // add mouse click support
+      t11.addEventListener("click", handleTileClick);
+      t12.addEventListener("click", handleTileClick);
+      t13.addEventListener("click", handleTileClick);
+      t21.addEventListener("click", handleTileClick);
+      t22.addEventListener("click", handleTileClick);
+      t23.addEventListener("click", handleTileClick);
+      t31.addEventListener("click", handleTileClick);
+      t32.addEventListener("click", handleTileClick);
+      t33.addEventListener("click", handleTileClick);
+      // add keyboard support
+      document.addEventListener("keyup", handleKey)
+  }
+
+  function handleTileClick(e) {
+    let message = document.getElementById("message");
+    let newGame = document.getElementById("newGame");
+    let tile = e.target.innerText;
+    let playerTile = currentPlayer === 0 ? 'X' : 'O';
+    let opponentTile = currentPlayer === 0 ? 'O' : 'X';
+
+    if ((tile.charAt(0) !== 'X') && (tile.charAt(0) !== 'O')) {
+        e.target.innerText = playerTile
+        currentPlayer = currentPlayer === 0 ? 1 : 0;
+        if (checkWin()) { // player won
+            message.innerText = "Player " + playerTile + " WON!";
+            newGame.hidden = false;
+        } else if (checkCat()) { // nobody won
+            message.innerText = "It's the Cat's Game.";
+            newGame.hidden = false;
+        } else { // next player's turn
+            message.innerText = "Player " + opponentTile + " Turn...";
+        }
+    }
+
+  }
+
+  function handleKey(e) {
+      let tile = null;
+      if (e.key >= "1") tile = t11;
+      if (e.key >= "2") tile = t12;
+      if (e.key >= "3") tile = t13;
+      if (e.key >= "4") tile = t21;
+      if (e.key >= "5") tile = t22;
+      if (e.key >= "6") tile = t23;
+      if (e.key >= "7") tile = t31;
+      if (e.key >= "8") tile = t32;
+      if (e.key >= "9") tile = t33;
+
+      if (tile != null) {
+          let ne = {target:tile};
+          handleTileClick(ne);
+      }
+  }
+
+  function checkCat() {
+      return ( (t11.innerText !== "1") &&
+          (t12.innerText !== "2") &&
+          (t13.innerText !== "3") &&
+          (t21.innerText !== "4") &&
+          (t22.innerText !== "5") &&
+          (t23.innerText !== "6") &&
+          (t31.innerText !== "7") &&
+          (t32.innerText !== "8") &&
+          (t33.innerText !== "9") );
+  }
+
+  function checkLine(a, b, c) {
+      if ( (a.innerText === b.innerText) && (b.innerText === c.innerText) ) {
+          a.style.background = "#B00";
+          b.style.background = "#B00";
+          c.style.background = "#B00";
+          return true;
+      }
+      return false;
+  }
+
+  function checkWin() {
+      return checkLine(t11, t12, t13) ||
+          checkLine(t21, t22, t23) ||
+          checkLine(t31, t32, t33) ||
+          checkLine(t11, t21, t31) ||
+          checkLine(t12, t22, t32) ||
+          checkLine(t13, t23, t33) ||
+          checkLine(t11, t22, t33) ||
+          checkLine(t13, t22, t31) ;
+  }
+
+  function restartGame() {
+      // reset the board
+      t11.innerText = "1";
+      t11.style.background = "rebeccapurple";
+      t12.innerText = "2";
+      t12.style.background = "rebeccapurple";
+      t13.innerText = "3";
+      t13.style.background = "rebeccapurple";
+      t21.innerText = "4";
+      t21.style.background = "rebeccapurple";
+      t22.innerText = "5";
+      t22.style.background = "rebeccapurple";
+      t23.innerText = "6";
+      t23.style.background = "rebeccapurple";
+      t31.innerText = "7";
+      t31.style.background = "rebeccapurple";
+      t32.innerText = "8";
+      t32.style.background = "rebeccapurple";
+      t33.innerText = "9";
+      t33.style.background = "rebeccapurple";
+
+      // restart state
+      currentPlayer = 0;
+      document.getElementById("message").innerText = "Player X Turn...";
+      document.getElementById("newGame").hidden = true;
+  }
+
+  init();
+  restartGame();
+</script>
+</html>
