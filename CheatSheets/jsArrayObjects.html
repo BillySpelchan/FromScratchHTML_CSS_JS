@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Arrays and Objects Cheat Sheet</title>
+    <link href="styles/cssBasics.css" rel="stylesheet">
+</head>
+<body>
+<div class="main">
+<h1>JavaScript Arrays and Objects Cheat Sheet</h1>
+<h2>Arrays</h2>
+<p>There are several ways of creating arrays</p>
+<div class="source">
+    x = new Array();<br>
+    x = [];<br>
+    x = new Array(size);<br>
+    x = new Array (element1, element2, ..., elementN);<br>
+    x = [element1, element2, ..., elementN)];<br>
+</div>
+<p>Access elements using varName[index] with indexes starting at 0 (no offset) up to 1 less than the size.</p>
+<div class="source">
+    index = 3;<br>
+    list = new Array(0, 1, 2, 3, 4, 5);<br>
+    result = list[2] + list[index];<br>
+    list[0] = result;<br>
+</div>
+<p>Special form of for loop for traversing an array:</p>
+<div class="source">
+    let testArray = [1,2,3,4];<br>
+    for (let n in testArray) {<br>
+    &nbsp; console.log(n);<br>
+    }
+</div>
+
+<!-- ------------------------------------------ -->
+
+<h2>Multidimensional Arrays</h2>
+
+<p>In JavaScript, a multidimensional array is simply an array of arrays.
+We create the array by having arrays inside the array, with the easiest way being:</p>
+<div class="source">
+    let microSudoku = [<br>
+    &nbsp; [1,2, 3,4], [3,4, 1,2], [2,1, 4,3], [4,3, 2,1]<br>
+    ];<br>
+    <br>
+    console.log("Multidimensional with for")<br>
+    for (let row = 0; row < microSudoku.length; ++row) {<br>
+    &nbsp; let line = "";<br>
+    &nbsp; for (let col = 0; col < microSudoku[row].length; ++col) {<br>
+    &nbsp; &nbsp; line = line + microSudoku[row][col] + " ";<br>
+    &nbsp; }<br>
+    &nbsp; console.log(line);<br>
+    }
+</div>
+
+<!-- ------------------------------------------ -->
+
+<h2>Associative Arrays</h2>
+    <p>Another common type of array is the associative array, which uses a key/value pair for accessing elements.
+    These are commonly used to store items with a meaningful label then be able to access that item with the key.
+    In JavaScript these are created and used as follows:</p>
+<div class="source">
+    let associative = {"Strength": 11, <br>
+    &nbsp; "Intelligence": 18, "Dexterity": 14}; <br>
+    console.log("strength is " + associative.Strength); <br>
+    console.log("Intelligence is " + associative["Intelligence"])<br>
+    let dex = "Dexterity"<br>
+    console.log(associative[dex]);<br>
+</div>
+
+    <!-- ------------------------------------------ -->
+
+<h2>Classes</h2>
+    <p>The old-school way of creating objects was using prototypes. Since ES6 we have had a class construct.</p>
+    <div class="source">
+        class Employee {<br>
+        &nbsp; // private instance variables<br>
+        &nbsp; #name;<br>
+        &nbsp; #empId;<br>
+        &nbsp; // public instance variables<br>
+        &nbsp; publicVariable;<br>
+        <br>
+        &nbsp; // constructor<br>
+        &nbsp; constructor(name, empId) {<br>
+        &nbsp; &nbsp; this.#name = name;<br>
+        &nbsp; &nbsp; this.#empId = empId<br>
+        &nbsp; }<br>
+        <br>
+        &nbsp; // methods<br>
+        &nbsp; getName() {return this.#name;}<br>
+        &nbsp; getEmployeeId() {return this.#empId;}<br>
+        <br>
+        &nbsp; toString() {<br>
+        &nbsp; &nbsp; return `${this.#name} (${this.#empId})`;<br>
+        &nbsp; }<br>
+        <br>
+        &nbsp; // static methods<br>
+        &nbsp; // (don't require instance, just class name)<br>
+        &nbsp; static isEven(n) {<br>
+        &nbsp; &nbsp; return (n % 2) === 0;<br>
+        &nbsp; }<br>
+        }<br>
+        <br>
+        let e1 = new Employee("Bob", 1);<br>
+        console.log(e1.toString());<br>
+    </div>
+
+<!-- ------------------------------------------ -->
+
+<h2>Inheritance</h2>
+
+    <p>JavaScipt supports inheritance by using the <strong>extends</strong> keyword.
+        The inherited class gains all the methods and non-private instance variables.
+        The <strong>super</strong> can be used to call the parent version of classes,
+        which is useful when overriding methods needs the original version.
+        Here is an example:
+    </p>
+    <div class="source">
+        class SalariedEmployee extends Employee {<br>
+        &nbsp; #salary;<br>
+        <br>
+        &nbsp; constructor(name, eid, salary) {<br>
+        &nbsp; &nbsp; super(name, eid);<br>
+        &nbsp; &nbsp; this.#salary = salary;<br>
+        &nbsp; }<br>
+        <br>
+        &nbsp; getSalary() {return this.#salary}<br>
+        <br>
+        &nbsp; toString() {<br>
+        &nbsp; &nbsp; return super.toString() +<br>
+        &nbsp; &nbsp; &nbsp; &nbsp; " Salary " + this.#salary;<br>
+        &nbsp; }<br>
+        }<br>
+        <br>
+        let e2 = new SalariedEmployee("Alice", 2, 120000);<br>
+        console.log(e2.toString());<br>
+    </div>
+
+<!-- ------------------------------------------ -->
+
+<h2>Polymorphism and Duck Typing (interfaces)</h2>
+
+<p>Due to JavaScripts' use of dynamic variables, we use duck typing to perform polymorphic operations.
+    Because functions are treated like a variable, we can check to see if a function exists as follows:
+</p>
+<div class="source">
+    if (myObject.myMethod) { <br>
+    &nbsp; // we have the desired method <br>
+    &nbsp; myObject.myMethod(); <br>
+    } else { <br>
+    &nbsp; // handle not having the method here <br>
+    }
+</div>
+
+<!-- ------------------------------------------ -->
+
+<h2>Binding objects</h2>
+
+    <p>The <strong>this</strong> keyword in JavaScript works a bit different in JavaScript than in most of the other
+        object-oriented languages. The value of <strong>this</strong> changes based on how a function is called.
+        The value of <strong>this</strong> is not the object that was created, but by the object used to call the
+        function. This means that if you want to use an object method as a callback, things are not going to work.
+        to get around this java has the bind function. Can add parameters after the "this" object.</p>
+    <div class="source">
+        function callback(toCall) {<br>
+        &nbsp; console.log("callback: " + toCall());<br>
+        }<br>
+        <br>
+        // will cause exception because this bound to callback<br>
+        //callback(e1.toString);<br>
+        <br>
+        // will work as expected<br>
+        callback(e1.toString.bind(e1));<br>
+        <br>
+        // will use child data but with parent method<br>
+        callback(e1.toString.bind(e2));<br>
+    </div>
+<!-- ------------------------------------------ -->
+
+<h2>closures</h2>
+<p>This technique lets you hide values by using encapsulation via function scope.</p>
+<div class="source">
+    function closureClass(msg) {<br>
+    &nbsp; let protectedMessage = msg;<br>
+    &nbsp; return class {<br>
+    &nbsp; &nbsp; getProtectedMessage() {<br>
+    &nbsp; &nbsp; &nbsp; return protectedMessage;<br>
+    &nbsp; &nbsp; }<br>
+    &nbsp; };<br>
+    }<br>
+    <br>
+    let closureDemo =<br>
+    &nbsp; new (closureClass("This is a protected message"));<br>
+    console.log(closureDemo.getProtectedMessage());<br>
+</div>
+
+<!-- ------------------------------------------ -->
+
+<h2>JSON</h2>
+    <p>JSON (JavaScript Object Notation) is a human-readable data transfer format that uses the code Java uses to create
+    objects as the format making it easy to get data and start using it with JavaScript.</p>
+    <div class="source">
+        let jsonString =<br>
+        &nbsp; '{"name": "Alice", "age": 42}';<br>
+        let obj = JSON.parse(jsonString);<br>
+        <br>
+        console.log(obj.name); // Alice<br>
+        console.log(obj.age);  // 42<br>
+        <br>
+        obj.age = 29;<br>
+        jsonString = JSON.stringify(obj);<br>
+        console.log(jsonString);<br>
+    </div>
+</div>
+<script>
+    let testArray = [1,2,3,4];
+    for (let n in testArray) {
+        console.log(n);
+    }
+
+    let microSudoku = [
+        [1,2, 3,4], [3,4, 1,2], [2,1, 4,3], [4,3, 2,1]
+    ];
+
+    console.log("Multidimensional with for")
+    for (let row = 0; row < microSudoku.length; ++row) {
+        let line = "";
+        for (let col = 0; col < microSudoku[row].length; ++col) {
+            line = line + microSudoku[row][col] + " ";
+        }
+        console.log(line);
+    }
+
+    let associative = {"Strength": 11, "Intelligence": 18, "Dexterity": 14};
+    console.log("strength is " + associative.Strength);
+    console.log("Intelligence is " + associative["Intelligence"])
+    let dex = "Dexterity"
+    console.log(associative[dex]);
+
+
+    class Employee {
+        #name;
+        #empId;
+        publicVariable;
+
+        constructor(name, empId) {
+            this.#name = name;
+            this.#empId = empId
+        }
+
+        getName() {return this.#name;}
+        getEmployeeId() {return this.#empId;}
+
+        toString() {
+            return `${this.#name} (${this.#empId})`;
+        }
+
+        // static methods (don't require instance, just class name)
+        static isEven(n) {
+            return (n % 2) === 0;
+        }
+    }
+
+    let e1 = new Employee("Bob", 1);
+    console.log(e1.toString());
+
+    class SalariedEmployee extends Employee {
+        #salary;
+
+        constructor(name, eid, salary) {
+            super(name, eid);
+            this.#salary = salary;
+        }
+
+        getSalary() {return this.#salary}
+
+        toString() {
+            return super.toString() + " Salary " + this.#salary;
+        }
+    }
+
+    let e2 = new SalariedEmployee("Alice", 2, 120000);
+    console.log(e2.toString());
+
+    // A simple callback function
+    function callback(toCall) {
+        console.log("callback: " + toCall());
+    }
+    // will cause exception because this bound to callback
+    //callback(e1.toString);
+
+    // will work as expected
+    callback(e1.toString.bind(e1));
+    // will use child data but with parent method
+    callback(e1.toString.bind(e2));
+
+    function closureClass(msg) {
+        let protectedMessage = msg;
+        return class {
+            getProtectedMessage() {
+                return protectedMessage;
+            }
+        };
+    }
+    let closureDemo =
+        new (closureClass("This is a protected message"));
+    console.log(closureDemo.getProtectedMessage());
+
+    let jsonString = '{"name": "Alice", "age": 42}';
+    let obj = JSON.parse(jsonString);
+
+    console.log(obj.name); // Alice
+    console.log(obj.age);  // 42
+
+    obj.age = 29;
+    jsonString = JSON.stringify(obj);
+    console.log(jsonString);
+</script>
+</body>
+</html>
