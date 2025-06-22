@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array Demo</title>
+    <style>
+        body {
+            font-size: larger;
+            text-align: center;
+            background: darkblue;
+            color: yellow;
+        }
+
+        .main {
+            width: 8.5in;
+            margin: auto;
+            text-align: left;
+            color: #304;
+            background: #edf;
+        }
+
+        .source {
+            font-family: "Courier New", monospace;
+            font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 1.05;
+            color: #131;
+            background: #EFE;
+        }
+
+        .output {
+            font-family: "Courier New", monospace;
+            font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 1.05;
+            color: #101;
+            background: #DDF;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+<h1>Arrays</h1>
+<h2>setting up</h2>
+<div class="source">
+let names = ["Alice", "Bob", "Carole", "Eve",<br>
+&nbsp; &nbsp; "Faith", "Grace", "Malory"];
+</div>
+
+<h2>for loop</h2>
+<div class="source">
+    let s = "";<br>
+    for (let i = 0; i < names.length; ++i) {<br>
+    &nbsp; &nbsp; s += "names[" + i + "] = " + names[i] + "&lt;br&gt;";<br>
+    }<br>
+    document.getElementById("forloop").innerHTML=s;<br>
+</div>
+<div id="forloop" class="output"></div>
+
+<h2>for in</h2>
+<div class="source">
+    s = "";<br>
+    for (let key in names) {<br>
+    &nbsp; &nbsp; s += `names[${key}]=${names[key]}<br>`;<br>
+    }<br>
+    document.getElementById("forin").innerHTML=s;<br>
+</div>
+<div id="forin" class="output"></div>
+
+<h2>for of</h2>
+    <div class="source">
+s = "";<br>
+for (let value of names) {<br>
+&nbsp; &nbsp; s += value + "<br>";<br>
+}<br>
+document.getElementById("forof").innerHTML=s;<br>
+    </div>
+<div id="forof" class="output"></div>
+</div>
+<script>
+    // setting up the array
+    let names = ["Alice", "Bob", "Carole", "Eve", "Faith",
+                "Grace", "Malory"];
+
+    // for loop
+    let s = "";
+    for (let i = 0; i < names.length; ++i) {
+        s += "names[" + i + "] = " + names[i] + "<br>";
+    }
+    document.getElementById("forloop").innerHTML=s;
+
+    // for in
+    s = "";
+    for (let key in names) {
+        s += `names[${key}]=${names[key]}<br>`;
+    }
+    document.getElementById("forin").innerHTML=s;
+
+    // for of
+    s = "";
+    for (let value of names) {
+        s += value + "<br>";
+    }
+    document.getElementById("forof").innerHTML=s;
+
+</script>
+</body>
+</html>
